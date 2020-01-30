@@ -1,45 +1,61 @@
-*************
-スカラー
-**************
-○文字列の代入はダブルクォートあるいはシングルクォートで囲む
-$a = "apple";
 
-○文字列の結合はドット
-$a = "apple";
-$b = "banana";
-$c = $a . $b;
+## スカラー
+
+数字の代入
+
+    # Assin a value to a valuable
+    $a = 1;
+    $b = 3;
+    # Confirm
+    print $a;  # 1
+    print $b;  # 3
+    
+四則計算
+
+    # addition  (+)  和
+    $sum = $a + $b;
+    print $sum;  # 4
+    
+    # substraction (-)  差
+    $sub = $a - $b;
+    print $sub;  # -2
+    
+    # multiplication  (*)  乗
+    $mul = $a * $b;
+    print $mul; # 3
+    
+    # division  (/)  除
+    $div = $a / $b;
+    print $div;  # 0.333333
+    
+    # remainder  (%) 余り
+    $rem = $a % $b;
+    print $rem;  # 1
+    
+文字列の代入
+
+    $a = "apple";
+    $b = "banana";
+    print "$a\n";   # apple
+    print "$b\n";   # banana
+    
+文字列の結合はドット
+
+    $c = $a . $b;
+    print "$c\n";   # applebanana
+
+## 配列
+作成
+    @market = ('apple', 'banana','cherry');
+要素の追加 (右側から)
+    push(@market, "durian");
+要素の追加 (左側から)
+
+## ハッシュ
 
 
-○　数字の代入 くぉーとはつけない
-$a = 10;
+## 制御構文
 
-
-○計算
-	和算
-	差算
-	乗算
-	除算
-	余り
-
-*************
-配列
-**************
-○作成
-@market = ('apple', 'banana','cherry');
-○新たな要素を右側から配列に追加
-push(@market, "durian");
-
-
-
-*************
-ハッシュ
-**************
-
-
-
-*************
-制御構文
-**************
 ○ while
 ○ if
 ○ if  else
@@ -48,37 +64,29 @@ push(@market, "durian");
 ○ foreach
 
 
+## ファイル入出力
 
-*************
-ファイル入出力
-**************
 open()
 close()
 
-*************
-正規表現
-**************
+## 正規表現
+
+## サブルーチン
 
 
 
 
-*************
-サブルーチン
-**************
 
+## 二次元行列
 
-
-
-*************
-二次元行列
-**************
 行列の例
-my $matrix = [
-    [10, 20, 30],
-    [40, 50, 60],
-    [70, 80, 90]
-];
-print ${ ${ $matrix }[0] }[2]; # 30
+
+    my $matrix = [
+        [10, 20, 30],
+        [40, 50, 60],
+        [70, 80, 90]
+    ];
+    print ${ ${ $matrix }[0] }[2]; # 30
 
 
 
