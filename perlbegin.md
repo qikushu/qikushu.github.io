@@ -46,10 +46,15 @@
 
 ## 配列
 作成
+
     @market = ('apple', 'banana','cherry');
+
 要素の追加 (右側から)
+
     push(@market, "durian");
+
 要素の追加 (左側から)
+
 
 ## ハッシュ
 
