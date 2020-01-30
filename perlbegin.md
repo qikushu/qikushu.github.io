@@ -98,10 +98,13 @@ close()
 
 
 無名ハッシュとは、リファレンスを用いたハッシュの事
-$person = {name => 'ken', age => 19};
+
+    $person = {name => 'ken', age => 19};
 
 無名ハッシュのデリファレンス（値の取り出し・参照）
-$name = $person -> {name};
+
+    $name = $person -> {name};
+    
 ハッシュのリファレンスから直接ハッシュの値を呼び出すには
 ->演算子を用いる
 
@@ -111,53 +114,62 @@ $name = $person -> {name};
 というイメージだが…ハッシュのキーを新たに追加する際の操作
 
 %hashとして、$hash{'key'}='val'
+
 $hashとして、$hash->{'key'}='val'
+
 
 を応用すれば、アロー演算子->で無名ハッシュが作れることになる。
 すなわち
-#無名ハッシュをつくって、
-$ref_hash = {"element1" => "A","element2" => "B",};
-# 要素を追加
-$ref_hash->{"element3"} ="C";
+
+    #無名ハッシュをつくって、
+    $ref_hash = {"element1" => "A","element2" => "B",};
+    # 要素を追加
+    $ref_hash->{"element3"} ="C";
 
 
 
-*********************
-リファレンス
-*******************
-○リファレンスの作成 = バックスラッシュをふる。
-my $s = "This is a pen.";
-my @a = ("Apple", "Orange", "Melon");
-my %h = (jp => 'Japan', kr => 'South Korea');
-sub f { print $_[0] }
-#リファレンス作成 リファレンスはスカラー変数
-my $s_ref = \$s;
-my $a_ref = \@a;
-my $h_ref = \%h;
-my $f_ref = \&f;
+## リファレンス
+
+リファレンスの作成 = バックスラッシュをふる。
+
+    my $s = "This is a pen.";
+    my @a = ("Apple", "Orange", "Melon");
+    my %h = (jp => 'Japan', kr => 'South Korea');
+    sub f { print $_[0] }
+    
+リファレンス作成 リファレンスはスカラー変数
+
+    my $s_ref = \$s;
+    my $a_ref = \@a;
+    my $h_ref = \%h;
+    my $f_ref = \&f;
+    
 リファレンスからのデリファレンスはサブルーチンは &{ } を使う。
-${ $s_ref } # $s
-@{ $a_ref } # @a
-%{ $h_ref } # %h
-&{ $f_ref } # &f
-リファレンスからの配列の要素、ハッシュの要素へのアクセス
-${ $a_ref }[1]     # "Orange"
-${ $h_ref }{jp}    # "Japan"
-&{ $f_ref }('hey') # hey とプリント
 
-*********************
-大事な小技
-*******************
-配列の数値ソート
-my @nums = (5, 11, 3, 2);
-# 数値的な昇順
-@nums = sort {$a <=> $b} @nums;
-# 数値的な降順
-@nums = sort {$b <=> $a} @nums;
-# 文字列的な昇順
-@nums = sort {$a cmp $b} @nums;
-# 文字列的な降順
-@nums = sort {$b cmp $a} @nums;
+    ${ $s_ref } # $s
+    @{ $a_ref } # @a
+    %{ $h_ref } # %h
+    &{ $f_ref } # &f
+    
+リファレンスからの配列の要素、ハッシュの要素へのアクセス
+
+    ${ $a_ref }[1]     # "Orange"
+    ${ $h_ref }{jp}    # "Japan"
+    &{ $f_ref }('hey') # hey とプリント
+
+
+## 大事な小技
+
+    配列の数値ソート
+    my @nums = (5, 11, 3, 2);
+    # 数値的な昇順
+    @nums = sort {$a <=> $b} @nums;
+    # 数値的な降順
+    @nums = sort {$b <=> $a} @nums;
+    # 文字列的な昇順
+    @nums = sort {$a cmp $b} @nums;
+    # 文字列的な降順
+    @nums = sort {$b cmp $a} @nums;
 
 
 
