@@ -80,7 +80,8 @@ hr {
 
 p, blockquote, ul, ol, dl, li, table, pre {
     margin: 15px 0;
-
+    color:#FFFFFF;
+    background-color: #000000;
 }
 
 code, pre {
@@ -92,8 +93,6 @@ code {
     border: 1px solid #EAEAEA;
     margin: 0 2px;
     padding: 0 5px;
-    color:#FFFFFF;
-    background-color: #000000;
 }
 
 pre {
