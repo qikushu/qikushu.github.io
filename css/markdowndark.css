@@ -30,10 +30,12 @@
 
 body {
     font-family: Helvetica, Arial, Freesans, clean, sans-serif;
-padding:1em;
-margin:auto;
-max-width:50em;
-background:#000000;
+    padding:1em;
+    margin:auto;
+    max-width:50em;
+    background:#000000;
+    color:#FFFFFF;
+   
 }
 
 h1, h2, h3, h4, h5, h6 {
