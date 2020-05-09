@@ -81,12 +81,12 @@ hr {
 p, blockquote, ul, ol, dl, li, table, pre {
     margin: 15px 0;
     color:#FFFFFF;
-    background-color: #000000;
 }
 
 code, pre {
     border-radius: 3px;
     color: inherit;
+    background-color: #000000;
 }
 
 code {
