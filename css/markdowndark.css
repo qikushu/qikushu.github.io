@@ -80,12 +80,12 @@ hr {
 
 p, blockquote, ul, ol, dl, li, table, pre {
     margin: 15px 0;
-        color:#FFFFFF;
+    color:#FFFFFF;
 }
 
 code, pre {
     border-radius: 3px;
-    background-color: #F8F8F8;
+    background-color: #000000;
     color: inherit;
 }
 
