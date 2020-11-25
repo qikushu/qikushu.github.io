@@ -2,7 +2,7 @@
 
 植物育種学研究室(旧農学科農学第一講座、通称育種学研究室)は1920年の開講以来一貫して、イネを対象として、遺伝・育種学的研究を展開しています。社会的にも生物学的にも期待の大きいイネを実験材料にして、当研究室では伝統的課題に新しい視点を与えながら研究を進めています。
 
-リンク=>|**[教育](index.md)** | **[研究](index.md)** | **[メンバー](members.md)** | **[アクセス](access.md)** | **[研究業績](publication.md)** | **[連絡先](access.md)** |
+リンク=>**[教育](index.md)**_**[研究](index.md)**_**[メンバー](members.md)**_**[アクセス](access.md)**_**[研究業績](publication.md)**_**[連絡先](access.md)**
 
 ## 研究室構成員 (Lab. members)
 ### Staff
@@ -12,7 +12,7 @@
 | 吉村 淳 (Atsushi YOSHIMURA) | 特任教授 (Prof., Ph.D.) | 研究者情報 Researchmap |マッピング、実験系統群の作出と評価、イネ白葉枯病抵抗性、国際協力研究事業 |
 | 山形 悦透 (Yoshiyuki YAMAGATA) | 准教授 (Assoc. Prof., Ph.D.) | 研究者情報 Researchmap |イネ、進化、生殖的隔離、雑種不稔、遺伝子単離 |
 | キン・タンダ・ウィン (Khin Thanda Win, From Myanmar) | 特任講師 (Lecturer, Ph.D.) | 研究者情報 Researchmap | イネ、雑種不稔、栽培化、コアコレクション |
-| 河村　享政 (Takamasa KAWAMUERA) | 技術職員 (Technical Staff) |  | 研究支援センター所属 |
+| 河村　享政 (Takamasa KAWAMUERA) | 技術職員 (Technical Staff) | | 研究支援センター所属 |
 | 平井 香織 (Kaoru HIRAI) | 技術補佐員 (Lab. Technician) |  |  |
 | 末松 裕子 (Yuko SUEMATSU) | 技術補佐員 (Field. Technician) |  |  |
 | 池田 えりか (Erika Ikeda) | 技術補佐員 (Lab. Technician) |  |  |
