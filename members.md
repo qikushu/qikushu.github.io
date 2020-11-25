@@ -19,6 +19,7 @@
 | 池田 えりか (Erika Ikeda) | 技術補佐員 (Lab. Technician) |  |  |
 
 ### Students
+
 | 名前 (Name) | 職位/学年 (Title/Grade) | Message |
 ---- | ---- | ----
 | モー・モー・ライン (Moe Moe Hlaing, From Myanmar) | D2 | SATREPS Scholarship |
