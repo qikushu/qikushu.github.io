@@ -7,7 +7,7 @@
 ## 研究室構成員 (Lab. members)
 ### Staff
 | 名前 (Name) | 職位/学年 (Title/Grade) | 研究者情報 (More info,) | Keywords |
-| :-- | :-- | :-- |:-- |
+| :--- | :--- | :--- |:--- |
 | 安井 秀 (Hideshi YASUI) | 教授 (Prof., Ph.D.) | 研究者情報 Researchmap |イネ、耐虫性、遺伝学、近縁野生種、細胞遺伝学、 国際協力研究事業 |
 | 吉村 淳 (Atsushi YOSHIMURA) | 特任教授 (Prof., Ph.D.) | 研究者情報 Researchmap |マッピング、実験系統群の作出と評価、イネ白葉枯病抵抗性、国際協力研究事業 |
 | 山形 悦透 (Yoshiyuki YAMAGATA) | 准教授 (Assoc. Prof., Ph.D.) | 研究者情報 Researchmap |イネ、進化、生殖的隔離、雑種不稔、遺伝子単離 |
@@ -19,7 +19,7 @@
 
 ### Students
 | 名前 (Name) | 職位/学年 (Title/Grade) | Message |
-| :-- | :-- | :-- |
+| :--- | :--- | :--- |
 | モー・モー・ライン (Moe Moe Hlaing, From Myanmar) | D2 | SATREPS Scholarship |
 | ナン・モー・カム (Nang Moe Kham, From Myanmar) | D1 | SATREPS Scholarship |
 | 竹林 雄樹 (Yuki TAKEBAYASHI) | M2 |  |
