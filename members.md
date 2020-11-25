@@ -26,8 +26,7 @@
 | 熊野 友紀 (Yuki KUMANO) | B4 | | 
 | 末崎 光翔 (Mika SUEZAKI) | B4 | | 
 | 中山 聖菜 (Seina NAKAYAMA) | B4 | | 
-| 末崎 光翔 (Mika SUEZAKI) | B3 | | 
-| 末崎 光翔 (Mika SUEZAKI) | B3 | | 
-| 末崎 光翔 (Mika SUEZAKI) | B3 | | 
-| 末崎 光翔 (Mika SUEZAKI) | B3 | | 
-
+| 尾上 明日香 (Asuka ONOUE) | B3 | | 
+| 柏　陽菜 (Hina KASHIWA) | B3 | | 
+| 清水 陸史 (Rikushi SHIMUZU) | B3 | | 
+| 松嶋 章 (Akira Matsushima) | B3 | | 
