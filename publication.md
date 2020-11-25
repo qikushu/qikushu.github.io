@@ -6,6 +6,14 @@
 
 ## Publication
 
+最近の業績に関しては、九大研究者データベースに整理されておりますので、下記リンクよりご確認ください
+
+|氏名|研究|教育|社会活動|
+----|----|----|----
+|安井　秀 (YASUI, Hideshi)| [Link](https://hyoka.ofc.kyushu-u.ac.jp/search/details/K001594/thesisList.html)|[Link](https://hyoka.ofc.kyushu-u.ac.jp/search/details/K001594/education.html)|[Link](https://hyoka.ofc.kyushu-u.ac.jp/search/details/K001594/society.html)
+|山形　悦透 (YAMAGATA, Yoshiyuki)| [Link](https://hyoka.ofc.kyushu-u.ac.jp/search/details/K003539/thesisList.html)|[Link](https://hyoka.ofc.kyushu-u.ac.jp/search/details/K003539/education.html)||
+
+
 ### 2012年度
 K. Myint, D. Fujita (equal to 1st author), M. Matsumura, T. Sonoda, A. Yoshimura, and H. Yasui (2012) Mapping and pyramiding of two major genes for resistance to the brown planthopper (Nilaparvata lugens) in the rice cultivar ADR52. Theor. Appl. Genet. 124: 495-504. DOI: 10.1007/s00122-011-1723-4
 
