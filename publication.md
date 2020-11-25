@@ -1,4 +1,7 @@
-# Publication
+## Publication
+
+リンク | **[教育](index.md)** | **[研究](index.md)** | **[メンバー](members.md)** | **[アクセス](access.md)** | **[研究業績](publication.md)** | **[連絡先](access.md)**
+
 ### 2012年度
 K. Myint, D. Fujita (equal to 1st author), M. Matsumura, T. Sonoda, A. Yoshimura, and H. Yasui (2012) Mapping and pyramiding of two major genes for resistance to the brown planthopper (Nilaparvata lugens) in the rice cultivar ADR52. Theor. Appl. Genet. 124: 495-504. DOI: 10.1007/s00122-011-1723-4
 
