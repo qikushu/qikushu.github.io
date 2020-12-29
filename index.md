@@ -1,6 +1,6 @@
 ---
 layout: default
-title: トップページ
+site.title: トップページ
 ---
 
 ## 九州大学大学院農学研究院 植物育種学研究室
