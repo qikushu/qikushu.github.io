@@ -3,7 +3,7 @@ Times new roman, Centuryなどの英文フォントを用いる。MSP明朝な�
 
 μも半角英文フォントを用いる。ここからコピペすればよい
 
-## 引用用 Manifucturer 
+## 引用用 Manufacturer 
 ### 海外
 Beckman Coulter, Brea, CA, USA
 Roche,  Basel,  Switzerland
