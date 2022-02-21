@@ -79,14 +79,20 @@ Astec, Fukuoka, Japan
 明確に論じる。Chapter内のDiscussionでは実験結果に即した一次的な議論を行う。General discussionでは論文全体から得られた結論や
 考えを、general introductionと対応させて、論じる。
 
++ Book cover
++ Index
 + General introduction
-  + Chapter 1 XXXXX
++ (General Materials and Methods)
++ Chapter 1 XXXXX
     + Introduction
     + Materials and Methods
     + Results
     + Discussion
-  + Chapter 2
-  + Chapter 3
++ Chapter 2
++ Chapter 3
 + General discussion
++ Acknowledgement
++ References
++ Abstract
 
 
