@@ -1,4 +1,4 @@
-# 学位論文作成のルール
+# 植物育種学研究室 学位論文作成のルール
 
 ### テンプレートファイル
 最新バージョンは[ここ](修論タイトルおよび目次.docx)からダウンロードする
@@ -72,4 +72,21 @@ Astec, Fukuoka, Japan
 
 ### 統計
 統計量は半角フォントのイタリックにする。
+
+### 構成
+基本的には博士論文を手本として構成する。General introductionには一般的背景から問題点、博士論文全体における目的を明確にする。
+その目的を達成するための研究を章立て(Chapter)にして構成する。Chapterごとにより具体的な背景や問題点、引用文献等を引用し、研究目的を
+明確に論じる。Chapter内のDiscussionでは実験結果に即した一次的な議論を行う。General discussionでは論文全体から得られた結論や
+考えを、general introductionと対応させて、論じる。
+
++ General introduction
+  + Chapter 1 XXXXX
+    + Introduction
+    + Materials and Methods
+    + Results
+    + Discussion
+  + Chapter 2
+  + Chapter 3
++ General discussion
+
 
