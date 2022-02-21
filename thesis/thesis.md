@@ -20,7 +20,7 @@ Merck, Kenilworth, NJ, USA
 
 New England Biolabs, Ipswich, MA, USA
 
-Oxford Nanopore Technologies, XXXXXXX UK
+Oxford Nanopore Technologies, Oxford, UK
 
 Roche,  Basel,  Switzerland
 
