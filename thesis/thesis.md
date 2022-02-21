@@ -16,11 +16,13 @@ Times new roman, Centuryなどの英文フォントを用いる。MSP明朝な�
 ### 海外
 Beckman Coulter, Brea, CA, USA
 
-Roche,  Basel,  Switzerland
-
 New England Biolabs, Ipswich, MA, USA
 
+Roche,  Basel,  Switzerland
+
 Thermo Fisher Scientific, Waltham, MA, USA
+
+Promega, Madison, WI, USA
 
 ### 日本国内
 Astec, Fukuoka, Japan
