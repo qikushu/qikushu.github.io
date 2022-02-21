@@ -16,7 +16,11 @@ Times new roman, Centuryなどの英文フォントを用いる。MSP明朝な�
 ### 海外
 Beckman Coulter, Brea, CA, USA
 
+Merck, Kenilworth, NJ, USA
+
 New England Biolabs, Ipswich, MA, USA
+
+Oxford Nanopore Technologies, XXXXXXX UK
 
 Roche,  Basel,  Switzerland
 
