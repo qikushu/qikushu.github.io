@@ -1,7 +1,7 @@
 # 植物育種学研究室 学位論文作成のルール
 
 ### テンプレートファイル
-最新バージョンは[ここ](修論タイトルおよび目次.docx)からダウンロードする
+最新バージョンは[ここ](https://github.com/qikushu/qikushu.github.io/raw/master/thesis/%E4%BF%AE%E8%AB%96%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E3%81%8A%E3%82%88%E3%81%B2%E3%82%99%E7%9B%AE%E6%AC%A1.docx)からダウンロードする
 
 ### フォント
 日本語フォントはMS P明朝、英数字は英文半角フォント(Times New Roman, Centuryなど)を用いる。
