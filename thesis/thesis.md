@@ -32,28 +32,30 @@
 明確に論じる。Chapter内のDiscussionでは実験結果に即した一次的な議論を行う。General discussionでは論文全体から得られた結論や
 考えを、general introductionと対応させて、論じる。
 
-+ Book cover
-+ Index
-+ General introduction
-+ (General Materials and Methods)
-+ Chapter 1 XXXXX
-    + Introduction
-    + Materials and Methods
-    + Results
-    + Discussion
-+ Chapter 2
-+ Chapter 3
-+ General discussion
-+ Acknowledgement
-+ References
-+ Abstract
++ Book cover (表紙)
++ Index (目次)
++ General introduction (一般的背景)
++ (General Materials and Methods) (共通の材料と方法)
++ Chapter 1 XXXXX (第一章)
+    + Introduction (背景)
+    + Materials and Methods (材料と方法)
+    + Results (結果)
+    + Discussion (考察)
++ Chapter 2 (第二章)
++ Chapter 3 (第三章)
++ General discussion (総合考察)
++ Acknowledgement (謝辞)
++ References (引用文献)
++ Abstract (摘要)
++ Supplemental Table (付表)
++ Supplemental Figure (付図)
 
 ### 背景
 
 #### 図表に対する考え方
 メインの図表については本論文についてオリジナリティを有するものに原則的には限定するべき。削除しても十分意味が通じるように本文中に必要な情報は文章で提供するべき。どうしても必要ならば、supplemental figureとして(Fig. S1)などのようにして引用する。
 
-コメント：結局他人の業績を引用しているだけなので、あまりしない方が良い、
+コメント：図表はもっとも人の目にふれ、オリジナリティが発揮されるアピールポイントである。他人の業績をメインの図表とするのは誤解を招くので控える。
 
 
 
