@@ -60,9 +60,15 @@
 
 
 ### 材料と方法 
+
+#### 考え方
+方法では具体的な対象物は特定されず、再現可能な方法として記述する。品種や世代など概念として扱える遺伝的素材については材料と方法に記述するが、具体的に選抜するなど特定されうる個体や集団について結果の解釈に伴う行為がある場合は、結果として記述する。
+
 試薬や機器メーカーについて、初出においては、Manufacturer, Countryを記述する。アメリカの場合はstateも記載する。二回目以降はメーカー名だけでよい。
 
-#### 海外 Manufacturer
+#### Manufacturer
+**海外**
+
 Beckman Coulter, Brea, CA, USA
 
 Illumina, San Diego，CA
@@ -81,8 +87,11 @@ Thermo Fisher Scientific, Waltham, MA, USA
 
 Promega, Madison, WI, USA
 
-#### 日本国内
+**国内**
+
 Astec, Fukuoka, Japan
+
+Takara Bio, Kusatsu，Japan
 
 ### 単位
 単位はSI単位系にて表現する。数字と単位の間は半角スペースを一つ入れる。
