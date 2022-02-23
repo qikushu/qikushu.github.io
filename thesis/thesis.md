@@ -20,6 +20,63 @@
 | 2 |，| 全角 | ．| 全角 |
 | 3 | , | 半角 | . | 半角 |
 
+### 構成
+基本的には博士論文を手本として構成する。General introductionには一般的背景から問題点、博士論文全体における目的を明確にする。
+その目的を達成するための研究を章立て(Chapter)にして構成する。Chapterごとにより具体的な背景や問題点、引用文献等を引用し、研究目的を
+明確に論じる。Chapter内のDiscussionでは実験結果に即した一次的な議論を行う。General discussionでは論文全体から得られた結論や
+考えを、general introductionと対応させて、論じる。
+
++ Book cover
++ Index
++ General introduction
++ (General Materials and Methods)
++ Chapter 1 XXXXX
+    + Introduction
+    + Materials and Methods
+    + Results
+    + Discussion
++ Chapter 2
++ Chapter 3
++ General discussion
++ Acknowledgement
++ References
++ Abstract
+
+### 背景
+
+#### 図表に対する考え方
+メインの図表については本論文についてオリジナリティを有するものに原則的には限定するべき。削除しても十分意味が通じるように本文中に必要な情報は文章で提供するべき。どうしても必要ならば、supplemental figureとして(Fig. S1)などのようにして引用する。
+
+コメント：結局他人の業績を引用しているだけなので、あまりしない方が良い、
+
+
+
+
+### 材料と方法 
+試薬や機器メーカーについて、初出においては、Manufacturer, Countryを記述する。アメリカの場合はstateも記載する。二回目以降はメーカー名だけでよい。
+
+#### 海外 Manufacturer
+Beckman Coulter, Brea, CA, USA
+
+Illumina, San Diego，CA
+
+Merck, Kenilworth, NJ, USA
+
+New England Biolabs, Ipswich, MA, USA
+
+Oxford Nanopore Technologies, Oxford, UK
+
+Qiagen, Venlo, Netherlands
+
+Roche,  Basel,  Switzerland
+
+Thermo Fisher Scientific, Waltham, MA, USA
+
+Promega, Madison, WI, USA
+
+#### 日本国内
+Astec, Fukuoka, Japan
+
 ### 単位
 単位はSI単位系にて表現する。数字と単位の間は半角スペースを一つ入れる。
 ```
@@ -48,55 +105,6 @@ MSP明朝など日本語フォントでは全角になり正しく表示され�
 25°C
 ```
 
-
-### 引用用 Manufacturer
-初出においては、Manufacturer, Countryを記述する。アメリカの場合はstateも記載する。
-
-#### 海外
-Beckman Coulter, Brea, CA, USA
-
-Illumina, San Diego，CA
-
-Merck, Kenilworth, NJ, USA
-
-New England Biolabs, Ipswich, MA, USA
-
-Oxford Nanopore Technologies, Oxford, UK
-
-Qiagen, Venlo, Netherlands
-
-Roche,  Basel,  Switzerland
-
-Thermo Fisher Scientific, Waltham, MA, USA
-
-Promega, Madison, WI, USA
-
-#### 日本国内
-Astec, Fukuoka, Japan
-
 ### 統計
 統計量は半角フォントのイタリックにする。
-
-### 構成
-基本的には博士論文を手本として構成する。General introductionには一般的背景から問題点、博士論文全体における目的を明確にする。
-その目的を達成するための研究を章立て(Chapter)にして構成する。Chapterごとにより具体的な背景や問題点、引用文献等を引用し、研究目的を
-明確に論じる。Chapter内のDiscussionでは実験結果に即した一次的な議論を行う。General discussionでは論文全体から得られた結論や
-考えを、general introductionと対応させて、論じる。
-
-+ Book cover
-+ Index
-+ General introduction
-+ (General Materials and Methods)
-+ Chapter 1 XXXXX
-    + Introduction
-    + Materials and Methods
-    + Results
-    + Discussion
-+ Chapter 2
-+ Chapter 3
-+ General discussion
-+ Acknowledgement
-+ References
-+ Abstract
-
 
