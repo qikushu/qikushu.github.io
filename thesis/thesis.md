@@ -61,6 +61,8 @@ New England Biolabs, Ipswich, MA, USA
 
 Oxford Nanopore Technologies, Oxford, UK
 
+Qiagen, Venlo, Netherlands
+
 Roche,  Basel,  Switzerland
 
 Thermo Fisher Scientific, Waltham, MA, USA
