@@ -55,6 +55,8 @@ MSP明朝など日本語フォントでは全角になり正しく表示され�
 #### 海外
 Beckman Coulter, Brea, CA, USA
 
+Illumina, San Diego，CA
+
 Merck, Kenilworth, NJ, USA
 
 New England Biolabs, Ipswich, MA, USA
