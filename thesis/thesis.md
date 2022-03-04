@@ -80,6 +80,8 @@ Illumina, San Diego，CA
 
 Merck, Kenilworth, NJ, USA
 
+Macherey-Nagel, Dueren, Germany
+
 New England Biolabs, Ipswich, MA, USA
 
 Oxford Nanopore Technologies, Oxford, UK
