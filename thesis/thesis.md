@@ -98,6 +98,8 @@ Astec, Fukuoka, Japan
 
 Takara Bio, Kusatsu，Japan
 
+Toyobo, Osaka, Japan
+
 ### 単位
 単位はSI単位系にて表現する。数字と単位の間は半角スペースを一つ入れる。
 ```
