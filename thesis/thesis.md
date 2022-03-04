@@ -72,6 +72,8 @@
 #### Manufacturer
 **海外**
 
+Azenta, Chelmsford, MA, USA
+
 Beckman Coulter, Brea, CA, USA
 
 Illumina, San Diego，CA
