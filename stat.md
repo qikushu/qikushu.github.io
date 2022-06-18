@@ -130,7 +130,7 @@ a / b
 ### Rでの行列操作
 線形代数の教科書では、$\vec{a}$、$\vec{b}$などのベクトルは小文字の太字$\boldsymbol{a}$、$\boldsymbol{b}$で示し、行列は
 大文字の太字$\boldsymbol{A}$、$\boldsymbol{B}$にて示す。1行$m$列の行列を行ベクトルあるいは横ベクトルとよぶ。
-$$\boldsymbol{a}=\begin{bmatrix} a_1 & a_2 & a_3 & a_4 & \cdots & a_m) \end{bmatrix}$$
+$$\boldsymbol{a}=\begin{bmatrix} a_1 & a_2 & a_3 & a_4 & \cdots & a_m \end{bmatrix}$$
 $n$行1列の行列を列ベクトルあるいは縦ベクトルとよぶ。
 
 $$ \boldsymbol{b} = \begin{bmatrix}
@@ -143,7 +143,7 @@ $$
 
 行列の行と列を入れ替えたものを転置ベクトルと呼び、右上にTを付す。(教科書によってはプライムを付ける)。
 
-$$\boldsymbol{b}^{T}=\begin{bmatrix} = b_1 & b_2 & \cdots & b_n) \end{bmatrix}$$
+$$\boldsymbol{b}^{T}=\begin{bmatrix} b_1 & b_2 & \cdots & b_n \end{bmatrix}$$
 
 Rではベクトルを作成した段階では列ベクトルと行ベクトルの区別はないが、同じ長さのベクトルを行ベクトルとして
 縦に結合する場合はrbind()関数で結合すると行列を作成できる。
