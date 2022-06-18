@@ -232,3 +232,97 @@ a 1 -3.469447e-18
 b 0  1.000000e+00
 ```
 のように計算できる。
+
+## データフレームの取り扱い
+### Fisherのアヤメのデータ
+統計解析をする場合、実際はデータをタイプして打つことはほとんどなく、表形式のテキストデータを読み込んで解析を行う。
+ここでは英国の統計学者・植物学者であったロナルド・フィッシャー氏によるアヤメ(Iris)三種 {\sl Iris setosa}、
+{\sl Iris versicolor}、{\sl Iris virginica} の種分化に関する論文(Fisher RA. 1936. The use of multiple measurements in
+taxonomic problems. Annals of Eugenics 7:179-188.)から、種別の花弁およびがくに関する多変量データを紹介する。
+
+
+irisとタイプすると、表が表示される。irisに限らず、自作のファイルから読み込んだデータは**データフレーム**という。
+データフレームの一部のデータを、ベクトル、行列、データフレームとして切り出して解析を行う場合がほとんどである。
+その方法をここでは学習する。最初の数行をhead()関数で表示させる。
+
+```
+head(iris)
+# 結果の表示
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+```
+Sepal.Lengthは花弁の長さ、Sepal.Widthは花弁の幅、Petal.Lengthはがくの長さ、Petal.Widthはがくの幅、Speciesは種名をしめし、
+それぞれの列の名(列ラベル名)である。
+
+### データフレームからのデータの抽出###
+データフレームからデータを切り出すときの方法について説明する。
+データの取り出し方には (1) ドルマークを使う「列ラベル目法」と、(2)大かっこ[  ]を用いる「座標法」との二つがある。
+
+#### 列ラベル名法
+データフレーム名irisをみると、 5つの列があり、Sepal.Length、Sepal.Width、Petal.Length、Petal.Width、Species
+という名前を持っている。windowsのイメージで例えると、irisというフォルダの中に、Sepal.Length、Sepal.Width、Petal.Length、Petal.Width、Speciesという
+フォルダがあって、それをダブルクリックすると、例えば、Sepal.Lengthというフォルダに入ったデータがスラスラと出てくるイメージである。
+
+irisデータフレームにどのような名前の列があるか、だいたい覚えておけばよい。irisとタイプした後にドルマークをタイプし、
+キーボード左上付近の「Tab」キーを打つと、候補が出てくる。スマホの予測みたいなものである。
+そのあと、自分のほしい列名を選択すればよい。実際、タイプするとタイプミスをするので、タイプミスを避けるため
+積極的にtabキーは利用するべきである。決して怠惰なわけではなく、そうあるべきである。
+Rのデフォルトの関数もtabキーで予測してもらえる。またユーザーが作成した変数(正式にはオブジェクト)も
+ユーザーが作成した後であれば、tabキーで予測される。ただし、ヒントで最初の何文字かは与えよう。
+ユーザーが今何をしたいかまでは、予測してくれません。
+
+```
+#irisデータフレームのSepal.Length列にアクセス！
+iris$Sepal.Length  
+```
+
+#### 座標法 
+データフレーム名irisのa行b列のデータを取り出す。
+```
+iris[a,b]
+```
+「データフレーム名irisのb列のデータをすべて取り出す。
+```
+iris[,b]
+```
+「データフレーム名irisの''Species''列のデータをすべて取り出す。
+\begin{breakbox}
+\begin{verbatim}
+iris[,"Species"]
+\end{verbatim}
+\end{breakbox}
+
+「データフレーム名irisのb1からb2列のデータをすべて取り出す。
+```
+iris[,b1:b2]
+```
+「データフレーム名irisのa行のデータをすべて取り出す。
+```
+iris[a,]
+```
+
+#### 条件抽出
+データフレーム名irisのSpecies列が"setosa"であるSepal.Length列を取り出す
+```
+ris[iris$Species=="setosa","Sepal.Length"]
+```
+
+### 演習問題
+データフレームirisに対して、
+\begin{enumerate}
+\item[問題1] setosaの花弁長(Sepal.Length)をSL\_setosaに代入せよ。
+\item[問題2] versicolorの花弁長(Sepal.Length)をSL\_versicolorに代入せよ。
+\item[問題3] virginicaの花弁長(Sepal.Length)をSL\_virginicaに代入せよ。
+\end{enumerate}
+
+### 演習問題の答え
+```
+SL_setosa = iris[iris$Species=="setosa","Sepal.Length"]
+SL_versicolor = iris[iris$Species=="versicolor","Sepal.Length"]
+SL_virginica = iris[iris$Species=="virginica","Sepal.Length"]
+```
