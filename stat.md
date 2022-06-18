@@ -132,14 +132,17 @@ a / b
 大文字の太字$\boldsymbol{A}$、$\boldsymbol{B}$にて示す。1行$m$列の行列を行ベクトルあるいは横ベクトルとよぶ。
 $$\boldsymbol{a}=\begin{bmatrix} a_1 & a_2 & a_3 & a_4 & \cdots & a_m) \end{bmatrix}$$
 $n$行1列の行列を列ベクトルあるいは縦ベクトルとよぶ。
+
 $$ \boldsymbol{b} = \begin{bmatrix}
 b_1 \\
 b_2 \\
 \vdots \\
 b_n
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 行列の行と列を入れ替えたものを転置ベクトルと呼び、右上にTを付す。(教科書によってはプライムを付ける)。
+
 $$\boldsymbol{b}^{T}=\begin{bmatrix} = b_1 & b_2 & \cdots & b_n) \end{bmatrix}$$
 
 Rではベクトルを作成した段階では列ベクトルと行ベクトルの区別はないが、同じ長さのベクトルを行ベクトルとして
@@ -170,7 +173,7 @@ Y # Yを表示
  [8,] -8  3
  [9,] -1  3
 ```
-$\boldsymbol{X}$は(2 $\times$ 9)の行列、$\boldsymbol{Y}$は(9 $\times$ 2)の行列である。
+$\boldsymbol{X}$ は(2 $ \times $ 9)の行列、$\boldsymbol{Y}$は(9 $ \times $ 2)の行列である。
 $\boldsymbol{X}\boldsymbol{Y}$は(2 $\times$ 9)$\times$(9 $\times$ 2)=(2 $\times$ 2)の
 行列となる。行列の積は演算子\%*\%にて得ることができる。
 
@@ -189,7 +192,8 @@ W  # 計算結果の表示
 a 0.003280901 0.000112488
 b 0.000112488 0.005718142
 ```
-$\boldsymbol{Z}^{-1}$と$\boldsymbol{Z}$の積により、単位行列$\bm{I}$を得る。
+$\boldsymbol{Z}^{-1}$と$\boldsymbol{Z}$の積により、単位行列$\boldsymbol{I}$を得る。
+
 $$
 \boldsymbol{Z}^{-1}\boldsymbol{Z}=\boldsymbol{I} =
 \begin{bmatrix}
@@ -197,6 +201,7 @@ $$
 0 & 1
 \end{bmatrix}
 $$
+
 ```
 W %*% Z  # 計算結果の表示
   a             b
