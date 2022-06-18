@@ -173,8 +173,20 @@ Y # Yを表示
  [8,] -8  3
  [9,] -1  3
 ```
-$\boldsymbol{X}$ は(2 $ \times $ 9)の行列、$\boldsymbol{Y}$は(9 $ \times $ 2)の行列である。
-$\boldsymbol{X}\boldsymbol{Y}$は(2 $\times$ 9)$\times$(9 $\times$ 2)=(2 $\times$ 2)の
+$\boldsymbol{X}$ は(2 
+$\times$
+9)の行列、$\boldsymbol{Y}$は(9 
+$ \times $
+2)の行列である。
+$ \boldsymbol{X} \boldsymbol{Y} $ は(2 
+$ \times $
+9)
+$ \times $
+(9 
+$ \times $
+2)=(2 
+$ \times $
+2)の
 行列となる。行列の積は演算子\%*\%にて得ることができる。
 
 ```
