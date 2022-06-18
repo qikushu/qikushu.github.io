@@ -130,6 +130,9 @@ a / b
 ### Rでの行列操作
 線形代数の教科書では、$\vec{a}$、$\vec{b}$などのベクトルは小文字の太字$\boldsymbol{a}$、$\boldsymbol{b}$で示し、行列は
 大文字の太字$\boldsymbol{A}$、$\boldsymbol{B}$にて示す。1行$m$列の行列を行ベクトルあるいは横ベクトルとよぶ。
+
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+
 $$
 \boldsymbol{a}=(a_1, a_2, a_3, a_4, \cdots , a_m)
 $$
