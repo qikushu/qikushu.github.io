@@ -176,16 +176,16 @@ Y # Yを表示
 $\boldsymbol{X}$ は(2 
 $\times$
 9)の行列、$\boldsymbol{Y}$は(9 
-$ \times $
+$\times$
 2)の行列である。
-$ \boldsymbol{X} \boldsymbol{Y} $ は(2 
-$ \times $
+$\boldsymbol{X} \boldsymbol{Y}$ は(2 
+$\times$
 9)
-$ \times $
+$\times$
 (9 
-$ \times $
+$\times$
 2)=(2 
-$ \times $
+$\times$
 2)の
 行列となる。行列の積は演算子\%*\%にて得ることができる。
 
