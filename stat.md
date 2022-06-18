@@ -126,3 +126,109 @@ a / b
 [1] -1.7500000 1.0000000 -Inf 0.3333333 4.0000000 0.0000000 -1.7500000
 [8] -2.6666667 -0.3333333
 ```
+
+### Rでの行列操作
+線形代数の教科書では、$\vec{a}$、$\vec{b}$などのベクトルは小文字の太字$\boldsymbol{a}$、$\boldsymbol{b}$で示し、行列は
+大文字の太字$\boldsymbol{A}$、$\boldsymbol{B}$にて示す。1行$m$列の行列を行ベクトルあるいは横ベクトルとよぶ。
+$$
+\boldsymbol{a}=(a_1, a_2, a_3, a_4, \cdots , a_m)
+$$
+$n$行1列の行列を列ベクトルあるいは縦ベクトルとよぶ。
+```math
+  \boldsymbol{b} = \left(
+    \begin{array}{c}
+      b_1 \\
+      b_2 \\
+      \vdots \\
+      b_n
+    \end{array}
+  \right)
+```
+行列の行と列を入れ替えたものを転置ベクトルと呼び、右上にTを付す。(教科書によってはプライムを付ける)。
+\[
+	\bm{b}^{T}=(b_1, b_2,, \cdots , a_n)
+\]
+Rではベクトルを作成した段階では列ベクトルと行ベクトルの区別はないが、
+同じ長さのベクトルを行ベクトルとして縦に結合する場合はrbind()関数で結合すると行列を作成できる。
+\begin{breakbox}
+\begin{verbatim}
+a = c(7, 7, -5, 2, 8, 0, 7, -8, -1)  # 要素数9のベクトル
+b = c(-4 ,7, 0, 6, 2, -6, -4, 3, 3)  # 要素数9のベクトル
+X = rbind(a, b) 
+X   # Xを表示
+  [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+a    7    7   -5    2    8    0    7   -8   -1
+b   -4    7    0    6    2   -6   -4    3    3
+\end{verbatim}
+\end{breakbox}
+列ベクトルとして横に結合する場合はcbind()関数を用いる。
+\begin{breakbox}
+\begin{verbatim}
+a = c(7, 7, -5, 2, 8, 0, 7, -8, -1)  # 要素数9のベクトル
+b = c(-4 ,7, 0, 6, 2, -6, -4, 3, 3)  # 要素数9のベクトル
+Y = cbind(a, b)
+Y # Yを表示
+       a  b
+ [1,]  7 -4
+ [2,]  7  7
+ [3,] -5  0
+ [4,]  2  6
+ [5,]  8  2
+ [6,]  0 -6
+ [7,]  7 -4
+ [8,] -8  3
+ [9,] -1  3
+\end{verbatim}
+\end{breakbox}
+$\bm{X}$は(2 $\times$ 9)の行列、$\bm{Y}$は(9 $\times$ 2)の行列である。
+$\bm{X}\bm{Y}$は(2 $\times$ 9)$\times$(9 $\times$ 2)=(2 $\times$ 2)の
+行列となる。行列の積は演算子\%*\%にて得ることができる。
+\begin{breakbox}
+\begin{verbatim}
+Z = X %*% Y   # XとYの行列の積の答えをZに代入
+Z  # Zを表示
+    a   b
+a 305  -6
+b  -6 175
+\end{verbatim}
+\end{breakbox}
+ちなみに逆行列はsolve()関数にてえる。
+\begin{breakbox}
+\begin{verbatim}
+W = solve(Z)
+W  # 計算結果の表示
+            a           b
+a 0.003280901 0.000112488
+b 0.000112488 0.005718142
+\end{verbatim}
+\end{breakbox}
+$\bm{Z}^{-1}$と$\bm{Z}$の積により、単位行列$\bm{I}$を得る。
+\[
+\bm{Z}^{-1}\bm{Z}=\bm{I} =\left(
+    \begin{array}{cc}
+      1 & 0 \\
+      0 & 1 \\
+    \end{array} \right)
+\]
+\begin{breakbox}
+\begin{verbatim}
+W %*% Z  # 計算結果の表示
+  a             b
+a 1 -3.469447e-18
+b 0  1.000000e+00
+\end{verbatim}
+\end{breakbox}
+数値計算なので誤差が出ているが、ほぼ$\bm{I}$で、たしかに逆行列。ちなみに-3.469447e-18は
+$-3.469447 \times 10^{-18}$の意味。\\
+Rにて計算を行う場合は、毎回計算結果を変数に代入することなく、複数の関数を
+組み合わせて使うことができる。例えば、上記の一連の流れを
+\begin{breakbox}
+\begin{verbatim}
+solve(rbind(a, b) %*% cbind(a, b)) %*% (rbind(a, b) %*% cbind(a, b))
+# 結果の表示
+  a             b
+a 1 -3.469447e-18
+b 0  1.000000e+00
+\end{verbatim}
+\end{breakbox}
+のように計算できる。
