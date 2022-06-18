@@ -5,8 +5,8 @@
 
 $$	P(a \leq x \leq b) = \int_a^b f(x) dx  $$
 
-と表される場合、$f(x)$を{\bf 確率密度関数 (probability density function)}という。$a=b$の場合$P(x=a)=0$である。
-**連続変数の場合、確率は点ではなく 区間で推定** する。
+と表される場合、$f(x)$を{\bf 確率密度関数 (probability density function)}という。$a=b$の場合$P(x)=0$である。
+**連続変数の場合、確率は区間で定義** される。
 確率密度関数には、正規分布(normal distribution)、指数分布 (exponential distribution)、ガンマ分布(gamma distribution)、ベータ分布(Beta distribution)　などがある。
 
 ### 正規分布
@@ -14,7 +14,8 @@ $$	P(a \leq x \leq b) = \int_a^b f(x) dx  $$
 
 $$	f(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \mathrm{exp} (\frac{-(x-\mu)^2}{2\sigma^2} ) \quad (-\infty < x < \infty) $$
 
-とあらわされる。$\mathrm{exp}(x)$はネイピア数$e=2.718\cdots$の$x$乗であることを示す。
+とあらわされる。$\mathrm{exp}(x)$はネイピア数$e=2.718\cdots$の$x$乗であることを示す。複雑に見えるが、この関数の形状は定数である平均$\mu$、
+分散$\sigma^2$が決定する。
 $x$の分布が平均$\mu$、
 分散$\sigma^2$の
 正規分布に従う場合、$x \sim \mathcal{N}(\mu, \sigma^2)$と表記する。
@@ -28,7 +29,7 @@ $$ P(-\infty \leq x \leq \infty) = \int_{-\infty}^{\infty} f(x) dx = 1 $$
 
 を満たすため、$\frac{1}{\sqrt{2\pi \sigma^2}}$をかけて調整している。
 
-<img src="./slndj5.png" width="800">
+<img src="./slndj5.png" width="600">
 
 ## 正規分布の例
 厚生労働省平成21年度体力・運動能力調査によると、日本人男性20才の平均身長(m)は1.7166、
@@ -97,39 +98,40 @@ integrate(teigikansuu2,lower=1.80, upper=Inf)
 ### 中心極限定理
 確率変数$X$が母平均$\mu$と
 母分散$\sigma^2$をもち、標本数nが十分大きい場合、
-
 標本平均 $\bar{X}$ は
 母平均 $\mu$、
 分散$\sigma^2/n$の正規分布に従う
 ( $\bar{X} \sim \mathcal{N}(\mu, \sigma^2/n)$ )。
-
-標本平均$\bar{X}$の標準化スコア$Z = (\bar{X} - \mu) / (\sigma / \sqrt{n})$は、
+さらに、標本平均$\bar{X}$の標準化スコア$Z = (\bar{X} - \mu) / (\sigma / \sqrt{n})$は、
 母平均0、分散1の標準正規分布に従う
 ( $Z \sim \mathcal{N}(0, 1)$ )。
 
 これより、**確率変数$X$が正規分布に従っていなくても、
 多数の標本から得られた平均値$\bar{X}$は正規分布に従う**、といえる。
+$\sigma / \sqrt(n)$を特に**標準誤差** といい、
+平均値の推定値のばらつきを表す推定量である。
 
 ### 母平均の点推定
-中心極限定理より、$\bar{X} \sim \mathcal{N}(\mu, \sigma^2/n)$ だから、
-母平均を$\bar{X}$と推定できる。これを点推定という。
+中心極限定理より、$\bar{X} \sim \mathcal{N}(\mu, \sigma^2/n)$ であるので、E[$\bar{X}]=\mu$、
+すなわちその期待値は母平均と等しいといえる。したがって、母平均の推定量として$\bar{X}$を用いるのが適切である。これを**点推定**という。
 
 ### 信頼区間の推定
 中心極限定理より、標本平均$\bar{X}$の標準化スコア$Z = (\bar{X} - \mu) / (\sigma / \sqrt{n})$は、
 母平均0、分散1の標準正規分布に従う
 ( $Z \sim \mathcal{N}(0, 1)$ )。
 
-このとき、$z$は下側信頼限界$T_1$と、上側信頼限界$T_2$の区間に95\%の確率で存在する。
-この時、$T_1 < z < T_2$を$z$の95%信頼区間という。
+このとき、$Z$は下側信頼限界$T_1$と、上側信頼限界$T_2$の区間に95\%の確率で存在する。
+$T_1 < z < T_2$を$Z$の95%信頼区間という。
+確率密度関数$f(Z)$について、区間$-\infty < z < T_1$の定積分を
+下側累積確率$\Phi(Z < T_1)$という。
+一方、区間 $T_2 < Z < \infty$ の定積分を
+上側累積確率$\Phi(T_2 < Z)$という。
+Z分布は$Z=0$について対称なので、$T_1 = -T_2$かつ
+$\Phi(Z < T_1) + $
+$\Phi(Z > T_2) = 0.05$を満たすときの
+$T_1$と$T_2$を選ぶ。
 
-
-$-\infty < z < T_1$を満たす確率密度関数$f(z)$の積分を累積確率$\Phi(z < T_1)$)という。
-$T_2 < z < \infty $を満たす$z$の累積確率は、$\Phi(T_2 < z) = 1-\Phi(z < T_2)$と求められる。
-
-$Z$分布は$z=0$について対称なので、$T_1$は、$\Phi(z < T_1) = 0.025$を満たすときのz、
-$T_2$は、$\Phi(z > T_2) = 0.025$を満たすときのzを選ぶ。
-
-<img src="./rd0jfey.png" width="800">
+<img src="./rd0jfey.png" width="600">
 
 ```
 # T1を求める場合 (下側確率 lower.tail = T)
