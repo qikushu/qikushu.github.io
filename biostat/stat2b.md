@@ -142,9 +142,10 @@ qnorm(p=0.025, mean=0, sd=1, lower.tail = T)
 qnorm(p=0.025, mean=0, sd=1, lower.tail = F)
 [1] 1.959964   
 ```
-よって、$Z$の信頼区間から、$\bar{X}$の範囲を求めるように逆算すると
+よって、$Z$の信頼区間から、
+$\bar{X}$の範囲を求めるように逆算すると
 
-$$ -1.959964 <Z = (\bar{X} - m) /(\sigma / \sqrt{n}) < 1.959964 $$
+$$ -1.959964 < Z = (\bar{X} - m) / ( \sigma / \sqrt{n} ) < 1.959964 $$
 
 $$ -1.959964 \cdot \sigma / \sqrt{n} <\bar{X} - m < 1.959964  \cdot \sigma / \sqrt{n} $$ 
 
