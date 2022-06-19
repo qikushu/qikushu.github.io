@@ -9,7 +9,7 @@
 経験的に $\mu$ と $m$ は似ているし、
 $\sigma^2$ と $s^2$ も似ているだろうが、どのように似ているかはわからない。通常、標本から母数をよりよく推定する。
 
-<img src="./Yv2RteVWRz.png">
+<img src="./Yv2RteVWRz.png" width="500" style="background-color:white;">
 
 **標本から母集団の母数の推定**
 
@@ -17,9 +17,7 @@ $\sigma^2$ と $s^2$ も似ているだろうが、どのように似ている�
 #### 離散変数の期待値
 $X$が確率変数の場合、その期待値を$\textrm{E}[X]$とおく。$X$が離散分布する変数の場合、$X=X_i$になるときの確率を$p_i$とすると
 
-$$ \textrm{E}[X] = \sum_{i=1}^{n} p_i X_i
-\label{KRXI5fjSFU}
-$$
+$$ \textrm{E}[X] = \sum_{i=1}^{n} p_i X_i $$
 
 と表す。
 離散分布する変数の例としてはサイコロや宝くじがある。サイコロを1回投げた場合の期待値は、$\frac{1}{6} \cdot 1 +\frac{1}{6} \cdot 2 +\frac{1}{6} \cdot 3 +\frac{1}{6} \cdot 4 +\frac{1}{6} \cdot 5 +\frac{1}{6} \cdot 6 = \frac{1+2+3+4+5+6}{6}=3.5$である。また、平成28年11~12月に行われた年末ジャンボ宝くじの発売数と当選数、当選金額は以下のとおりである。
@@ -102,11 +100,15 @@ $$\textrm{E}(X) = \mu_X $$
 
 であり、母平均$\mu_X$の定義である。$a$が定数のとき、
 
-$$ \textrm{E} [a] &= a \quad \mbox{(定数の期待値は定数)} $$
-$$ \textrm{E} [X + a] &= \textrm{E}[X] + a  \quad \mbox{(定数は外に出せる1)} $$
-$$ \textrm{E} [aX] &= a\textrm{E}[X] \quad \mbox{(定数は外に出せる2)} $$
-$$ \textrm{E} [X+Y] &= \textrm{E}[X]+\textrm{E}[Y]  \quad \mbox{(期待値の和は、和の期待値と等しい)} $$
-$$ \textrm{E} [XY] =&\textrm{E}[X]\textrm{E}[Y] \quad (ただし、XとYが独立の場合) $$
+$$ \textrm{E} [a] = a \quad \mbox{(定数の期待値は定数)} $$
+
+$$ \textrm{E} [X + a] = \textrm{E}[X] + a  \quad \mbox{(定数は外に出せる1)} $$
+
+$$ \textrm{E} [aX] = a\textrm{E}[X] \quad \mbox{(定数は外に出せる2)} $$
+
+$$ \textrm{E} [X+Y] = \textrm{E}[X]+\textrm{E}[Y]  \quad \mbox{(期待値の和は、和の期待値と等しい)} $$
+
+$$ \textrm{E} [XY] = \textrm{E}[X]\textrm{E}[Y] \quad (ただし、XとYが独立の場合) $$
 
 が成り立つ。
 
@@ -117,8 +119,11 @@ $$\textrm{V}[X] = \textrm{E}[(X-\textrm{E}[X])^2] = \sigma_X^2 $$
 である。$a$が定数とすると
 
 $$  \textrm{V}[a] = 0 \quad \mbox{(定数の分散は0)} $$
+
 $$ \textrm{V}[aX] = a^2 \textrm{V}[X] \quad \mbox{($X$の$a$倍の分散は、$X$の分散の$a^2$倍)} $$
+
 $$ \textrm{V}[X + a] = \textrm{V}[X] \mbox{(定数の和は無視)} $$
+
 である。
 
 ```
@@ -142,9 +147,9 @@ $\textrm{V}[Y]  = \sigma_Y^2$のとき、
 
 $$ \textrm{V}[X \pm Y] = \textrm{V}[X] + \textrm{V}[Y] \pm 2 \cdot \textrm{Cov}[X,Y] $$
 
-である。ただし、\textrm{Cov}[X,Y]は{\bf 共分散(co-variance)}といい、
+である。ただし、$\textrm{Cov}[X,Y]$は**共分散(co-variance)** といい、
 
-$$ &\textrm{Cov}[X,Y] = \textrm{E}[ ( X - \textrm{E}(X) )( Y - \textrm{E}(Y))] = r \cdot  \sigma_X \cdot \sigma_Y $$
+$$ \textrm{Cov}[X,Y] = \textrm{E}[ ( X - \textrm{E}(X) )( Y - \textrm{E}(Y))] = r \cdot  \sigma_X \cdot \sigma_Y $$
 
 の性質を持つ。$r$は **相関係数**といい、 $-1 \leq r \leq  1$の範囲を持つ。$X$と$Y$が独立の場合は $r=0$となり、$\textrm{Cov}[X,Y]=0$であるため、
 
