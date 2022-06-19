@@ -4,11 +4,11 @@
 離散分布をとる確率変数、例えば生存/死亡、成功/失敗などの二値データ、あるいは個数などの整数をとる変数の場合について考える。
 状況に応じて検定の呼び名あるいは検定法が異なる。自習等で検索や文献等にあたる場合は以下の図を参考にしてほしい。
 
-<img src="./qurx2z.png" width=400>
+<img src="./qurx2z.png" width=500>
 
 **図. 個数データに関する検定法の整理**
 
-<img src="./ogx960k.png" width=400>
+<img src="./ogx960k.png" width=500>
 
 **図. 適合度検定と独立性検定の考え方の違い**
 
@@ -393,3 +393,9 @@ $$ μ = \cfrac{\left( \cfrac{s_1^2}{n_1} + \cfrac{s_2^2}{n_2} \right)^2}{\cfrac{
 |---- | ---- | ---- | ---- | ----  | 
 |蔵卵個体数 | 89 | 60 | 57 | 29 |
 |非蔵卵個体数 | 45 | 14 | 70 | 26 | 
+
+
+########
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
