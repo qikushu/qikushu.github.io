@@ -210,7 +210,7 @@ $E[\bar{X} - \bar{Y}]=22.48333-24.03333 = -1.55$が標本平均の差の点推�
 
 
 ### 母分散未知の場合
-#### $t$分布
+#### $t$分布の導入
 
 前節では、母分散$\sigma^2$が既知の時、標準正規分布
 
@@ -219,86 +219,58 @@ $$ Z = \frac{\bar{X}-\mu}{\sqrt{\sigma^2/n}} $$
 を考えた。一方、母分散$\sigma^2$が未知の場合、$\sigma^2$の代わりに$s^2$を用いて
 $$ t = \frac{\bar{X}-\mu}{\sqrt{s^2/n}} $$
 をスチューデントの$t$統計量として新たに定義する。$t$統計量は自由度$n-1$の$t$分布に従う。
-$t$分布は自由に動ける変数のかず「自由度」によってその分布が変化する。$t$分布表を参照するか、統計ソフトを用いて信頼区間の推定を行う。
+$t$分布は自由に動ける変数のかず「自由度」によってその分布が変化する。
+自由度(degree of freedom (df))が大きくなるにつれて標準正規分布$\mathcal{N} (0, 1)$に近づく。
+$t$分布表を参照するか、統計ソフトを用いて信頼区間の推定を行う。
 
-
-\paragraph{$t$分布と$z$分布(標準正規分布)をRで比較してみよう！} とにかくやってみる。自由度(degree of freedom (df))が大きくなるにつれて
-標準正規分布に近づくのがお分かりか。dnormは標準正規分布をあらわす。 dtは$t$分布で自由度を要求する。
-
-\begin{breakbox}
-\begin{verbatim}
+```
+# dnormは標準正規分布、dtは$t$分布の確率密度を出力する。
 curve(dnorm,-4,4)  # まず標準正規分布のグラフ
 curve(dt(x,df=1),-4,4,add=T,lty=2)  #自由度1のt分布を追加
 curve(dt(x,df=3),-4,4,add=T,lty=3)  #自由度3のt分布を追加
 curve(dt(x,df=10),-4,4,add=T,lty=4)  ##自由度10のt分布を追加
-\end{verbatim}
-\end{breakbox}
+```
+<img src="./wdk32jah.png" width="500">
+#### 自由度に伴うt分布の変化
 
-\begin{figure}[htbp]
-\begin{center}
- \fbox{\includegraphics[clip,width=9.0cm]{./wdk32jah.png}}
- \caption{標準正規分布にどんどん近づく$t$分布。}
- \label{fig:wdk32jah}
-\end{center}
-\end{figure}
-
-$t$分布は$n \rightarrow \infty$で標準正規分布$\mathcal{N} (0, 1)$に近づく。
-
-
-\paragraph{母分散が未知だが等しいと仮定するとき($\sigma_x^2 = \sigma_y^2 = \sigma^2)$\\ \\}
-\begin{itembox}[l]{例題}
- ある飼育法により昆虫個体群XとYを飼育したとする。飼育法以外の条件を均一にそろえたうえで、個体群XおよびYの昆虫重量 (mg)は
+#### 母分散が未知だが等しいとき
+ある飼育法により昆虫個体群XとYを飼育したとする。飼育法以外の条件を均一にそろえたうえで、個体群XおよびYの昆虫重量 (mg)は
  $X=\{27.6, 19.0, 20.1, 24.7, 21.8, 21.7\}$、$Y=\{26.1, 27.1, 23.0, 25.9, 19.4, 22.7\}$であった。個体群XおよびYの母分散は
-不明であるが、等しいと仮定する。$X$と$Y$平均の差$\bar{X}-\bar{Y}$についての点推定および区間推定を行いなさい。
- \end{itembox}
- 
-\paragraph{$t$分布を例題に当てはめて考える}
-式(\ref{eq:KKJybRhR})は$\sigma_x^2 = \sigma_y^2 = \sigma^2$より
-\begin{equation}
-	\begin{split}
-	Z &= \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{\sigma_x^2/m + \sigma_y^2/n}} \\
-	&= \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{(1/m + 1/n)\sigma^2}} (\because \sigma_x^2 = \sigma_y^2 = \sigma^2)
-	\end{split}
-\end{equation}
-ここで$X$と$Y$の標本不偏分散の{\bf プールした分散 (pooled variance)}$s_p^2$ を考える。
-\begin{equation}
-	\begin{split}
-	s_p^2 &= \frac{\sum_{i=1}^{m}(X_i - \bar{X})^2 + \sum_{j=1}^{n}(Y_j - \bar{Y})^2}{(m-1) + (n-1)} \\
-	\end{split}
-\end{equation}
+不明であるが、等しいと仮定する。$X$と$Y$平均の差$\bar{X}-\bar{Y}$についての95%信頼区間の推定を行いなさい。
+
+#### 解答例
+$\sigma_x^2 = \sigma_y^2 = \sigma^2$より
+
+$$ Z = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{\sigma_x^2/m + \sigma_y^2/n}} $$
+$$ = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{(1/m + 1/n)\sigma^2}} (\because \sigma_x^2 = \sigma_y^2 = \sigma^2) $$
+
+ここで$X$と$Y$の標本不偏分散の **プールした分散 (pooled variance) $s_p^2$** を考える。
+
+$$ s_p^2 &= \frac{\sum_{i=1}^{m}(X_i - \bar{X})^2 + \sum_{j=1}^{n}(Y_j - \bar{Y})^2}{(m-1) + (n-1)} $$
+
 $X$と$Y$が与えられている場合は、上記のように計算できるが、$s_x^2$および$s_y^2$のみ与えられている場合は、
-\begin{equation}
-	\begin{split}
-	s_p^2 &= \frac{(m-1)s_x^2 + (n-1)s_y^2}{(m-1) + (n-1)} (\because s_x^2 = \frac{\sum_{i=1}^{m}(X_i - \bar{X})^2}{m-1})
-	\end{split}
-\end{equation}
-と求める。
-式(\ref{eq:LajlNviyHv})より、
-\begin{equation}
-	\begin{split}
-	t = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{(1/m + 1/n) s_p^2}}
-	\end{split}
-\end{equation}
+
+$$ s_p^2 &= \frac{(m-1)s_x^2 + (n-1)s_y^2}{(m-1) + (n-1)}
+(\because s_x^2 = 
+\frac{\sum_{i=1}^{m}(X_i - \bar{X})^2}{m-1}) $$
+と求める。よって
+
+$$ t = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{(1/m + 1/n) s_p^2}} $$
 となり、２標本$t$統計量は自由度$m+n-2$の$t$分布に従う。
 
 
 
 \paragraph{考え方2 $\quad $信頼区間の推定}
-図\ref{fig:rvtn2q4p}を見てほしい。$t$分布は$t=0$について対称であるので、95\%信頼区間の下側信頼限界は
-$\Phi(T_1 < t) = (1-0.95) / 2 = 0.025$を満たす$T_1$であり、上側信頼限界は$1 - \Phi(T_2 > t) =1 - (1 - 0.025) = 0.025$を満たす$T_2$である。
-R関数のqt(累積確率, df=m+n-2)にて、t分布において$-\infty$から$t$までの累積確率が、ユーザーが与えた累積確率になるときの$t$を求めることが
-できる。自由度が$m+n-2=6+6-2=10$のときの上側および下側信頼限界を求める。
+$t$分布は$t=0$について対称であるので、95\%信頼区間の下側信頼限界は$\Phi(T_1 < t) = (1-0.95) / 2 = 0.025$を満たす$T_1$であり、
+上側信頼限界は$1 - \Phi(T_2 > t) =1 - (1 - 0.025) = 0.025$を満たす$T_2$である。R関数のqt(累積確率, df=m+n-2)にて、
+t分布において$-\infty$から$t$までの累積確率が、ユーザーが与えた累積確率になるときの$t$を求めることができる。
+自由度が$m+n-2=6+6-2=10$のときの上側および下側信頼限界を求める。
 
-\begin{figure}[htbp]
-\begin{center}
- \fbox{\includegraphics[clip,width=9.0cm]{./rvtn2q4p.png}}
- \caption{$t$分布における信頼区間推定。ちょっと形が違うのが伝わります！？}
- \label{fig:rvtn2q4p}
-\end{center}
-\end{figure}
+<img src="./rvtn2q4p.png">
 
-\begin{breakbox}
-\begin{verbatim}
+#### $t$分布における信頼区間推定
+
+```
 # T1を求める場合
 qt(0.025, df=10)
 # 結果
@@ -308,21 +280,19 @@ qt(0.025, df=10)
 qt(0.975,df=10)
 # 結果
 [1] 2.228139 # T1にマイナス1をかけただけの値であることに注意
-\end{verbatim}
-\end{breakbox}
+```
 よって、95\%信頼区間は、
-\[
-	-2.228139 < t = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{(1/m + 1/n) s_p^2}}  < 2.228139
-\]
+
+$$-2.228139 < t = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{(1/m + 1/n) s_p^2}}  < 2.228139 $$
+
 $\bar{X}-\bar{Y}$で整理して
-\begin{equation}
-	\begin{split}
-	-2.228139 \cdot \sqrt{(1/m + 1/n) s_p^2} +  (\mu_x - \mu_y) &< \bar{X}-\bar{Y} < 2.228139 \cdot \sqrt{(1/m + 1/n) s_p^2}  +  (\mu_x - \mu_y) \\
-	\end{split}
-\end{equation}
+
+$$ -2.228139 \cdot \sqrt{(1/m + 1/n) s_p^2} +  (\mu_x - \mu_y) 
+< \bar{X}-\bar{Y} < 
+2.228139 \cdot \sqrt{(1/m + 1/n) s_p^2}  +  (\mu_x - \mu_y) $$
+
 それではRの標準関数でコツコツ解いてみよう。
-\begin{breakbox}
-\begin{verbatim}
+```
 X= c(27.6, 19.0, 20.1, 24.7, 21.8, 21.7)
 Y = c(26.1, 27.1, 23.0, 25.9, 19.4, 22.7)
 mean_X = mean(X)  # Xの標本平均 値は22.48333
@@ -340,14 +310,12 @@ qt(0.025,df=10)*( sqrt( ( 1/6 + 1/6 ) * pooled_var) )+(mean_X - mean_Y)
 # 95%上側信頼限界をもとめる
 qt(0.975,df=10)*( sqrt( ( 1/6 + 1/6 ) * pooled_var) )+(mean_X - mean_Y) 
 [1] 2.340462
-\end{verbatim}
-\end{breakbox}
-これはRの専用関数t.test()関数で一撃である。標本$X$と標本$Y$の分散が等しいことは
-var.equal = TRUEと指示する。また、両側確率を求めるため、alternative = c("two.sided")を
-指定している。
-\begin{breakbox}
-\begin{verbatim}
-t.test(X,Y,var.equal = TRUE, alternative = c("two.sided"))
+```
+
+これはRの専用関数t.test()関数で一撃である。標本$X$と標本$Y$の分散が等しい場合、var.equal = TRUEと指示する。
+また、両側確率を求めるため、alternative = c("two.sided")を指定する。95%信頼区間を求めたい場合はconf.level = 0.95にて指定する。
+```
+t.test(X,Y,var.equal = TRUE, alternative = c("two.sided"), conf.level = 0.95)
 ##### 以降 結果の表示  ######
 	Two Sample t-test
 
@@ -359,29 +327,8 @@ alternative hypothesis: true difference in means is not equal to 0
 sample estimates:
 mean of x mean of y 
  22.48333  24.03333 
-\end{verbatim}
-\end{breakbox}
-デフォルトで95\%信頼区間を求めている。上記の95 percent confidence interval: の箇所を参照すればよい。99\%信頼区間を求めたい場合は
-conf.level = 0.99にて指定する。
-\begin{breakbox}
-\begin{verbatim}
-t.test(X,Y,var.equal = TRUE,alternative = c("two.sided"), conf.level = 0.99)
-##### 以降 結果の表示  ######
-	Two Sample t-test
-
-data:  X and Y
-t = -0.88771, df = 10, p-value = 0.3955
-alternative hypothesis: true difference in means is not equal to 0
-99 percent confidence interval:  # 99%信頼区間
- -7.083737  3.983737
-sample estimates:
-mean of x mean of y 
- 22.48333  24.03333 
-\end{verbatim}
-\end{breakbox}
-t.test()関数、便利ですよね。。。きちんとt分布の区間推定ができたなら、t.test()関数のありがたみがわかる。
-
-
+```
+上記の95 percent confidence interval: の箇所をが95信頼区間である。
 
 
 \paragraph{母分散が未知だが等しいとは限らないとき($\sigma_x^2 \neq \sigma_y^2$)}
@@ -416,22 +363,18 @@ mean of x mean of y
 \end{verbatim}
 \end{breakbox}
 
-%%%%%%%%%%%%%%
-\subsubsection{第二回演習のレポート課題}
-%%%%%%%%%%%%%%
+### 第二回演習のレポート課題
 まず課題データをRでダウンロードし、オブジェクトに保存してください。
-\begin{breakbox}
-\begin{verbatim}
+```
 URL3 = "https://raw.githubusercontent.com/qikushu/stat/master/kadai_R3.txt"
 kadai_data3 = read.table(URL3, head=T)
-\end{verbatim}
-\end{breakbox}
-うまく読め込めたでしょうか。\\
-
+```
+#### 問題
 今回は日本型イネ台中65号とアウス型(いわゆる印度型の一種)イネDV85の交雑F2を自殖して得られた
 組換え自殖系統群(Recombinant Inbred Line)という種類のイネで、ほぼすべての遺伝子型が台中65号ホモ接合型(課題
 データではAと表記)とDV85ホモ接合型(課題データではBと表記)に固定している。それは今回の統計の授業には関係ないが、
-とにかく、いわゆるメンデルの遺伝の法則のAAホモ型とBBホモ型でABのヘテロ接合型はほぼない、ということだ。\\
+とにかく、いわゆるメンデルの遺伝の法則のAAホモ型とBBホモ型でABのヘテロ接合型はほぼない、ということだ。
+
 HD93とは1993年にイネを播種して出穂するまでの到穂日数の日数について、この系統群について観察した結果である。この
 到穂日数と関連のあるゲノム領域を探索するため、100個以上のDNAマーカーを用いて遺伝子型を解析している。
 今回の課題では、そのうち染色体1に座乗(ざじょう)するDNAマーカーC813と染色体8に座乗するDNAマーカーR902によって
@@ -441,14 +384,14 @@ HD93とは1993年にイネを播種して出穂するまでの到穂日数の日
 答えにたどり着けるようにしているので、順番に解いてほしい。t.test()を使わずに解ければ加点である(たぶん)。答え合わせはt.test()で
 できますよね！？
 
-\begin{enumerate}
-  \item stripchart()関数を用いて、C813の遺伝子型をもとにHD93の散布図を作成せよ。(第一回レポート課題の問題とほぼ同じ問題)
-  \item stripchart()関数を用いて、R902の遺伝子型をもとにHD93の散布図を作成せよ。(第一回レポート課題の問題とほぼ同じ問題)
-  \item DNAマーカーC813における遺伝子型をもとに、HD93のデータを分類し、平均値および不偏分散を求めよ。(第一回レポート課題の問題とほぼ同じ問題)
-  \item DNAマーカーR902における遺伝子型をもとに、HD93のデータを分類し、平均値および不偏分散を求めよ。(第一回レポート課題の問題とほぼ同じ問題)
-   \item DNAマーカーC813において、遺伝子型Aをもつ系統の標本平均を$\bar{A}_{C813}$、遺伝子型Bをもつ系統の標本平均を$\bar{B}_{C813}$と
+
+1. stripchart()関数を用いて、C813の遺伝子型をもとにHD93の散布図を作成せよ。(第一回レポート課題の問題とほぼ同じ問題)
+1. stripchart()関数を用いて、R902の遺伝子型をもとにHD93の散布図を作成せよ。(第一回レポート課題の問題とほぼ同じ問題)
+1. DNAマーカーC813における遺伝子型をもとに、HD93のデータを分類し、平均値および不偏分散を求めよ。(第一回レポート課題の問題とほぼ同じ問題)
+1. DNAマーカーR902における遺伝子型をもとに、HD93のデータを分類し、平均値および不偏分散を求めよ。(第一回レポート課題の問題とほぼ同じ問題)
+1. DNAマーカーC813において、遺伝子型Aをもつ系統の標本平均を $\bar{A}_{C813}$ 、遺伝子型Bをもつ系統の標本平均を$\bar{B}_{C813}$と
    おくと、$\bar{A}_{C813}-\bar{B}_{C813}$の平均および95\%信頼区間を示せ。ただし、今回は等分散性は仮定してよい。$\bar{A}_{C813}$と$\bar{B}_{C813}$は二つ前の問題で導出したものである。  ちなみにベクトルXの要素数を調べる場合はlength(X)である。データ数を数えたい場合ってありますよね.
-   \item DNAマーカーC902において、遺伝子型Aをもつ系統の標本平均を$\bar{A}_{R902}$、遺伝子型Bをもつ系統の標本平均を$\bar{B}_{R902}$と
+1. DNAマーカーC902において、遺伝子型Aをもつ系統の標本平均を $\bar{A}_{R902}$ 遺伝子型Bをもつ系統の標本平均を$\bar{B}_{R902}$と
    おくと、$\bar{A}_{R902}-\bar{B}_{R902}$の平均および95\%信頼区間を示せ。ただし等分散性は仮定してよい。$\bar{A}_{R902}$と$\bar{B}_{R902}$は二つ前の問題で導出したものである。
-\end{enumerate}
+
 
