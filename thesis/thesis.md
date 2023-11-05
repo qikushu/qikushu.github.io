@@ -89,7 +89,9 @@ Azenta, Chelmsford, MA, USA
 
 Beckman Coulter, Brea, CA, USA
 
-Illumina, San Diego，CA
+Illumina, San Diego，CA, USA
+
+Kapa Biosystems, Wilmington, MA, USA
 
 Merck, Kenilworth, NJ, USA
 
