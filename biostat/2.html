@@ -1,0 +1,922 @@
+<!doctype html>
+<html >
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--[if lt IE 9]>
+                <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="template.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/template.css" />
+
+    <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- <script type='text/javascript' src='menu/js/jquery.cookie.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.hoverIntent.minified.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.dcjqaccordion.2.7.min.js'></script> -->
+
+    <!-- <link href="menu/css/skins/blue.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/graphite.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/grey.css" rel="stylesheet" type="text/css" /> -->
+  
+    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+        
+  
+    <!-- <script src="script.js"></script> -->
+  
+    <!-- <script src="jquery.sticky-kit.js "></script> -->
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.cookie.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.dcjqaccordion.2.7.min.js'></script>
+
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/graphite.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/grey.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/ryangrose/easy-pandoc-templates@948e28e5/css/elegant_bootstrap.css" rel="stylesheet" type="text/css" />
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/jquery.sticky-kit.js"></script>
+    <meta name="generator" content="pandoc" />
+  <meta name="author" content="Yoshiyuki Yamagata" />
+  <title>2023生物統計学第2回</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+
+    
+    <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="doc-title">2023生物統計学第2回</span>
+        <ul class="nav pull-right doc-info">
+                    <li><p class="navbar-text">Yoshiyuki
+Yamagata</p></li>
+                              <li><p class="navbar-text">2023年11月8日</p></li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <div class="row">
+            <div class="span12">
+
+      
+      <h1 id="生物統計演習-第2回-推定">生物統計演習 第2回 推定</h1>
+<p>推定統計では、少数の<strong>標本</strong>から<strong>母集団</strong>全体を推定する。母集団は規模の十分大きい集団であり
+、母集団から観察あるいは実験によって少数の<strong>標本(sample)</strong>を得る。母平均および母分散を、未知の定数<span
+class="math inline">\(\mu\)</span>(みゅーとよむ)および<span
+class="math inline">\(\sigma^2\)</span>(しぐまにじょうとよむ)、標本平均と標本分散を<span
+class="math inline">\(m\)</span>および標本の分散を<span
+class="math inline">\(s^2\)</span>とおくと、経験的に<span
+class="math inline">\(\mu \simeq m\)</span>および<span
+class="math inline">\(\sigma^2 \simeq
+s^2\)</span>とわかるが、どのように似ているかはわからない。通常、母数は未知なので標本から母数をよりよく推定したい。</p>
+<p><img src="Yv2RteVWRz.png" alt="" width="50%"> <strong>図.
+標本から母集団の母数の推定</strong></p>
+<h2 id="期待値と分散">1. 期待値と分散</h2>
+<h3 id="離散変数の期待値">1-1. 離散変数の期待値</h3>
+<p><span
+class="math inline">\(X\)</span>が確率変数の場合、その期待値を<span
+class="math inline">\(E(X)\)</span>とおく。<span
+class="math inline">\(X\)</span>が離散分布する変数の場合、<span
+class="math inline">\(X=X_i\)</span>になるときの確率を<span
+class="math inline">\(p_i\)</span>とすると <span class="math display">\[
+E(X) = \sum_{i=1}^{n} p_i X_i
+\]</span> と表す。
+離散分布する変数の例としてはサイコロや宝くじがある。サイコロを1回投げた場合の期待値は、<span
+class="math inline">\(\frac{1}{6} \cdot 1 +\frac{1}{6} \cdot 2
++\frac{1}{6} \cdot 3 +\frac{1}{6} \cdot 4 +\frac{1}{6} \cdot 5
++\frac{1}{6} \cdot 6 =
+\frac{1+2+3+4+5+6}{6}=3.5\)</span>である。また、平成28年11~12月に行われた年末ジャンボ宝くじの発売数と当選数、当選金額は以下のとおりである。</p>
+<p>宝くじ当せん金・本数（発行枚数が5億枚の場合）</p>
+<table>
+<thead>
+<tr class="header">
+<th>等級等</th>
+<th>当せん金</th>
+<th>本数</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1等</td>
+<td>700,000,000円</td>
+<td>25本</td>
+</tr>
+<tr class="even">
+<td>1等の前後賞</td>
+<td>150,000,000円</td>
+<td>50本</td>
+</tr>
+<tr class="odd">
+<td>1等の組違い賞</td>
+<td>500,000円</td>
+<td>4,975本</td>
+</tr>
+<tr class="even">
+<td>2等</td>
+<td>15,000,000円</td>
+<td>500本</td>
+</tr>
+<tr class="odd">
+<td>3等</td>
+<td>1,000,000円</td>
+<td>5,000本</td>
+</tr>
+<tr class="even">
+<td>4等</td>
+<td>10,000円</td>
+<td>500,000本</td>
+</tr>
+<tr class="odd">
+<td>5等</td>
+<td>3,000円</td>
+<td>5,000,000本</td>
+</tr>
+<tr class="even">
+<td>6等</td>
+<td>300円</td>
+<td>50,000,000本</td>
+</tr>
+</tbody>
+</table>
+<p>この場合、期待値は149.975円となる。</p>
+<h3 id="連続変数の期待値">1.2 連続変数の期待値</h3>
+<p><span class="math inline">\(x\)</span>が連続分布する変数の場合、<span
+class="math inline">\(x\)</span>の確率密度関数を<span
+class="math inline">\(f(x)\)</span>とすると、 <span
+class="math display">\[
+E(x) = \int_{-\infty}^{\infty} xf(x) dx
+\]</span> と表す。<span class="math inline">\(x\)</span>と<span
+class="math inline">\(x\)</span>が起こる確率<span
+class="math inline">\(P(x)\)</span>の積の総和が期待値であることには変わりはない。</p>
+<h3 id="確率変数xの期待値と分散">1-3. 確率変数Xの期待値と分散</h3>
+<p>離散変数および連続変数について、以下の法則が成り立つ。 #### 1-3a.
+期待値の性質 確率変数<span
+class="math inline">\(X\)</span>に関する母平均<span
+class="math inline">\(\mu_X\)</span>の定義は、期待値$E[X] = _X <span
+class="math inline">\(である。以下が期待値の性質である。ただし\)</span>a$は定数とする。
+<span class="math display">\[
+    E[a] = a \quad \text{(定数の期待値は定数)}\\
+    E[X + a] = E[X] + a  \quad \text{(定数は外に出せる1)}\\
+    E[aX] = aE[X] \quad \text{(定数は外に出せる2)}\\
+    E[X+Y] = E[X]+E[Y]  \quad
+\text{(期待値の和は、和の期待値と等しい)}\\
+    E[XY] = E[X]E[Y] \quad \text(ただし、XとYが独立の場合) \\
+\]</span></p>
+<h4 id="b.-分散の性質">1-3b. 分散の性質</h4>
+<p>確率変数<span class="math inline">\(X\)</span>の母分散<span
+class="math inline">\(\sigma_X^2\)</span>の定義は、$V[X] = E[(X-E[X])^2]
+= _X^2 <span
+class="math inline">\(である。以下が分散の性質である。ただし\)</span>a$は定数とする。
+<span class="math display">\[
+    V[a] = 0 \quad \text{(定数の分散は0)}\\
+    V[aX] = a^2V[X] \quad
+\text{($X$の$a$倍の分散は、$X$の分散の$a^2$倍)}\\
+    V[X + a] = V[X] \\
+\]</span> である。</p>
+<h4 id="c.-共分散の公式">1-3c. 共分散の公式</h4>
+<p>確率変数<span class="math inline">\(X\)</span>と<span
+class="math inline">\(Y\)</span>について<span class="math inline">\(V[X]
+= \sigma_X^2\)</span>および<span class="math inline">\(V[Y] =
+\sigma_Y^2\)</span>のとき、 <span class="math display">\[
+    V[X \pm Y] = V[X] + V[Y] \pm 2 \cdot Cov[X,Y]
+\]</span> である。ただし、Cov[X,Y]は
+<strong>共分散(co-variance)</strong> といい、 <span
+class="math display">\[
+    Cov[X,Y] = E[ ( X - E(X) )( Y - E(Y))]
+\]</span></p>
+<p>ここで、<span class="math inline">\(X\)</span>と<span
+class="math inline">\(Y\)</span>が独立の場合は<span
+class="math inline">\(Cov[X,Y]=0\)</span>より <span
+class="math display">\[
+    V[X \pm Y] = V[X] + V[Y]
+\]</span> すなわち、分散は<span class="math inline">\(X\)</span>と<span
+class="math inline">\(Y\)</span>が独立ならば、<span
+class="math inline">\(X \pm Y\)</span>の分散は、<span
+class="math inline">\(X\)</span>の分散と<span
+class="math inline">\(Y\)</span>の分散に分割できる。</p>
+<h4 id="d.-練習問題">1-3d. 練習問題</h4>
+<ol type="1">
+<li>イネの10アール(a)当たり収量について、品種Aの収量をしめす確率変数<span
+class="math inline">\(A\)</span>は母平均386.1 kg/10aおよび母標準偏差25.4
+kg/10aをもつ。コムギの20アールにおける母平均と母標準偏差はいくつが期待されるか。</li>
+<li>イネ品種Bの確率変数<span
+class="math inline">\(B\)</span>は母平均333.6
+kg/10aおよび母標準偏差は22.4 kg/10aをもつと仮定する。品種Aを10
+a、品種Bを10
+a育成した場合、両者を合わせたコムギ収量の母平均と母標準偏差はいくつか。ただし、品種Aと品種Bの育成は相互に影響を与えない(独立)とする。</li>
+<li>品種Aを10 a、品種Bを20
+a育成した場合、両者を合わせたイネ収量の母平均と母標準偏差はいくつか。ただし、品種Aと品種Bの育成は相互に影響を与えない(独立)とする。</li>
+</ol>
+<h4 id="e.-練習問題こたえ">1-3e. 練習問題こたえ</h4>
+<ol type="1">
+<li><span class="math inline">\(E[2A] = 2E[A] = 2 \cdot 386.1 =
+772.2\)</span>、<span class="math inline">\(V[2A] = 2^2 \cdot V[A] = 4
+\cdot 25.4^2 = 2580.64\)</span>。ゆえに母平均は772.2、母標準偏差は<span
+class="math inline">\(\sqrt{2580.64}=50.8\)</span>である。</li>
+<li><span class="math inline">\(E[A+B] = E[A]+E[B]=386.1+333.6 =
+719.7\)</span> kg/10aである。また、<span
+class="math inline">\(V[A+B]=V[A] + V[B] = 25.4^2 + 22.4^2
+=1146.92\)</span>より、母標準偏差は<span
+class="math inline">\(\sqrt{1146.92}\fallingdotseq33.87\)</span>である。</li>
+<li><span class="math inline">\(E[A+2B] = E[A]+E[2B]=386.1+2 \cdot 333.6
+= 1053.3\)</span> kg/10aである。また、<span
+class="math inline">\(V[A+2B]=V[A] + V[2B] = 25.4^2 + 4 \cdot 22.4^2
+=2652.2\)</span>より、母標準偏差は<span
+class="math inline">\(\sqrt{2652.2}\fallingdotseq51.50\)</span>である。</li>
+</ol>
+<h3 id="標本xの期待値と分散">1-4. 標本<span
+class="math inline">\(X\)</span>の期待値と分散</h3>
+<p>ふつう、母平均と母標準偏差はわからない。少数の標本から母平均と分散を推定する数学的な正当性は以下のように示される。数式よりは、下線の部分を暗記しましょう。</p>
+<h4 id="a.-標本xの期待値">1-4a. 標本<span
+class="math inline">\(X\)</span>の期待値</h4>
+<p><span class="math display">\[
+E[X] = \mu_X
+\]</span> 標本<span
+class="math inline">\(X\)</span>の期待値は母平均<span
+class="math inline">\(\mu_X\)</span>と等しい。</p>
+<h4 id="b.-標本平均barxの期待値">1-4b. 標本平均<span
+class="math inline">\(\bar{X}\)</span>の期待値</h4>
+<p><span class="math display">\[
+E[\bar X]  =  \mu_X
+\]</span> <u>母平均<span
+class="math inline">\(\mu_X\)</span>を推定するためには、標本平均<span
+class="math inline">\(\bar{X}\)</span>を計算する。</u>証明は<strong>大数の法則</strong>である。</p>
+<h4 id="c.-標本不偏分散s2の期待値">1-4c. 標本不偏分散<span
+class="math inline">\(s^2\)</span>の期待値</h4>
+<p>標本不偏分散を$s^2 = $と計算したとき、 <span class="math display">\[
+E[s^2]  = \sigma_X^2
+\]</span> である。<u>母分散<span
+class="math inline">\(\sigma_X\)</span>を推定するためには<span
+class="math inline">\(s^2\)</span>を計算する。</u>Rやmatlabでは<code>var()</code>関数にて計算する。</p>
+<h4 id="d.-標本平均の分散vbar-xの期待値">1-4d. 標本平均の分散<span
+class="math inline">\(V[\bar X]\)</span>の期待値</h4>
+<p><span class="math display">\[
+V[\bar X]  = \frac{\sigma_X^2}{n}
+\]</span> <u>標本平均の母分散を推定したい場合は、<span
+class="math inline">\(s^2/n\)</span>で推定する。</u>証明は<strong>中心極限定理</strong>である。R/matlabではvar()をサンプル数で割る。さらに、平方根をとった値を<strong>標準誤差
+(Standard error)</strong> という。確率変数<span
+class="math inline">\(X\)</span>の標準偏差が標準偏差と呼び、確率変数<span
+class="math inline">\(X\)</span>の平均値<span
+class="math inline">\(\bar{X}\)</span>の標準偏差を標準誤差と呼ぶ。</p>
+<h4 id="e.-練習問題">1-4e. 練習問題</h4>
+<p>コムギ品種Aの10アール(a)当たり収量について、5箇所の調査を行い、<span
+class="math inline">\(280, 290, 300, 260, 255\)</span>
+kg/10aのデータを得た。 1. 標本平均と不偏分散を求めよ。 1.
+コムギ品種Aの母平均、母分散、母標準偏差を推定せよ。 1.
+標本平均の標準誤差を求めよ。</p>
+<h3 id="f.-練習問題こたえ">1-4f. 練習問題こたえ</h3>
+<p>1.標本平均はmean()関数、不偏分散はvar()関数にて求める。</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span> [<span class="fl">280</span><span class="op">,</span> <span class="fl">290</span><span class="op">,</span> <span class="fl">300</span><span class="op">,</span> <span class="fl">260</span><span class="op">,</span> <span class="fl">255</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">mean</span>(<span class="va">a</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fl">277</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="va">var</span>(<span class="va">a</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fl">370</span></span></code></pre></div>
+<p>よって、標本平均は277, 不偏分散は370</p>
+<ol start="2" type="1">
+<li>母平均の不偏推定値は標本平均である。母分散の不偏推定量は不偏分散である。母分散の平方根は母標準偏差(定義)である。</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">sqrt</span>(<span class="va">var</span>(<span class="va">a</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fl">19.23538</span></span></code></pre></div>
+<p>よって、母平均の不偏推定値は277、母分散の不偏推定量は370、母標準偏差の不偏推定値は370の平方根の19.23538である。</p>
+<ol start="3" type="1">
+<li>標本平均の標準誤差は、不偏分散を標本数で割った平方根。</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">sqrt</span>(<span class="va">var</span>(<span class="va">a</span>)<span class="op">/</span><span class="fl">5</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fl">8.602325</span></span></code></pre></div>
+<p>よって、標本平均の標準誤差は8.602325である。</p>
+<h2 id="区間推定">2. 区間推定</h2>
+<p>推定の主な目的は母集団のパラメータを推定することであるが、点推定と区間推定がある。これまで点推定について説明してきた。区間推定について説明しよう。区間推定においては確率モデルを考える必要がある。確率モデルとして最も有名な正規分布について考える。</p>
+<h3 id="正規分布">2-1. 正規分布</h3>
+<p><strong>正規分布 (Normal distribution)</strong>
+はもっとも代表的な連続型の確率密度関数であり、<strong>非常に重要</strong>である。</p>
+<p><span class="math display">\[
+    f(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \mathrm{exp}
+\left\{\frac{-(x-\mu)^2}{2\sigma^2} \right\} \quad (-\infty &lt; x &lt;
+\infty)
+\]</span></p>
+<p><span class="math inline">\(\mathrm{exp}(x)\)</span>はネイピア数<span
+class="math inline">\(e=2.718\cdots\)</span>の<span
+class="math inline">\(x\)</span>乗であることを示す。<span
+class="math inline">\(x\)</span>は平均<span
+class="math inline">\(\mu\)</span>、分散<span
+class="math inline">\(V(x)=\sigma^2\)</span>の
+正規分布に従うと読み、<span class="math inline">\(x \sim
+\mathcal{N}(\mu, \sigma^2)\)</span>と表記する。山なりの曲線である<span
+class="math inline">\(y=e^{-x^2}\)</span>について、<span
+class="math inline">\(\mu\)</span>でx軸方向の移動、<span
+class="math inline">\(\sigma^2\)</span>でx軸方向に伸びちじみさせたものである。ドイツの数学者、天文学者、物理学者のC.
+F.
+ガウスは、天文観測データの誤差が正規分布にしたがうことを発見した。正規分布はガウス(ガウシアン)分布とも呼ばれる。</p>
+<h4 id="a.-正規分布の一例">2-1a. 正規分布の一例</h4>
+<p>厚生労働省平成21年度体力・運動能力調査によると、日本人男性20才の平均身長(m)は1.7166、標準偏差は0.0560、女性の平均身長は1.5832、標準偏差は0.0552であり、身長の分布は正規分布に従うことが知られている。男性の正規分布の確率密度関数のグラフを1.2mから2.0mの範囲で描画しよう。</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">% パラメータ設定</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">mu</span> <span class="op">=</span> <span class="fl">1.7166</span><span class="op">;</span>        <span class="co">% 平均値</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">sigma</span> <span class="op">=</span> <span class="fl">0.0560</span><span class="op">;</span>     <span class="co">% 標準偏差</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="fl">1.4</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">2</span><span class="op">;</span> <span class="co">% x軸の値域</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">% 正規分布の確率密度関数（PDF）を計算</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="va">pdf</span> <span class="op">=</span> (<span class="fl">1</span> <span class="op">/</span> (<span class="va">sigma</span> <span class="op">*</span> <span class="va">sqrt</span>(<span class="fl">2</span> <span class="op">*</span> <span class="va">pi</span>))) <span class="op">*</span> <span class="va">exp</span>(<span class="op">-</span>(<span class="va">x</span> <span class="op">-</span> <span class="va">mu</span>)<span class="op">.^</span><span class="fl">2</span> <span class="op">/</span> (<span class="fl">2</span> <span class="op">*</span> <span class="va">sigma</span><span class="op">^</span><span class="fl">2</span>))<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">% グラフを描画</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">pdf</span>)<span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">&#39;正規分布の確率密度関数&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="va">xlabel</span>(<span class="ss">&#39;x&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;確率密度&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="va">grid</span> <span class="va">on</span><span class="op">;</span></span></code></pre></div>
+<p>正規分布関数はコピペすればよいが、一回は書いてみると掴めると思います。</p>
+<p><img src="A4xyeBZGrwkj.png" alt="" width="50%"></p>
+<p><strong>図. 平均1.7166、分散0.003136の正規分布</strong></p>
+<p>確率密度関数<span class="math inline">\(f(x)\)</span>は<span
+class="math inline">\(x=1.7166\)</span>に最大値をもち、そこから対称に裾野を持っていることがわかる。</p>
+<h3 id="連続変数の確率">2-2. 連続変数の確率</h3>
+<h4 id="a.-確率密度関数">2-2a. 確率密度関数</h4>
+<p>　連続型の確率変数<span
+class="math inline">\(x\)</span>について、<span
+class="math inline">\(x\)</span>の範囲<span class="math inline">\(a \leq
+x \leq b\)</span>において、確率が <span class="math display">\[
+    P(a \leq x \leq b) = \int_a^b f(x) dx
+\]</span> と表される場合、<span class="math inline">\(f(x)\)</span>を
+<strong>確率密度関数 (probability density function)</strong> という。
+<span class="math inline">\(f(x)\)</span>が正規分布の時、<span
+class="math inline">\(x\)</span>の定義域である<span
+class="math inline">\(-\infty&lt;x&lt;\infty\)</span>について積分すると、確率の要件を満たすため
+<span class="math display">\[
+    P(-\infty \leq x \leq \infty) = \int_{-\infty}^{\infty} f(x) dx = 1
+\]</span> となるように<span
+class="math inline">\(f(x)\)</span>は定義される。確率は区間<span
+class="math inline">\(a \leq x \leq
+b\)</span>における定積分にて定義されるため、<span
+class="math inline">\(a=b\)</span>の場合、 <span class="math display">\[
+    P(a \leq x \leq a) = \int_a^a f(x) dx = 0
+\]</span> となり、<span
+class="math inline">\(P(x=a)=0\)</span>、すなわち微小な一点の確率はゼロである。</p>
+<p><img src="slndj5.png" alt="" width="50%"></p>
+<p><strong>図. 確率密度関数</strong></p>
+<p>身長の場合で説明すると、121.1cmと121.2cmの間には、無限個の点が存在するのでその「点」における確率はほぼ0である、と考えればよい。<strong>連続変数の場合、確率は点ではなく
+区間で推定</strong>する。 確率密度関数には、正規分布(normal
+distribution)、指数分布 (exponential distribution)、 ガンマ分布(gamma
+distribution)、ベータ分布(Beta distribution)　などがある。</p>
+<h4 id="b.-演習問題">2-2b. 演習問題</h4>
+<p>男性で身長1.7から1.8mの人は全体の何%か。</p>
+<p>連続型変数の確率を計算するには、区間の積分をする必要があるが、これは陽(あらわ)に解けないので数値計算にて近似解を求める。
+Rコマンドintegrate(ユーザ定義関数、lower=a,
+upper=b)にて数値積分を行う。</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 正規分布のパラメータ設定</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">mu</span> <span class="op">=</span> <span class="fl">1.7166</span><span class="op">;</span>        <span class="co">% 平均値</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">sigma</span> <span class="op">=</span> <span class="fl">0.0560</span><span class="op">;</span>     <span class="co">% 標準偏差</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">% 積分範囲を指定</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span> <span class="fl">1.7</span><span class="op">;</span>    <span class="co">% 下限</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span> <span class="fl">1.8</span><span class="op">;</span>     <span class="co">% 上限</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">% 正規分布の確率密度関数（PDF）を定義</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="va">pdf</span> <span class="op">=</span> <span class="op">@</span>(<span class="va">x</span>) (<span class="fl">1</span> <span class="op">/</span> (<span class="va">sigma</span> <span class="op">*</span> <span class="va">sqrt</span>(<span class="fl">2</span> <span class="op">*</span> <span class="va">pi</span>))) <span class="op">*</span> <span class="va">exp</span>(<span class="op">-</span>((<span class="va">x</span> <span class="op">-</span> <span class="va">mu</span>)<span class="op">.^</span><span class="fl">2</span>) <span class="op">/</span> (<span class="fl">2</span> <span class="op">*</span> <span class="va">sigma</span><span class="op">^</span><span class="fl">2</span>))<span class="op">;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">% 区間 [a, b] での積分を計算</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="va">probability</span> <span class="op">=</span> <span class="va">integral</span>(<span class="va">pdf</span><span class="op">,</span> <span class="va">a</span><span class="op">,</span> <span class="va">b</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fl">0.5483</span></span></code></pre></div>
+<p>すなわち、全体の54.8%の人間が身長1.7から1.8mの区間に入る。</p>
+<h4 id="c.-問題">2-2c. 問題</h4>
+<p>身長が1.80m以上の男性は、日本全体で何%に入るだろうか。</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span> <span class="fl">1.80</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span> <span class="va">Inf</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="va">probability</span> <span class="op">=</span> <span class="va">integral</span>(<span class="va">pdf</span><span class="op">,</span> <span class="va">a</span><span class="op">,</span> <span class="va">b</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fl">0.0682</span></span></code></pre></div>
+<p>で全体の上位6.8%に入る。つまり、平均と標準偏差を知ることにより、確率を推定することが可能である。</p>
+<h3 id="中心極限定理-標本平均は正規分布に従う">2-3. 中心極限定理
+(標本平均は正規分布に従う)</h3>
+<p>平均値に関する性質として、以下の重要な定理が知られる。</p>
+<p>確率変数<span class="math inline">\(X\)</span>が母平均<span
+class="math inline">\(\mu\)</span>と母分散<span
+class="math inline">\(\sigma^2\)</span>のとき、nが十分大きい場合、
+標本平均<span class="math inline">\(\bar{X}\)</span>は母平均<span
+class="math inline">\(\mu\)</span>、分散<span
+class="math inline">\(\sigma^2/n\)</span>の正規分布に従う(<span
+class="math inline">\(\bar{X} \sim \mathcal(\mu,
+\sigma/\sqrt{n})\)</span>)。</p>
+<p>標準化すると、</p>
+<p>確率変数<span class="math inline">\(X\)</span>が母平均<span
+class="math inline">\(\mu\)</span>と母分散<span
+class="math inline">\(\sigma^2\)</span>のとき、nが十分大きい場合、
+標本平均<span class="math inline">\(\bar{X}\)</span>の標準化スコア<span
+class="math inline">\(Z = (\bar{X} - \mu) / (\sigma /
+\sqrt{n})\)</span>は 母平均<span
+class="math inline">\(0\)</span>、分散<span
+class="math inline">\(1\)</span>の標準正規分布に従う(<span
+class="math inline">\(Z \sim \mathcal(0, 1\)</span>))。</p>
+<p>以上より、<u>母集団が正規分布に従っていなくても、平均値は母平均、分散<span
+class="math inline">\(\sigma^2/n\)</span>の正規分布に従って現れる</u>ことの正当性を主張する根拠となっている。</p>
+<h3 id="平均値の信頼区間の推定">2-4. 平均値の信頼区間の推定</h3>
+<h4 id="a.-95信頼区間">2-4a. 95%信頼区間</h4>
+<p>標準正規分布<span class="math inline">\(f(z)\)</span>について<span
+class="math inline">\(-\infty &lt; z &lt;
+T_1\)</span>の積分を下側累積確率<span class="math inline">\(\Phi(z &lt;
+T_1)\)</span>(ふぁいとよむ)という。逆に$T_2 &lt; z &lt; <span
+class="math inline">\(の上側累積確率は、\)</span>(T_2 &lt; z) = 1-(z
+&lt; T_2)$にて求める。</p>
+<p>下側累積確率が0.025となるときの<span
+class="math inline">\(T_1\)</span>、および上側累積確率が0.025
+となるときの<span class="math inline">\(T_2\)</span>を考えたとき、<span
+class="math inline">\(T_1\)</span>と<span
+class="math inline">\(T_2\)</span>に挟まれた領域を<strong>95%信頼区間</strong>という。すなわち<span
+class="math inline">\(z\)</span>は95%の確率で信頼区間に存在すると期待される。そのため。<span
+class="math inline">\(T_1\)</span>を下側信頼限界、<span
+class="math inline">\(T_2\)</span>を上側信頼限界ともいう。</p>
+<p>MATLABのnorminv(確率)にて、標準正規分布において<span
+class="math inline">\(-\infty\)</span>から<span
+class="math inline">\(z\)</span>までの累積確率が、ユーザーが与えた累積確率になるときの<span
+class="math inline">\(z\)</span>を求めることができる。</p>
+<p><img src="rd0jfey.png" alt="" width="50%"></p>
+<p><strong>図. 95%信頼区間</strong></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a># <span class="va">T1を求める場合</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">norminv</span>(<span class="fl">0.025</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">1.9600</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a># <span class="va">T2を求める場合</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="va">norminv</span>(<span class="fl">0.975</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fl">1.9600</span>   # 標準正規分布は左右対称なので、<span class="va">T2はT1にマイナス1をかけた値</span>。</span></code></pre></div>
+<p>よって、<span class="math inline">\(Z\)</span>の信頼区間から、<span
+class="math inline">\(\bar{X}\)</span>の範囲を求めるように逆算すると</p>
+<p><span class="math display">\[
+-1.959964 &lt;Z = (\bar{X} - m) / (\sigma / \sqrt{n}) &lt; 1.959964 \\
+-1.959964 \cdot \sigma / \sqrt{n} &lt;\bar{X} - m &lt; 1.959964  \cdot
+\sigma / \sqrt{n} \\
+-1.959964 \cdot \sigma / \sqrt{n} + m &lt; \bar{X} &lt; 1.959964 \cdot
+\sigma / \sqrt{n} + m
+\]</span> であり、<span
+class="math inline">\(\bar{X}\)</span>の95%の信頼区間である。信頼区間に基づいて<span
+class="math inline">\(\bar{X}\)</span>を区間で推定する場合を<strong>区間推定</strong>という。対照的に、<span
+class="math inline">\(\bar{X}=(X_1 + X_2 + \cdots +
+X_n)/n\)</span>のように、単一の数字として推定することを<strong>点推定</strong>という。</p>
+<h4 id="b.-補足">2-4b. 補足</h4>
+<p>母平均<span
+class="math inline">\(\mu\)</span>は未知だが定数である。一方、確率変数<span
+class="math inline">\(X\)</span>がばらつくので、標本平均<span
+class="math inline">\(\bar{X}\)</span>も標本が変わるたびばらつく。毎回違う値なんだけれども、$
+-1.959964 / + m &lt; {X} &lt; 1.959964 / + m <span
+class="math inline">\(の区間に95\%の確率で入る、という意味である。標本をとって標本平均を計算する、を繰り返すと、100回に95回は95\%信頼区間の中に入る頻度である。標本平均として\)</span>{X}<span
+class="math inline">\(と\)</span>m<span
+class="math inline">\(が説明の中で出てくるが、\)</span>{X}<span
+class="math inline">\(は変数ある一方、\)</span>m$は標本から計算される具体的な定数であり、両者は異なる。</p>
+<h2 id="標本平均barxの推定">3. 標本平均<span
+class="math inline">\(\bar{X}\)</span>の推定</h2>
+<h3 id="母分散既知の場合">3-1. 母分散既知の場合</h3>
+<h4 id="a.-1標本問題">3-1a. 1標本問題</h4>
+<p>ある道の駅でリンゴMサイズ1箱を購入し、入っていた12個のリンゴの重さ(グラム)を計測したところ、<span
+class="math inline">\(A = \{329.5, 316.7, 336.3, 336.0, 325.9, 327.2,
+326.4, 356.5, 325.1, 324.4, 341.0,
+353.5\}\)</span>であった。Mサイズの母分散<span
+class="math inline">\(9^2\)</span>であることが分かっている。標本平均<span
+class="math inline">\(\bar{A}\)</span>についての
+点推定と95%信頼区間の推定を行いなさい。</p>
+<h4 id="考え方">考え方</h4>
+<p>おなじ確率分布から得られるデータ群が1つの場合である。これを1標本問題という。母分散がすでに分かっていないと、問題として成立しないので、標本が一つで母分散が示されていれば、1標本問題として処理しましょう。</p>
+<h4 id="解答例">解答例</h4>
+<p><span
+class="math inline">\(E[\bar{A}]=\mu\)</span>より、標本平均が母平均の一致推定量である。よって標本平均<span
+class="math inline">\(\bar{A}=(329.5 + 316.7 + 336.3 + 336.0 + 325.9 +
+327.2 + 326.4 + 356.5 + 325.1 + 324.4 + 341.0 + 353.5)/12 \fallingdotseq
+333.2\)</span>が点推定量である。一方、95%信頼区間は $ -1.959964 / +
+333.2 &lt; {A} &lt; 1.959964 / + 332.3 $である。</p>
+<h4 id="b.-2標本問題">3-1b. 2標本問題</h4>
+<p>ある飼育法により昆虫個体群XとYを飼育したとする。飼育法以外の条件を均一にそろえたうえで、個体群XおよびYの昆虫重量
+(mg)は<span class="math inline">\(X=\{27.6, 19.0, 20.1, 24.7, 21.8,
+21.7\}\)</span>、<span class="math inline">\(Y=\{26.1, 27.1, 23.0, 25.9,
+19.4, 22.7\}\)</span>であった。個体群XおよびYの母分散は<span
+class="math inline">\(\sigma_X^2 = 4.0^2\)</span>および<span
+class="math inline">\(\sigma_Y^2 =
+2.9^2\)</span>であることがわかっている。<span
+class="math inline">\(X\)</span>と<span
+class="math inline">\(Y\)</span>平均の差の確率変数<span
+class="math inline">\(\bar{X}-\bar{Y}\)</span>についての点推定および区間推定を行いなさい。</p>
+<h4 id="考え方1">考え方1</h4>
+<p>上記は独立の確率分布から得られるデータ群が二つの場合である。これを二標本問題といい、しばしばこの両者を比較する問題である。この節では、この二標本それぞれの母分散がすでに分かっている場合について解説をする。一方、母分散がわかっていない場合、次節のカイ二乗分布とt分布の考え方が必要になってくる。</p>
+<h4 id="考え方2">考え方2</h4>
+<p>難しいが、順を追って処理しよう。 <strong>Step 1. まずは定義</strong>
+確率変数<span class="math inline">\(X \sim \mathcal{N}(\mu_x,
+\sigma_x^2)\)</span>および<span class="math inline">\(Y \sim
+\mathcal{N}(\mu_y, \sigma_y^2)\)</span>があり、標本平均の確率変数を<span
+class="math inline">\(\bar{X} = 1/m (X_1 + X_2 + \cdots +
+X_m)\)</span>および、<span class="math inline">\(\bar{Y} = 1/n (Y_1 +
+Y_2 + \cdots + Y_ n)\)</span>とおく。</p>
+<p><strong>Step 2.
+二つの正規分布の和あるいは差に由来する正規分布の特性</strong>**
+中心極限定理より、<span class="math inline">\(\bar{X} \sim
+\mathcal{N}(\mu_x, \sigma_x^2/m)\)</span>および<span
+class="math inline">\(\bar{Y} \sim \mathcal{N}(\mu_y,
+\sigma_y^2/n)\)</span>であるから、正規分布あるいは期待値の特性より、<span
+class="math inline">\(\bar{X}-\bar{Y} \sim \mathcal{N}(\mu_x - \mu_y,
+\sigma_x^2/m + \sigma_y^2/n)\)</span>である。</p>
+<p><strong>Step 3. 標本平均の差に関する点推定量</strong> <span
+class="math inline">\(E[\bar{X} -\bar{Y}] = E[\bar{X}] -E[\bar{Y}] =
+\mu_x - \mu_y\)</span>だから、 <span class="math inline">\(\bar{X}
+-\bar{Y}\)</span>が一致推定量。</p>
+<p><strong>Step 4. 標準正規分布への帰着</strong>
+つぎに、95%信頼区間推定を行う。<span
+class="math inline">\(\bar{X}-\bar{Y}\)</span>の標準化<span
+class="math inline">\(Z\)</span>は、定義通り <span
+class="math display">\[
+    Z = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{\sigma_x^2/m +
+\sigma_y^2/n}}
+\]</span> であり、標準正規分布<span
+class="math inline">\(\mathcal{N}(0,1)\)</span>に従う。</p>
+<p><strong>Step 5. 区間推定</strong>
+95%信頼区間において、下側信頼限界(<span
+class="math inline">\(z_1\)</span>)は<span
+class="math inline">\(z_1=-1.959964\)</span>、上側信頼限界(<span
+class="math inline">\(z_2\)</span>)は<span
+class="math inline">\(z_2=1.959964\)</span>だから、 <span
+class="math display">\[
+z_1 &lt; Z &lt; z_2 \\
+-1.959964 &lt; \frac{(\bar{X}-\bar{Y}) - (\mu_x -
+\mu_y)}{\sqrt{\sigma_x^2/m + \sigma_y^2/n}} &lt; 1.959964 \\
+    -1.959964 \cdot \sqrt{\sigma_x^2/m + \sigma_y^2/n} &lt;
+(\bar{X}-\bar{Y}) - (\mu_x - \mu_y) &lt; 1.959964 \cdot
+\sqrt{\sigma_x^2/m + \sigma_y^2/n} \\
+    -1.959964 \cdot \sqrt{\sigma_x^2/m + \sigma_y^2/n} + (\mu_x - \mu_y)
+&lt; \bar{X}-\bar{Y} &lt; 1.959964 \cdot \sqrt{\sigma_x^2/m +
+\sigma_y^2/n} + (\mu_x - \mu_y) \\
+\]</span></p>
+<h4 id="解答例-1">解答例</h4>
+<p>標本平均の差<span class="math inline">\(m_x -
+m_y\)</span>が標本平均の差の一致推定量である。<span
+class="math inline">\(m_x = (27.6+19.0+20.1+24.7+21.8+21.7)/6
+=22.48333\)</span>、<span class="math inline">\(m_y =
+(26.1+27.1+23.0+25.9+19.4+22.7)/6=24.03333\)</span>より<span
+class="math inline">\(E[\bar{X} - \bar{Y}]=22.48333-24.03333 =
+-1.55\)</span>が標本平均の差の点推定量。95%信頼区間については式(<span
+class="math inline">\(\ref{eq:slbemgj5}\)</span>)に代入して、<span
+class="math inline">\(-5.50 &lt; \bar{X} - \bar{Y} &lt;
+2.40\)</span>である。</p>
+<h3 id="母分散未知の場合">3-2. 母分散未知の場合</h3>
+<p>一般に母分散がすでに分かっているケースは少ない。標本分散<span
+class="math inline">\(s^2\)</span>から母分散<span
+class="math inline">\(\sigma^2\)</span>を推定するため、<span
+class="math inline">\(\chi^2\)</span>(カイ二乗)分布を新たに導入しよう。</p>
+<h4 id="a.-chi2カイ二乗分布">3-2a. <span
+class="math inline">\(\chi^2\)</span>(カイ二乗)分布</h4>
+<p><span
+class="math inline">\(\chi^2\)</span>(カイ二乗)分布について紹介する。確率変数<span
+class="math inline">\(X \sim \mathcal{N}(\mu,
+\sigma^2)\)</span>のとき、標準化スコア<span
+class="math inline">\(Z\)</span>について、 <span class="math display">\[
+    \chi^2 = Z_1^2 + Z_2^2 + \cdots + Z_n^2
+\]</span> を自由度<span class="math inline">\(n\)</span>の<span
+class="math inline">\(\chi^2\)</span>(カイじじょう)値と定義する。標本不偏分散<span
+class="math inline">\(s^2\)</span>と母分散<span
+class="math inline">\(\sigma^2\)</span>について、自由度<span
+class="math inline">\(n-1\)</span>のカイ二乗値<span
+class="math inline">\(\chi^2(\mathrm{df}=n-1)\)</span>は <span
+class="math display">\[
+    \chi^2 = \frac{s^2}{\sigma^2} \cdot (n-1)
+\]</span> が成り立つ。<span
+class="math inline">\(\sigma^2\)</span>が未知の場合でも、標本分散<span
+class="math inline">\(s^2\)</span>と自由度<span
+class="math inline">\(n-1\)</span>の<span
+class="math inline">\(\chi^2\)</span>分布を用いて推定できる。カイ二乗分布は標本分散<span
+class="math inline">\(s^2\)</span>と母分散<span
+class="math inline">\(\sigma^2\)</span>をつなぐ、大切な分布である。
+<span
+class="math inline">\(\chi^2\)</span>分布表を見ることで値がわかる(表)。</p>
+<h4 id="b.-自由度">3-2b. 自由度</h4>
+<p>カイ二乗分布は自由度によって変化するので、自由度の考え方を記す。自由度とは、自由に動ける変数のかずの事である。例えば、<span
+class="math inline">\(a+b =
+2\)</span>とおいたとき、この式を満たすように自由に動くことができる変数の数は<span
+class="math inline">\(a\)</span>あるいは<span
+class="math inline">\(b\)</span>の１つである。よって自由度は1である。集合<span
+class="math inline">\(X=\{x_1, x_2, \cdots,
+x_n\}\)</span>の要素の平均値が<span
+class="math inline">\(m_x\)</span>であるとき、<span
+class="math inline">\(m_x\)</span>を定数に固定した場合、自由に動ける変数の数(自由度)は<span
+class="math inline">\(n-1\)</span>個となる。<span
+class="math inline">\(n-1\)</span>個目の変数が決まった場合、最後の変数の値は自動的に決まる。自由度の選択は統計解析の根幹にかかわる重要な要素である。</p>
+<h3 id="t分布">3-3. <span class="math inline">\(t\)</span>分布</h3>
+<h4 id="a.-t分布の導入">3-3a. <span
+class="math inline">\(t\)</span>分布の導入</h4>
+<p><span class="math inline">\(X \sim \mathcal{N}(\mu_x,
+\sigma_x^2)\)</span>のとき、中心極限定理から<span
+class="math inline">\(\bar{X} \sim \mathcal{N}(\mu_x,
+\sigma_x^2/m)\)</span>。<span class="math inline">\(\bar{X}\)</span>を
+<span class="math display">\[
+    Z = \frac{\bar{X}-\mu}{\sqrt{\sigma^2/n}}
+\]</span> にて標準化した<span class="math inline">\(Z\)</span>は<span
+class="math inline">\(Z \sim \mathcal{N}(0,1)\)</span>。</p>
+<p>しかし、通常<span
+class="math inline">\(\sigma^2\)</span>は未知であるため、代わりに<span
+class="math inline">\(s^2\)</span>を用いた新たな統計量として <span
+class="math display">\[
+    t = \frac{\bar{X}-\mu}{\sqrt{s^2/n}}
+\]</span> を定義する。これをスチューデントの<span
+class="math inline">\(t\)</span>統計量とよぶ。これはもはや正規分布には従わない。ここで前述のカイ二乗分布を用いて表すと、
+<span class="math display">\[
+    t = Z/ \sqrt{\frac{s^2}{\sigma^2}}  
+\]</span> <span class="math display">\[
+    t = Z / \sqrt{\chi^2 (n-1)}
+\]</span> と書ける。<span
+class="math inline">\(t\)</span>分布とは、数理統計的には分子は標準正規分布N(0,1)、分母は自由度<span
+class="math inline">\(n-1\)</span>の<span
+class="math inline">\(\chi^2\)</span>分布と<span
+class="math inline">\(n-1\)</span>の積の平方根にて表される分布であることがわかる。<span
+class="math inline">\(t\)</span>統計量は自由度<span
+class="math inline">\(n-1\)</span>の<span
+class="math inline">\(t\)</span>分布に従う。これを<span
+class="math inline">\(t \sim t(n-1)\)</span>と書く。</p>
+<p>通常これも<span
+class="math inline">\(t\)</span>分布表を参照すれば良い。あるいは統計ソフトにて正確な値を算出することができる。<span
+class="math inline">\(t\)</span>分布は<span class="math inline">\(n
+\rightarrow \infty\)</span>で標準正規分布<span
+class="math inline">\(\mathcal{N} (0,
+1)\)</span>に近づく。これはカイ二乗分布において<span
+class="math inline">\(s^2 \simeq
+\sigma^2\)</span>になることによる。ちなみに”スチューデント(Student)“とは、<span
+class="math inline">\(t\)</span>分布を発見した英国の統計学者William
+Gosset
+(1876-1937)が論文を発表する際に自分の名前を”Student”としたことに由来する。自分が得た実験データについて、比較を行う際、この<span
+class="math inline">\(t\)</span>検定を使う場面は多い。</p>
+<h4 id="b.-t分布とz分布標準正規分布をrで比較してみよう">3-3b. <span
+class="math inline">\(t\)</span>分布と<span
+class="math inline">\(z\)</span>分布(標準正規分布)をRで比較してみよう！</h4>
+<p>とにかくやってみる。自由度(degree of freedom
+(df))が大きくなるにつれて
+準正規分布に近づくのがお分かりか。dnormは標準正規分布をあらわす。
+dtは<span class="math inline">\(t\)</span>分布で自由度を要求する。</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">on</span><span class="op">;</span> <span class="co">% 複数のプロットを重ねて表示するために&quot;hold on&quot;を使用</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="op">-</span><span class="fl">4</span> <span class="op">:</span> <span class="fl">0.01</span> <span class="op">:</span> <span class="fl">5</span> <span class="op">;</span> <span class="co">% x軸の値域を指定</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="va">pdf</span> <span class="op">=</span> <span class="va">tpdf</span>(<span class="va">x</span><span class="op">,</span> <span class="fl">3</span>)<span class="op">;</span>  <span class="co">% t分布、自由度3</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span>  <span class="va">pdf</span><span class="op">,</span> <span class="st">&quot;red&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="va">pdf</span> <span class="op">=</span> <span class="va">tpdf</span>(<span class="va">x</span><span class="op">,</span> <span class="fl">10</span>)<span class="op">;</span>  <span class="co">% t分布、自由度10</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span>  <span class="va">pdf</span><span class="op">,</span> <span class="st">&quot;green&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="va">pdf</span> <span class="op">=</span> <span class="va">tpdf</span>(<span class="va">x</span><span class="op">,</span> <span class="fl">20</span>)<span class="op">;</span>  <span class="co">% t分布、自由度20</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span>  <span class="va">pdf</span><span class="op">,</span><span class="st">&quot;blue&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="va">pdf</span> <span class="op">=</span> <span class="va">normpdf</span>(<span class="va">x</span>)<span class="op">;</span>  <span class="co">% t分布、自由度20</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span>  <span class="va">pdf</span><span class="op">,</span><span class="st">&quot;black&quot;</span>)<span class="op">;</span></span></code></pre></div>
+<p><img src="wdk32jah.png" alt="" width="50%"></p>
+<p>**図. 標準正規分布にどんどん近づく<span
+class="math inline">\(t\)</span>分布$$</p>
+<h4
+id="母分散が未知だが等しいと仮定するときsigma_x2-sigma_y2-sigma2">3-4.
+母分散が未知だが等しいと仮定するとき(<span
+class="math inline">\(\sigma_x^2 = \sigma_y^2 = \sigma^2)\)</span></h4>
+<h4 id="例題">例題</h4>
+<p>ある飼育法により昆虫個体群XとYを飼育したとする。飼育法以外の条件を均一にそろえたうえで、個体群XおよびYの昆虫重量
+(mg)は<span class="math inline">\(X=\{27.6, 19.0, 20.1, 24.7, 21.8,
+21.7\}\)</span>、<span class="math inline">\(Y=\{26.1, 27.1, 23.0, 25.9,
+19.4,
+22.7\}\)</span>であった。個体群XおよびYの母分散は不明であるが、等しいと仮定する。<span
+class="math inline">\(X\)</span>と<span
+class="math inline">\(Y\)</span>平均の差<span
+class="math inline">\(\bar{X}-\bar{Y}\)</span>についての点推定および区間推定を行いなさい。</p>
+<h4 id="t分布を例題に当てはめて考える"><span
+class="math inline">\(t\)</span>分布を例題に当てはめて考える</h4>
+<p><span class="math inline">\(\sigma_x^2 = \sigma_y^2 =
+\sigma^2\)</span>より <span class="math display">\[
+    Z = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{\sigma_x^2/m +
+\sigma_y^2/n}} \\
+    = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{(1/m +
+1/n)\sigma^2}} (\because \]</span> ここで<span
+class="math inline">\(X\)</span>と<span
+class="math inline">\(Y\)</span>の標本不偏分散の<strong>プールした分散
+(pooled variance)</strong><span class="math inline">\(s_p^2\)</span>
+を考える。 <span class="math display">\[
+    s_p^2 = \frac{\sum_{i=1}^{m}(X_i - \bar{X})^2 + \sum_{j=1}^{n}(Y_j -
+\bar{Y})^2}{(m-1) + (n-1)}
+\]</span> <span class="math inline">\(X\)</span>と<span
+class="math inline">\(Y\)</span>が与えられている場合は、上記のように計算できるが、<span
+class="math inline">\(s_x^2\)</span>および<span
+class="math inline">\(s_y^2\)</span>のみ与えられている場合は、 <span
+class="math display">\[
+    s_p^2 = \frac{(m-1)s_x^2 + (n-1)s_y^2}{(m-1) + (n-1)} (\because
+s_x^2 = \frac{\sum_{i=1}^{m}(X_i - \bar{X})^2}{m-1})
+\]</span> と求める。(注釈: <span
+class="math inline">\((m-1)s_x^2\)</span>は<span
+class="math inline">\(s_x^2\)</span>を求める際に用いた自由度をかけることで、<span
+class="math inline">\(x\)</span>に由来する誤差平方和を再抽出している。<span
+class="math inline">\(y\)</span>についても同様。自由度<span
+class="math inline">\((m-1)+(n-1)\)</span>でわる理由は、<span
+class="math inline">\(x\)</span>および<span
+class="math inline">\(y\)</span>の平均値<span
+class="math inline">\(m_x\)</span>と<span
+class="math inline">\(m_y\)</span>の2条件の制約を受けたもとでの自由度なので、m+n-2である。)
+<span class="math display">\[
+    t = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{(1/m + 1/n)
+s_p^2}}
+\]</span> となり、２標本<span
+class="math inline">\(t\)</span>統計量は自由度<span
+class="math inline">\(m+n-2\)</span>の<span
+class="math inline">\(t\)</span>分布に従う。</p>
+<h4 id="考え方2-信頼区間の推定">考え方2 信頼区間の推定</h4>
+<p>以下の図を見てほしい。<span
+class="math inline">\(t\)</span>分布は<span
+class="math inline">\(t=0\)</span>について対称であるので、95%信頼区間の下側信頼限界は
+<span class="math inline">\(\Phi(T_1 &lt; t) = (1-0.95) / 2 =
+0.025\)</span>を満たす<span
+class="math inline">\(T_1\)</span>であり、上側信頼限界は<span
+class="math inline">\(1 - \Phi(T_2 &gt; t) =1 - (1 - 0.025) =
+0.025\)</span>を満たす<span
+class="math inline">\(T_2\)</span>である。R関数のqt(累積確率,
+df=m+n-2)にて、t分布において<span
+class="math inline">\(-\infty\)</span>から<span
+class="math inline">\(t\)</span>までの累積確率が、ユーザーが与えた累積確率になるときの<span
+class="math inline">\(t\)</span>を求めることが できる。自由度が<span
+class="math inline">\(m+n-2=6+6-2=10\)</span>のときの上側および下側信頼限界を求める。</p>
+<p><img src="rvtn2q4p.png" alt="" width="50%"></p>
+<p><strong>図. <span
+class="math inline">\(t\)</span>分布における信頼区間推定。ちょっと形が違うのが伝わります！？</strong></p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">% T1を求める場合</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">tinv</span>(<span class="fl">0.025</span><span class="op">,</span> <span class="fl">10</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">2.2281</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">% T2を求める場合</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="va">tinv</span>(<span class="fl">0.975</span><span class="op">,</span><span class="fl">10</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">2.2281</span> <span class="co">% T1にマイナス1をかけただけの値であることに注意</span></span></code></pre></div>
+<p>よって、95%信頼区間は、 <span class="math display">\[
+    -2.228139 &lt; t = \frac{(\bar{X}-\bar{Y}) - (\mu_x -
+\mu_y)}{\sqrt{(1/m + 1/n) s_p^2}}  &lt; 2.228139
+\]</span> <span class="math inline">\(\bar{X}-\bar{Y}\)</span>で整理して
+<span class="math display">\[
+    -2.228139 \cdot \sqrt{(1/m + 1/n) s_p^2} +  (\mu_x - \mu_y) &lt;
+\bar{X}-\bar{Y} &lt; 2.228139 \cdot \sqrt{(1/m + 1/n) s_p^2}  +  (\mu_x
+- \mu_y) \\
+\]</span> それではMATLABの標準関数でコツコツ解いてみよう。</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="va">X</span><span class="op">=</span> [<span class="fl">27.6</span><span class="op">,</span> <span class="fl">19.0</span><span class="op">,</span> <span class="fl">20.1</span><span class="op">,</span> <span class="fl">24.7</span><span class="op">,</span> <span class="fl">21.8</span><span class="op">,</span> <span class="fl">21.7</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="va">Y</span> <span class="op">=</span> [<span class="fl">26.1</span><span class="op">,</span> <span class="fl">27.1</span><span class="op">,</span> <span class="fl">23.0</span><span class="op">,</span> <span class="fl">25.9</span><span class="op">,</span> <span class="fl">19.4</span><span class="op">,</span> <span class="fl">22.7</span>]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="va">mean_X</span> <span class="op">=</span> <span class="va">mean</span>(<span class="va">X</span>)  <span class="co">% Xの標本平均 値は22.48333</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="va">mean_Y</span> <span class="op">=</span> <span class="va">mean</span>(<span class="va">Y</span>)  <span class="co">% Yの標本平均　値は24.03333</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="va">var_X</span> <span class="op">=</span> <span class="va">var</span>(<span class="va">X</span>)  <span class="co">% Xの標本不偏分散  値は9.997667</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="va">var_Y</span> <span class="op">=</span> <span class="va">var</span>(<span class="va">Y</span>)  <span class="co">% Yの標本不偏分散  値は8.294667 (等しいと仮定する)</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="va">pooled_var</span> <span class="op">=</span> (<span class="va">var_X</span> <span class="op">*</span> <span class="fl">5</span> <span class="op">+</span> <span class="va">var_Y</span> <span class="op">*</span> <span class="fl">5</span> ) <span class="op">/</span> (<span class="fl">6</span><span class="op">+</span><span class="fl">6</span><span class="op">-</span><span class="fl">2</span>)  <span class="co">% 9.146167</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">% 標本平均の差の推定値</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="va">mean_X</span> <span class="op">-</span> <span class="va">mean_Y</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">1.55</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">% 95%下側信頼限界をもとめる</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="va">tinv</span>(<span class="fl">0.025</span><span class="op">,</span><span class="fl">10</span>)<span class="op">*</span>( <span class="va">sqrt</span>( ( <span class="fl">1</span><span class="op">/</span><span class="fl">6</span> <span class="op">+</span> <span class="fl">1</span><span class="op">/</span><span class="fl">6</span> ) <span class="op">*</span> <span class="va">pooled_var</span>) )<span class="op">+</span>(<span class="va">mean_X</span> <span class="op">-</span> <span class="va">mean_Y</span>) </span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">5.4405</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">% 95%上側信頼限界をもとめる</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="va">tinv</span>(<span class="fl">0.975</span><span class="op">,</span><span class="fl">10</span>)<span class="op">*</span>( <span class="va">sqrt</span>( ( <span class="fl">1</span><span class="op">/</span><span class="fl">6</span> <span class="op">+</span> <span class="fl">1</span><span class="op">/</span><span class="fl">6</span> ) <span class="op">*</span> <span class="va">pooled_var</span>) )<span class="op">+</span>(<span class="va">mean_X</span> <span class="op">-</span> <span class="va">mean_Y</span>) </span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="fl">2.3405</span></span></code></pre></div>
+<p>実際のところ、MATLABの専用関数ttest2()関数で一撃である。等分散性を仮定する場合は、Vartype’,
+’equal’とする。</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">h</span><span class="op">,</span> <span class="va">p</span><span class="op">,</span> <span class="va">ci</span><span class="op">,</span> <span class="va">stats</span>] <span class="op">=</span> <span class="va">ttest2</span>(<span class="va">X</span><span class="op">,</span> <span class="va">Y</span><span class="op">,</span> <span class="ss">&#39;Vartype&#39;</span><span class="op">,</span> <span class="ss">&#39;equal&#39;</span>)<span class="op">;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">% 今日は95%信頼区間のみを確認しましょう</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="va">ci</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">5.4405</span>    <span class="fl">2.3405</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">% 99\%信頼区間を求めたい場合はalphaを0.01にする。alphaは次回行うが、有意水準で</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">% ciには 1- alphaの信頼区間が出てくる</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>[<span class="va">h</span><span class="op">,</span> <span class="va">p</span><span class="op">,</span> <span class="va">ci</span><span class="op">,</span> <span class="va">stats</span>] <span class="op">=</span> <span class="va">ttest2</span>(<span class="va">X</span><span class="op">,</span> <span class="va">Y</span><span class="op">,</span> <span class="ss">&#39;Vartype&#39;</span><span class="op">,</span> <span class="ss">&#39;equal&#39;</span><span class="op">,</span><span class="ss">&#39;Alpha&#39;</span><span class="op">,</span> <span class="fl">0.01</span>)<span class="op">;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="va">ci</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">7.0837</span>    <span class="fl">3.9837</span></span></code></pre></div>
+<h4
+id="母分散が未知だが等しいとは限らないときsigma_x2-neq-sigma_y2">3-5.
+母分散が未知だが等しいとは限らないとき(<span
+class="math inline">\(\sigma_x^2 \neq \sigma_y^2\)</span>)</h4>
+<p>の<span class="math inline">\(\sigma_x^2\)</span>に<span
+class="math inline">\(s_1^2\)</span>、<span
+class="math inline">\(\sigma_y^2\)</span>に<span
+class="math inline">\(s_2^2\)</span>を代入した <span
+class="math display">\[
+    t = \frac{(\bar{X}-\bar{Y}) - (\mu_x - \mu_y)}{\sqrt{s_1^2/m +
+s_2^2/n}}
+\]</span> は近似的に自由度が <span class="math display">\[
+    \nu = \cfrac{\left( \cfrac{s_1^2}{m} + \cfrac{s_2^2}{n}
+\right)^2}{\cfrac{(s_1^2/m)^2}{m-1}+\cfrac{(s_2^2/n)^2}{n-1}}
+\]</span> に最も近い整数<span
+class="math inline">\(\nu^*\)</span>(ニュー、スターと読む)の<span
+class="math inline">\(t\)</span>分布<span
+class="math inline">\(t(\nu^*)\)</span>に従うことが知られている。これをウェルチの近似法という。</p>
+<p>matlabでは、先ほどの<code>ttest2()</code>関数のうち、等分散性を仮定しない<code>var.equal = FALSE</code>を指定する。</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">h</span><span class="op">,</span> <span class="va">p</span><span class="op">,</span> <span class="va">ci</span><span class="op">,</span> <span class="va">stats</span>] <span class="op">=</span> <span class="va">ttest2</span>(<span class="va">X</span><span class="op">,</span> <span class="va">Y</span><span class="op">,</span> <span class="ss">&#39;Vartype&#39;</span><span class="op">,</span> <span class="ss">&#39;unequal&#39;</span>)<span class="op">;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">ci</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a> <span class="op">-</span><span class="fl">5.4450</span>    <span class="fl">2.3450</span></span></code></pre></div>
+<h2 id="レポート課題">レポート課題</h2>
+<p>まず課題データをmatlabでダウンロードし、オブジェクトに保存してください。</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">URL3</span> <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/qikushu/stat/master/kadai_R3.txt&quot;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">%データ読み込み</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="va">kadai_data3</span> <span class="op">=</span> <span class="va">readtable</span>(<span class="va">URL3</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">% カテゴリ型への変換</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="va">kadai_data3</span>.<span class="va">C813</span> <span class="op">=</span> <span class="va">categorical</span>(<span class="va">kadai_data3</span>.<span class="va">C813</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="va">kadai_data3</span>.<span class="va">R902</span> <span class="op">=</span> <span class="va">categorical</span>(<span class="va">kadai_data3</span>.<span class="va">R902</span>)</span></code></pre></div>
+<p>今回は日本型イネ台中65号とアウス型(いわゆる印度型の一種)イネDV85の交雑F2を自殖して得られた
+組換え自殖系統群(Recombinant Inbred
+Line)という種類のイネで、ほぼすべての遺伝子型が台中65号ホモ接合型(課題データではAと表記)とDV85ホモ接合型(課題データではBと表記)に固定している。それは今回の統計の授業には関係ないが、とにかく、いわゆるメンデルの遺伝の法則のAAホモ型とBBホモ型でABのヘテロ接合型はほぼない、ということだ。</p>
+<p>HD93とは1993年にイネを播種して出穂するまでの到穂日数の日数について、この系統群について観察した結果である。この到穂日数と関連のあるゲノム領域を探索するため、100個以上のDNAマーカーを用いて遺伝子型を解析している。</p>
+<p>今回の課題では、そのうち染色体1に座乗(ざじょう)するDNAマーカーC813と染色体8に座乗するDNAマーカーR902によって調査したこのゲノム領域の遺伝子型が判明している。HD93が90とは大体播種から出穂まで90日、約三か月かかっているということだ。</p>
+<p>まず第一回演習で行った記述統計の解析を行う。次に、今日解説した方法を用いて、各遺伝子型別にイネ系統を分類し、到穂日数の平均値に関する点推定と信頼区間の推定を行ってほしい。<code>ttest2()</code>関数を使わずに解ければ加点である(たぶん)。答え合わせは<code>ttest2()</code>でできますよね！？</p>
+<ol type="1">
+<li><code>scatter()</code>関数あるいは<code>swarmchart()関数</code>を用いて、C813の遺伝子型をもとにHD93の散布図を作成せよ。(第一回レポート課題の問題とほぼ同じ問題)</li>
+<li>遺伝子型別に平均値および不偏分散を求めよ。</li>
+<li><code>scatter()</code>関数あるいは<code>swarmchart()関数</code>を用いて、R902の遺伝子型をもとにHD93の散布図を作成せよ。(第一回レポート課題の問題とほぼ同じ問題)</li>
+<li>各遺伝子型別に平均値および不偏分散を求めよ。</li>
+<li>DNAマーカーC813において、遺伝子型Aをもつ系統の標本平均を<span
+class="math inline">\(\bar{A}_{C813}\)</span>、遺伝子型Bをもつ系統の標本平均を<span
+class="math inline">\(\bar{B}_{C813}\)</span>とおくと、<span
+class="math inline">\(\bar{A}_{C813}-\bar{B}_{C813}\)</span>の平均および95%信頼区間を示せ。ただし、今回は等分散性は仮定してよい。<span
+class="math inline">\(\bar{A}_{C813}\)</span>と<span
+class="math inline">\(\bar{B}_{C813}\)</span>は二つ前の問題で導出したものである。ちなみにベクトルXの要素数を調べる場合はlength(X)である。データ数を数えたい場合ってありますよね.</li>
+<li>DNAマーカーC902において、遺伝子型Aをもつ系統の標本平均を<span
+class="math inline">\(\bar{A}_{R902}\)</span>、遺伝子型Bをもつ系統の標本平均を<span
+class="math inline">\(\bar{B}_{R902}\)</span>とおくと、<span
+class="math inline">\(\bar{A}_{R902}-\bar{B}_{R902}\)</span>の平均および95%信頼区間を示せ。ただし等分散性は仮定してよい。<span
+class="math inline">\(\bar{A}_{R902}\)</span>と<span
+class="math inline">\(\bar{B}_{R902}\)</span>は二つ前の問題で導出したものである。</li>
+</ol>
+            </div>
+    </div>
+  </div>
+  <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+
+</body>
+</html>
