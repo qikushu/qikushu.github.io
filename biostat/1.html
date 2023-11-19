@@ -1,0 +1,764 @@
+<!doctype html>
+<html >
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--[if lt IE 9]>
+                <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="template.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/template.css" />
+
+    <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- <script type='text/javascript' src='menu/js/jquery.cookie.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.hoverIntent.minified.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.dcjqaccordion.2.7.min.js'></script> -->
+
+    <!-- <link href="menu/css/skins/blue.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/graphite.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/grey.css" rel="stylesheet" type="text/css" /> -->
+  
+    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+        
+  
+    <!-- <script src="script.js"></script> -->
+  
+    <!-- <script src="jquery.sticky-kit.js "></script> -->
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.cookie.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.dcjqaccordion.2.7.min.js'></script>
+
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/graphite.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/grey.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/ryangrose/easy-pandoc-templates@948e28e5/css/elegant_bootstrap.css" rel="stylesheet" type="text/css" />
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/jquery.sticky-kit.js"></script>
+    <meta name="generator" content="pandoc" />
+  <meta name="author" content="Yoshiyuki Yamagata" />
+  <title>2023生物統計学第1回</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+
+    
+    <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="doc-title">2023生物統計学第1回</span>
+        <ul class="nav pull-right doc-info">
+                    <li><p class="navbar-text">Yoshiyuki
+Yamagata</p></li>
+                              <li><p class="navbar-text">2023年11月8日</p></li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <div class="row">
+            <div class="span12">
+
+      
+      <h1 id="生物統計演習-第1回">生物統計演習 第1回</h1>
+<h2 id="第一章-イントロダクション">第一章 イントロダクション</h2>
+<h3 id="目的">目的</h3>
+<p>私たちは社会生活における様々な場面において、物事を比較、あるいは関連性を知りたい場面にしばしば遭遇するが、なんらかの観察やデータに基づく「認知」によって、次の判断や行動指針を得る。統計学は数学的な確率分布に基づいて、主観的な「勘」やこれまでの「信念」をできるだけ排除し、客観的な判断の指標を与えてくれる。ビッグデータや人工知能の時代が到来し、統計学の重要性はこれまで以上に高まるだろう。</p>
+<p>農学研究においても処理や条件の効果を統計学的手法により、できるだけ客観的に判断することが好ましい。圃場Aと圃場Bでイネを栽培したとする。圃場Aで育てたイネのほうが収量が高かった。その主要因は何だろう。圃場Aの土壌窒素量が高かったのかもしれないし、圃場Aで栽培した品種が高収量品種だったのかもしれない。はたまた、ただの偶然でそのようなデータが得られた可能性もある。そのような違いや関連性を統計学的な理論に基づいて分析し、各要因の効果の有無や大きさを推定することで、正しい結論に到達することができる。統計学的な手法を理解していないと、苦労して得た実験データが統計解析の条件を満たしておらず、データが無駄になってしまった、ということも起こりうる。本演習では、演習を通して統計解析を経験し、どのようなケースでどのような統計手法を用いることが適切なのか、その判断の素地となる考え方を習得する。</p>
+<h2 id="matlabのインストール">MATLABのインストール</h2>
+<p>MathWorks社のMATLABをインストールしましょう。まずは以下の九大キャンパスワイドライセンスを取得しましょう。学生は無料です。</p>
+<p>https://jp.mathworks.com/academia/tah-portal/kyushu-university-31651502.html</p>
+<p>「サインインして使い始める」から学生基本メールでアカウントを作成して、ログインしてください。ライセンスが自動付与されます。
+ダウンロードしてインストールしましょう。</p>
+<h2
+id="statistics-and-machine-learning-toolboxのインストール">Statistics
+and Machine Learning Toolboxのインストール</h2>
+<p>起動したらアドオンアイコンをクリックし、Statistics and Machine
+Learning Toolboxをインストールしてください。
+全学ライセンスに含まれています。</p>
+<h2 id="四則計算">四則計算</h2>
+<p>四則演算は下記のように行う。%記号はコメントアウトとよび、%以降のコマンドは実行されない。</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 和の演算子は+</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fl">1</span><span class="op">+</span><span class="fl">2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>     <span class="fl">2</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">% 行末にセミコロン;をつけると、結果は出力されない。画面右側のワークスペースで結果を確認する。</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fl">1</span><span class="op">+</span><span class="fl">2</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果は表示されない。</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">% 差の演算子は-</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fl">3</span> <span class="op">-</span> <span class="fl">5</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">2</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">% 積の演算子は* (アスタリスク)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fl">8</span><span class="op">*</span> (<span class="op">-</span><span class="fl">1</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">8</span>  </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">% 商の演算子は/ (スラッシュ)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">9</span> <span class="op">/</span> <span class="fl">6</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">1.5000</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">% あまりは mod() 関数で計算する。5割る3は以下のように計算する</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="va">mod</span>(<span class="fl">5</span><span class="op">,</span> <span class="fl">3</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fl">2</span>  </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">% べき乗の演算子は^ (パワー)</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fl">2</span> <span class="op">^</span> <span class="fl">5</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fl">32</span>  </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">% 平方根はsqrt()関数</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="va">sqrt</span>(<span class="fl">2</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fl">1.4142</span></span></code></pre></div>
+<h2 id="変数">変数</h2>
+<p>MATLABは電卓ではないので、通常、計算は変数に代入して処理する。変数に代入する演算子は
+=である。
+変数名はアルファベットと数字の組み合わせで、ユーザーが自由に作れる。ただし、MATLABの中では使ってはいけない変数名があるので、注意する。</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 変数appleに120を代入</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">apple</span> <span class="op">=</span> <span class="fl">120</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">apple</span>  <span class="co">% 変数appleに何が入っているか確認する。</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果 appleには120が入っている。</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fl">120</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">% 変数kosuuに5を代入</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="va">kosuu</span> <span class="op">=</span> <span class="fl">5</span><span class="op">;</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="va">kosuu</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果 kosuuには5が入っている。</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fl">5</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">% 変数apple * kosuuを計算し、計算結果をdaikinに代入する。</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="va">daikin</span> <span class="op">=</span> <span class="va">apple</span> <span class="op">*</span> <span class="va">kosuu</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="va">daikin</span> </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fl">600</span>  </span></code></pre></div>
+<h2 id="matlabでのベクトル演算">MATLABでのベクトル演算</h2>
+<p>データの集合<span class="math inline">\(A=\{7, 7, -5, 2, 8, 0, 7, -8,
+-1\}\)</span>および集合<span class="math inline">\(B=\{-4 ,7, 0, 6, 2,
+-6, -4, 3, 3\}\)</span>について考える。
+MATLABではデータの集合をベクトルとして扱う。[ ]でかこい、,
+(カンマ)で区切るか、スペースで区切る</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">% ベクトルの作成</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span> [<span class="fl">7</span><span class="op">,</span> <span class="fl">7</span><span class="op">,</span> <span class="op">-</span><span class="fl">5</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="fl">0</span><span class="op">,</span> <span class="fl">7</span><span class="op">,</span> <span class="op">-</span><span class="fl">8</span><span class="op">,</span> <span class="op">-</span><span class="fl">1</span>]<span class="op">;</span>  <span class="co">% 要素数9のベクトル</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span> [<span class="op">-</span><span class="fl">4</span> <span class="op">,</span><span class="fl">7</span><span class="op">,</span> <span class="fl">0</span><span class="op">,</span> <span class="fl">6</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="op">-</span><span class="fl">6</span><span class="op">,</span> <span class="op">-</span><span class="fl">4</span><span class="op">,</span> <span class="fl">3</span><span class="op">,</span> <span class="fl">3</span>]<span class="op">;</span>  <span class="co">% 要素数9のベクトル</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">% ベクトルの和</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="va">c</span> <span class="op">=</span> <span class="va">a</span> <span class="op">+</span> <span class="va">b</span><span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="va">c</span>  </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a> <span class="fl">3</span> <span class="fl">14</span> <span class="op">-</span><span class="fl">5</span>  <span class="fl">8</span> <span class="fl">10</span> <span class="op">-</span><span class="fl">6</span>  <span class="fl">3</span> <span class="op">-</span><span class="fl">5</span>  <span class="fl">2</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">% ベクトルの各要素を二乗し、ベクトルdに代入  .^ が演算子です。</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="va">d</span> <span class="op">=</span> <span class="va">c</span> <span class="op">.^</span><span class="fl">2</span><span class="op">;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="va">d</span>  </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fl">9</span>   <span class="fl">196</span>    <span class="fl">25</span>    <span class="fl">64</span>   <span class="fl">100</span>    <span class="fl">36</span>     <span class="fl">9</span>    <span class="fl">25</span>     <span class="fl">4</span>  </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">% ベクトルの内積  dot()関数 </span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="va">e</span> <span class="op">=</span> <span class="va">dot</span>(<span class="va">a</span><span class="op">,</span> <span class="va">b</span>)<span class="op">;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="va">e</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a> <span class="op">-</span><span class="fl">6</span></span></code></pre></div>
+<p>a .* bあるいはa ./
+bとすると、Rではベクトルの各要素同士で積あるいは商を計算する</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">.*</span> <span class="va">b</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">28</span>    <span class="fl">49</span>     <span class="fl">0</span>    <span class="fl">12</span>    <span class="fl">16</span>     <span class="fl">0</span>   <span class="op">-</span><span class="fl">28</span>   <span class="op">-</span><span class="fl">24</span>    <span class="op">-</span><span class="fl">3</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="va">a</span>  <span class="op">./</span> <span class="va">b</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">1.7500</span>    <span class="fl">1.0000</span>      <span class="op">-</span><span class="va">Inf</span>    <span class="fl">0.3333</span>    <span class="fl">4.0000</span>         <span class="fl">0</span>   <span class="op">-</span><span class="fl">1.7500</span>   <span class="op">-</span><span class="fl">2.6667</span>   <span class="op">-</span><span class="fl">0.3333</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">% 0で割ることはできないので、その要素は無限大となっていることを確認</span></span></code></pre></div>
+<h2 id="縦ベクトルと横ベクトル">縦ベクトルと横ベクトル</h2>
+<p>線形代数の教科書では、<span
+class="math inline">\(\vec{a}\)</span>、<span
+class="math inline">\(\vec{b}\)</span>などのベクトルは小文字の太字<span
+class="math inline">\(\mathbf{a}\)</span>、<span
+class="math inline">\(\mathbf{b}\)</span>で示す。 1行<span
+class="math inline">\(m\)</span>列の行列を行ベクトルあるいは横ベクトルとよぶ。</p>
+<p><span class="math display">\[
+\mathbf{a}= [a_1, a_2, a_3, a_4, \cdots , a_m]
+\]</span></p>
+<p><span
+class="math inline">\(n\)</span>行1列の行列を列ベクトルあるいは縦ベクトルとよぶ。</p>
+<p><span class="math display">\[
+  \mathbf{b} = \left[
+    \begin{array}{c}
+      b_1 \\
+      b_2 \\
+      \vdots \\
+      b_n
+    \end{array}
+  \right]
+\]</span></p>
+<p>MATLABでは列はカンマ、行はセミコロン; にて区切る。</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 横ベクトル</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">3</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">% 縦ベクトル</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">;</span> <span class="fl">2</span><span class="op">;</span> <span class="fl">3</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">% 違いを確認してください</span></span></code></pre></div>
+<h2 id="行列">行列</h2>
+<p>行列は大文字の太字<span
+class="math inline">\(\mathbf{A}\)</span>、<span
+class="math inline">\(\mathbf{B}\)</span>にて示す。
+行列の行と列を入れ替えたものを転置ベクトルと呼び、右上にTを付す。(教科書によってはプライムを付ける)。</p>
+<p><span class="math display">\[
+    \mathbf{b}^{T}=[b_1, b_2,, \cdots , a_n]
+\]</span></p>
+<p>MATLABでは以下のようにして行列を作成する。</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">3</span><span class="op">;</span> <span class="fl">4</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="fl">6</span><span class="op">;</span> <span class="fl">7</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="fl">9</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">5</span>     <span class="fl">6</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>     <span class="fl">7</span>     <span class="fl">8</span>     <span class="fl">9</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">% 自分で数字をタイプするなら、エンターで行を移動してもよいが、プログラミングには適さない。</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> [<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      <span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>      <span class="fl">7</span> <span class="fl">8</span> <span class="fl">9</span>]</span></code></pre></div>
+<p>複数のベクトルをつないでも行列を作成できる。要素数は同じでなければならない。</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 横ベクトルsと横ベクトルtを作成</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">s</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">3</span>]<span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> [<span class="fl">4</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="fl">6</span>]<span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">% ベクトルsとベクトルtを行列として連結（行として連結）</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="va">matrix</span> <span class="op">=</span> [<span class="va">s</span><span class="op">;</span> <span class="va">t</span>]</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">5</span>     <span class="fl">6</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">% 横ベクトルsと横ベクトルtを作成</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="va">s</span> <span class="op">=</span> [<span class="fl">7</span><span class="op">;</span> <span class="fl">8</span><span class="op">;</span> <span class="fl">9</span>]<span class="op">;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> [<span class="fl">10</span><span class="op">;</span> <span class="fl">11</span><span class="op">;</span> <span class="fl">12</span>]<span class="op">;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">% ベクトルsとベクトルtを行列として連結（列として連結）</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="va">matrix</span> <span class="op">=</span> [<span class="va">s</span><span class="op">,</span> <span class="va">t</span>]</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>     <span class="fl">7</span>    <span class="fl">10</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>     <span class="fl">8</span>    <span class="fl">11</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>     <span class="fl">9</span>    <span class="fl">12</span></span></code></pre></div>
+<h2 id="練習問題">練習問題</h2>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 横ベクトルaと横ベクトルbを行として連結し、行列Xを作成しなさい</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span> [<span class="fl">7</span><span class="op">,</span> <span class="fl">7</span><span class="op">,</span> <span class="op">-</span><span class="fl">5</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="fl">0</span><span class="op">,</span> <span class="fl">7</span><span class="op">,</span> <span class="op">-</span><span class="fl">8</span><span class="op">,</span> <span class="op">-</span><span class="fl">1</span>] <span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span> [<span class="op">-</span><span class="fl">4</span> <span class="op">,</span><span class="fl">7</span><span class="op">,</span> <span class="fl">0</span><span class="op">,</span> <span class="fl">6</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="op">-</span><span class="fl">6</span><span class="op">,</span> <span class="op">-</span><span class="fl">4</span><span class="op">,</span> <span class="fl">3</span><span class="op">,</span> <span class="fl">3</span>]<span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="va">X</span> <span class="op">=</span> [<span class="va">a</span><span class="op">;</span> <span class="va">b</span>]</span></code></pre></div>
+<p>Matlabで行列の転置を行うには、単に転置演算子 ’
+を使用します。転置演算子 ’
+を行列の後に付けると、その行列の転置が生成されます。</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 行列Xの転置行列をYに代入</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">Y</span> <span class="op">=</span> <span class="va">X</span><span class="op">&#39;</span></span></code></pre></div>
+<p>’</p>
+<p><span class="math inline">\(\mathbf{X}\)</span>は(2 <span
+class="math inline">\(\times\)</span> 9)の行列、<span
+class="math inline">\(\mathbf{Y}\)</span>は(9 <span
+class="math inline">\(\times\)</span> 2)の行列である。 <span
+class="math inline">\(\mathbf{X}\mathbf{Y}\)</span>は(2 <span
+class="math inline">\(\times\)</span> 9)<span
+class="math inline">\(\times\)</span>(9 <span
+class="math inline">\(\times\)</span> 2)=(2 <span
+class="math inline">\(\times\)</span> 2)の
+行列となる。行列の積は演算子*にて得ることができる。逆行列はinv()関数にてえる。</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 行列の積</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="va">Z</span> <span class="op">=</span> <span class="va">X</span> <span class="op">*</span> <span class="va">Y</span>   </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>   <span class="fl">305</span>    <span class="op">-</span><span class="fl">6</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span><span class="fl">6</span>   <span class="fl">175</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">% 逆行列</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="va">W</span> <span class="op">=</span> <span class="va">inv</span>(<span class="va">Z</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.0033</span>    <span class="fl">0.0001</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.0001</span>    <span class="fl">0.0057</span></span></code></pre></div>
+<p><span class="math inline">\(\mathbf{Z}^{-1}\)</span>と<span
+class="math inline">\(\mathbf{Z}\)</span>の積により、単位行列<span
+class="math inline">\(\mathbf{I}\)</span>を得る。 <span
+class="math display">\[
+\mathbf{Z}^{-1}\mathbf{Z}=\mathbf{I} =\left[
+    \begin{array}{cc}
+      1 &amp; 0 \\
+      0 &amp; 1 \\
+    \end{array} \right]
+\]</span></p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">W</span> <span class="op">*</span> <span class="va">Z</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span>   <span class="op">-</span><span class="fl">0.0000</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>         <span class="fl">0</span>    <span class="fl">1.0000</span></span></code></pre></div>
+<h2 id="データフレームの取り扱い">データフレームの取り扱い</h2>
+<h3 id="fisherのアヤメのデータ">Fisherのアヤメのデータ</h3>
+<p>次は表形式のテキストデータを読み込んで解析を行う。
+ここでは英国の統計学者・植物学者であったロナルド・フィッシャー氏が1936年に発表したアヤメ(Iris)三種
+<em>Iris setosa</em>、<em>Iris versicolor</em>、<em>Iris virginica</em>
+の種分化に関する論文から、種別の花弁およびがくに関する多変量データを紹介する。(Fisher
+RA. 1936. The use of multiple measurements in taxonomic problems. Annals
+of Eugenics 7:179-188.)</p>
+<p>MATLABでは標準データが組み込まれているので以下のコマンドで呼び出す。</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="va">load</span> <span class="va">fisheriris</span><span class="op">;</span></span></code></pre></div>
+<p>すると、<code>meas</code>行列と<code>species</code>行列が読み込まれ。　ワークスペースを見ると各オブジェクトの特徴やデータ型が表示されています。<code>species</code>は文字列を扱うことができるcell型というオブジェクトです。ダブルクリックすると、中身が見えます。
+R2013から導入されたテーブル型が便利です。テーブル型に変換してから解析するのがbetterです。</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 行列をテーブル型に変換  (一行で入らないので ... という行末の省略符号 をもちいています。)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">measT</span> <span class="op">=</span> <span class="va">array2table</span>(<span class="va">meas</span><span class="op">,</span> <span class="ss">&#39;VariableNames&#39;</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a> {<span class="ss">&#39;SepalLength&#39;</span><span class="op">,</span> <span class="ss">&#39;SepalWidth &#39;</span><span class="op">,</span> <span class="ss">&#39;PetalLength&#39;</span><span class="op">,</span> <span class="ss">&#39;PetalWidth &#39;</span>})<span class="op">;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">% カテゴリカル型に変換</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="va">Species</span> <span class="op">=</span> <span class="va">categorical</span>(<span class="va">species</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="va">irisT</span> <span class="op">=</span> <span class="va">addvars</span>(<span class="va">measT</span><span class="op">,</span> <span class="va">Species</span>)<span class="op">;</span></span></code></pre></div>
+<p>最初の数行を<code>head()</code>関数で表示させる。</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="va">head</span>(<span class="va">irisT</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">% 以下は結果</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">SepalLength</span>    <span class="va">SepalWidth</span>     <span class="va">PetalLength</span>    <span class="va">PetalWidth</span>     <span class="va">Species</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    ___________    ___________    ___________    ___________    _______</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="fl">5.1</span>            <span class="fl">3.5</span>            <span class="fl">1.4</span>            <span class="fl">0.2</span>        <span class="va">setosa</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        <span class="fl">4.9</span>              <span class="fl">3</span>            <span class="fl">1.4</span>            <span class="fl">0.2</span>        <span class="va">setosa</span> </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="fl">4.7</span>            <span class="fl">3.2</span>            <span class="fl">1.3</span>            <span class="fl">0.2</span>        <span class="va">setosa</span> </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>        <span class="fl">4.6</span>            <span class="fl">3.1</span>            <span class="fl">1.5</span>            <span class="fl">0.2</span>        <span class="va">setosa</span> </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>          <span class="fl">5</span>            <span class="fl">3.6</span>            <span class="fl">1.4</span>            <span class="fl">0.2</span>        <span class="va">setosa</span> </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        <span class="fl">5.4</span>            <span class="fl">3.9</span>            <span class="fl">1.7</span>            <span class="fl">0.4</span>        <span class="va">setosa</span> </span></code></pre></div>
+<p>SepalLengthは花弁の長さ、SepalWidthは花弁の幅、PetalLengthはがくの長さ、PetalWidthは
+がくの幅、Speciesは種名をしめし、それぞれの列の名(列ラベル名)である。</p>
+<h3 id="テーブルからのデータの抽出">テーブルからのデータの抽出</h3>
+<p>テーブル名に続いて、ドット(.)でアクセスします。
+<!-- \label{sec:8IFv5f60} --></p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">% SepalLength  列にアクセス</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="va">irisT</span>.<span class="va">SepalLength</span></span></code></pre></div>
+<h4 id="座標法">座標法</h4>
+<p>テーブル名(行、列)でアクセスします</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">%irisTの6行2列のデータを取り出す。</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="va">irisT</span>(<span class="fl">6</span><span class="op">,</span> <span class="fl">2</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">%irisTの1-6行2列のデータを取り出す。</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="va">irisT</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">,</span> <span class="fl">2</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">% irisTの2列目を取り出す。</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="va">irisT</span>(<span class="op">:</span> <span class="op">,</span> <span class="fl">2</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co">% irisTの6行目を取り出す。</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="va">irisT</span>(<span class="fl">6</span> <span class="op">,</span> <span class="op">:</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co">%irisTの&#39;&#39;Species&#39;&#39;列を取り出す。</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="va">irisT</span>(<span class="op">:</span> <span class="op">,</span> <span class="st">&quot;Species&quot;</span>)</span></code></pre></div>
+<h4 id="条件抽出">条件抽出</h4>
+<p>条件に合っていればTrue (1)、異なっていればFalse
+(0)の配列を得て、出力をコントロールする。</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">% irisTのSpecies列が&quot;setosa&quot;であるかを判定する。</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="va">irisT</span>.<span class="va">Species</span> <span class="op">==</span> <span class="st">&quot;setosa&quot;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">% setosaRows に代入する</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="va">setosaRows</span> <span class="op">=</span> <span class="va">irisT</span>.<span class="va">Species</span> <span class="op">==</span> <span class="st">&quot;setosa&quot;</span><span class="op">;</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">% setosaRowsのうち、1の行は出力、0の行は出力しないので、</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果的にirisSetosaには setosaのみが入る。  (ワークスペースで確認しよう)</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="va">irisSetosa</span> <span class="op">=</span> <span class="va">irisT</span>(<span class="va">setosaRows</span><span class="op">,</span> <span class="op">:</span> )<span class="op">;</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co">% ワンライナー (わかりにくいけども)</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="va">irisSetosa</span> <span class="op">=</span> <span class="va">irisT</span>(<span class="va">irisT</span>.<span class="va">Species</span> <span class="op">==</span> <span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="op">:</span> )<span class="op">;</span></span></code></pre></div>
+<h4 id="演習問題">演習問題</h4>
+<p>データフレームirisTに対して、 - 問題1
+setosaの花弁長(SepalLength)を<code>SLsetosa</code>に代入せよ。 - 問題2
+versicolorの花弁長(SepalLength)を<code>SLversicolor</code>に代入せよ。 -
+問題3
+virginicaの花弁長(SepalLength)を<code>SLvirginica</code>に代入せよ。</p>
+<h4 id="演習問題こたえ">演習問題こたえ</h4>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="va">SLsetosa</span> <span class="op">=</span> <span class="va">irisT</span>(<span class="va">irisT</span>.<span class="va">Species</span> <span class="op">==</span> <span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="st">&quot;SepalLength&quot;</span> )<span class="op">;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="va">SLversicolor</span> <span class="op">=</span> <span class="va">irisT</span>(<span class="va">irisT</span>.<span class="va">Species</span> <span class="op">==</span> <span class="st">&quot;versicolor&quot;</span><span class="op">,</span> <span class="st">&quot;SepalLength&quot;</span> )<span class="op">;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="va">SLvirginica</span> <span class="op">=</span> <span class="va">irisT</span>(<span class="va">irisT</span>.<span class="va">Species</span> <span class="op">==</span> <span class="st">&quot;virginica&quot;</span><span class="op">,</span> <span class="st">&quot;SepalLength&quot;</span>)<span class="op">;</span></span></code></pre></div>
+<h2 id="第二章-記述統計">第二章 記述統計</h2>
+<h2 id="プロット図">プロット図</h2>
+<p><strong>プロット図</strong>にてデータの概略をつかむ。 ####
+ヒストグラム
+前節にて得た<code>SLsetosa</code>、<code>SLversicolor</code>、<code>SLvirginica</code>について、ヒストグラムを作成する。MATLABでは<code>histogram()</code>関数にてヒストグラムを容易に作成できる。
+データの区間を階級といい、’BinWidth’オプションにて幅を指定する。今回は、階級は0.2幅で作成する</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">% histogram()関数で作成する</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="va">h</span> <span class="op">=</span> <span class="va">histogram</span>(<span class="va">SLsetosa</span>.<span class="va">SepalLength</span><span class="op">,</span> <span class="ss">&#39;BinWidth&#39;</span><span class="op">,</span> <span class="fl">0.2</span>)<span class="op">;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="va">xlabel</span>(<span class="ss">&#39;Sepal length&#39;</span>)<span class="op">;</span> <span class="co">% x軸のラベル</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;頻度&#39;</span>)<span class="op">;</span> <span class="co">% y軸のラベル</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">&#39;Iris setosaにおけるSepal lengthのヒストグラム&#39;</span>)<span class="op">;</span> <span class="co">% グラフのタイトル</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">% ヒストグラムデータを取得</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="va">binCounts</span> <span class="op">=</span> <span class="va">h</span>.<span class="va">BinCounts</span><span class="op">;</span> <span class="co">% 階級ごとのデータカウント</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="va">binEdges</span> <span class="op">=</span> <span class="va">h</span>.<span class="va">BinEdges</span><span class="op">;</span>   <span class="co">% 階級の境界値です。</span></span></code></pre></div>
+<p>以下SLversicolor、SLvirginicaについて行う。ヒストグラムを見ると、大まかにsetosa,
+versicolor, virginicaの順で大きくなっていく様子がわかる。</p>
+<p><img src="Hb06E8WZSufX.png" alt="" width="30%">
+<img src="TnXQ9N6gq2hb.png" alt="" width="30%">
+<img src="SAdWNI8nY2Vy.png" alt="" width="30%"></p>
+<p><strong>図. 花弁の長さのヒストグラム. (a) setosa, (b) versicolor,
+(c)virginica</strong></p>
+<h4 id="散布図">散布図</h4>
+<p>散布図では、x-y平面上にデータをプロットし、二者間のデータの関連を図示することができる。<code>scatter()</code>関数にて容易に得ることができる。</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">irisT</span>.<span class="va">Species</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> <span class="va">irisT</span>.<span class="va">SepalLength</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="va">scatter</span>(<span class="va">x</span><span class="op">,</span> <span class="va">y</span><span class="op">,</span> <span class="ss">&#39;SizeData&#39;</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="ss">&#39;MarkerFaceColor&#39;</span><span class="op">,</span> <span class="ss">&#39;blue&#39;</span>)<span class="op">;</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="va">xlabel</span>(<span class="ss">&#39;Species&#39;</span>)<span class="op">;</span> <span class="co">% X軸のラベルを設定</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Sepal Length&#39;</span>)<span class="op">;</span> <span class="co">% Y軸のラベルを設定</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">&#39;散布図&#39;</span>)<span class="op">;</span> <span class="co">% グラフのタイトルを設定</span></span></code></pre></div>
+<p><img src="FWbnDtA30c8f.png" alt="" width="40%"></p>
+<p><strong>図. 散布図</strong></p>
+<p>点が重なっている場合、データの数がわかりにくい。この場合は<code>swarmchart()</code>をもちいる。</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">irisT</span>.<span class="va">Species</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> <span class="va">irisT</span>.<span class="va">SepalLength</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="va">swarmchart</span>(<span class="va">x</span><span class="op">,</span> <span class="va">y</span><span class="op">,</span> <span class="ss">&#39;SizeData&#39;</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="ss">&#39;MarkerFaceColor&#39;</span><span class="op">,</span> <span class="ss">&#39;blue&#39;</span>)<span class="op">;</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="va">xlabel</span>(<span class="ss">&#39;Species&#39;</span>)<span class="op">;</span> <span class="co">% X軸のラベルを設定</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Sepal Length&#39;</span>)<span class="op">;</span> <span class="co">% Y軸のラベルを設定</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">&#39;散布図&#39;</span>)<span class="op">;</span> <span class="co">% グラフのタイトルを設定</span></span></code></pre></div>
+<p><img src="NnAyRcD8u7gr.png" alt="" width="40%"></p>
+<p><strong>図. 散布図2</strong></p>
+<p>使い方のわからない関数が出てきた場合、画面右上のドキュメンテーションの検索を確認しよう</p>
+<p>一次元データのみで作成したい場合は、ダミー変数として1のみのベクトル(いちベクトル)を用意し、xに与えてあげる。</p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">% テーブル型オブジェクトのirisTのSepalLength列の要素数をカウントする</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="va">youso</span> <span class="op">=</span> <span class="va">length</span>(<span class="va">irisT</span>.<span class="va">SepalLength</span>)<span class="op">;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">% 要素がすべて1である1(いち)ベクトルをones(1, x)関数にて作成する。</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="va">ichi_vector</span> <span class="op">=</span> <span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span> <span class="va">youso</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co">% scatter()関数で散布図を作成 (データが重なっている場合は、いくつでーたがあるのかわかりにくい)</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="va">scatter</span>(<span class="va">ichi_vector</span><span class="op">,</span> <span class="va">irisT</span>.<span class="va">SepalLength</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co">% swarmchart(x, y)関数を用いた場合は、データの重なりをずらして表示する</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="va">swarmchart</span>(<span class="va">ichi_vector</span><span class="op">,</span> <span class="va">irisT</span>.<span class="va">SepalLength</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="va">xlabel</span>(<span class="ss">&#39;All data of the SepalLength&#39;</span>)<span class="op">;</span> <span class="co">% X軸のラベルを設定</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Sepal Length&#39;</span>)<span class="op">;</span> <span class="co">% Y軸のラベルを設定</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">&#39;散布図&#39;</span>)<span class="op">;</span> <span class="co">% グラフのタイトルを設定</span></span></code></pre></div>
+<h4 id="箱ひげ図">箱ひげ図</h4>
+<p>箱ひげ図(box plot)は、データの最小値、
+第1四分位点、中央値、第3四分位点、最大値の概略を示す図である。外れ値に対して頑強であり、外れ値に影響を受けて平均値や分散が影響を受けにくい。
+散布図と同様、xとyに対応するベクトルを入力する。</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="va">boxchart</span>(<span class="va">Species</span><span class="op">,</span> <span class="va">irisT</span>.<span class="va">SepalLength</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Sepal Length&#39;</span>)<span class="op">;</span> <span class="co">% Y軸のラベルを設定</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">&#39;箱ひげ図&#39;</span>)<span class="op">;</span> <span class="co">% グラフのタイトルを設定</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">% おまけ</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="va">m</span> <span class="op">=</span> <span class="va">groupsummary</span>(<span class="va">irisT</span>.<span class="va">SepalLength</span><span class="op">,</span> <span class="va">Species</span><span class="op">,</span> <span class="ss">&#39;mean&#39;</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">on</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">m</span><span class="op">,</span><span class="ss">&#39;-o&#39;</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">off</span></span></code></pre></div>
+<p><img src="AVo4WXTKI2xD.png" alt="" width="40%"></p>
+<p><strong>図. ボックスプロット(箱ひげ図)</strong></p>
+<h2 id="記述統計量">記述統計量</h2>
+<p>散布図にて、大まかなデータの分布をつかんだ後は、「統計量」にて特徴を要約した値をえる。
+#### 総和
+Rでは数字の集合をベクトルに代入して起き、sum()関数により求める。ベクトル<span
+class="math inline">\(a\)</span>の各要素の総和を<span
+class="math inline">\(T_a\)</span>、 ベクトル<span
+class="math inline">\(b\)</span>の各要素の総和を<span
+class="math inline">\(T_b\)</span>とすると、</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">% ベクトルを用意</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span> [<span class="fl">7</span><span class="op">,</span> <span class="fl">7</span><span class="op">,</span> <span class="op">-</span><span class="fl">5</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="fl">0</span><span class="op">,</span> <span class="fl">7</span><span class="op">,</span> <span class="op">-</span><span class="fl">8</span><span class="op">,</span> <span class="op">-</span><span class="fl">1</span>] <span class="op">;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span> [<span class="op">-</span><span class="fl">4</span> <span class="op">,</span><span class="fl">7</span><span class="op">,</span> <span class="fl">0</span><span class="op">,</span> <span class="fl">6</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="op">-</span><span class="fl">6</span><span class="op">,</span> <span class="op">-</span><span class="fl">4</span><span class="op">,</span> <span class="fl">3</span><span class="op">,</span> <span class="fl">3</span>]<span class="op">;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">% ベクトルaの各要素の総和</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="va">Ta</span> <span class="op">=</span> <span class="va">sum</span>(<span class="va">a</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fl">17</span>  </span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co">% ベクトルbの各要素の総和</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="va">Tb</span> <span class="op">=</span> <span class="va">sum</span>(<span class="va">b</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="fl">7</span></span></code></pre></div>
+<p>のように計算する。</p>
+<h4 id="平均値">平均値</h4>
+<p>平均値は<strong>算術平均(arithmetic
+mean)</strong>、<strong>幾何平均(geometric
+mean)</strong>、<strong>調和平均(harmonic
+mean)</strong>などがある。算術平均を<span
+class="math inline">\(m_a\)</span>、幾何平均を<span
+class="math inline">\(m_g\)</span>とおくと、要素数が<span
+class="math inline">\(n\)</span>の場合</p>
+<p><span class="math display">\[
+m_a = \sum_{i=1}^n a_i = a_1 + a_2 + \cdots + a_n
+\]</span></p>
+<p><span class="math display">\[
+m_g = \sqrt[n]{\prod_{i=1}^{n} a_i} = \sqrt[n]{a_1 \times a_2 \times
+\cdots \times a_n}
+\]</span>
+と計算する。算術平均をよく用いる。<code>mean()</code>関数にて計算する。</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="va">mean</span>(<span class="va">a</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fl">1.8889</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">%中央値</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co">%データを下からあるいは上から数えて真ん中の値を中央値と呼ぶ。データ数が偶数個の場合は中央の二つの値の平均値を用いる。median()関数にて求める。</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="va">median</span>(<span class="va">a</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fl">2</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co">% 最大値</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co">% データの中で最も大きい値。max()関数にて求める。</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="va">max</span>(<span class="va">a</span>)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="fl">8</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="co">%最小値</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>データの中で最も小さい値。<span class="va">min</span>()関数にて求める。</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="va">min</span>(<span class="va">a</span>)</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="fl">8</span></span></code></pre></div>
+<h4 id="偏差">偏差</h4>
+<p>各データの平均値からのずれを偏差とよぶ。データの集合<span
+class="math inline">\(A = \{a_1, a_2, \cdots, a_n\}\)</span>について
+<span class="math inline">\(A\)</span>の平均値を<span
+class="math inline">\(m_a = \sum_{i=1}^{n}
+a_i/n\)</span>とおくと、偏差の集合<span
+class="math inline">\(D\)</span>は <span class="math display">\[
+    D = \{a_1 - m_a, a_2 - m_a, \cdots a_n - m_a\}
+\]</span> とかける。</p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 平均からの偏差</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="va">d</span> <span class="op">=</span> <span class="va">a</span> <span class="op">-</span> <span class="va">mean</span>(<span class="va">a</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fl">5.1111</span>    <span class="fl">5.1111</span>   <span class="op">-</span><span class="fl">6.8889</span>    <span class="fl">0.1111</span>    <span class="fl">6.1111</span>   <span class="op">-</span><span class="fl">1.8889</span>   <span class="fl">5.1111</span>   <span class="op">-</span><span class="fl">9.8889</span>   <span class="op">-</span><span class="fl">2.8889</span></span></code></pre></div>
+<h4 id="偏差平方和">偏差平方和</h4>
+<p>偏差を二乗したもの(偏差平方)の和を<strong>偏差平方和(sum of square
+(SS))</strong>という。平均値からのズレの二乗(またの言い方を平方)和だから、平均値から各データがバラけるほど、偏差平方和の値はどんどん大きくなる。偏差平方和が大きいほどデータがばらついていると言えそうだ。
+<span class="math display">\[
+    SS = \sum_{i=1}^{n} (a_i - m_a)^2
+\]</span></p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 偏差平方和</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="va">SS</span> <span class="op">=</span> <span class="va">sum</span>( (<span class="va">a</span> <span class="op">-</span> <span class="va">mean</span>(<span class="va">a</span>) ) <span class="op">.^</span><span class="fl">2</span> )  </span></code></pre></div>
+<h4 id="分散">分散</h4>
+<p>偏差平方和は平均値周辺のデータのバラつきの度合いをしめしたものだが、データ数が多いほどどんどん大きくなる。偏差平方和SSをデータ数<span
+class="math inline">\(n\)</span>で割ったものを<strong>標本分散 (sample
+variance)</strong>という。
+データ1つあたりのバラつきを評価できる。標本から母分散を推定する場合、偏差平方和SSを<span
+class="math inline">\(n-1\)</span>で割った<strong>不偏標本分散</strong>
+<strong>(unbiased sample variance)</strong>を用いる。</p>
+<p>実験データの解析では通常、不偏分散を標本分散として扱い、<span
+class="math inline">\(s^2\)</span>とおく。SSを<span
+class="math inline">\(n\)</span>で割った値の期待値は母分散と等しくないが、SSを<span
+class="math inline">\(n-1\)</span>で割った値の期待値は母分散と等しい。これを不偏性という。</p>
+<p><span class="math display">\[
+    s^2 = \cfrac{\sum_{i=1}^{n} (a_i - m_a)^2}{n-1} = \cfrac{SS}{n-1}
+\]</span></p>
+<p>また、分散の平方根を<strong>標準偏差 (Standard
+deviation)</strong>といい、ここでは<span
+class="math inline">\(s=\sqrt{s^2}\)</span>にて示す。標準偏差はデータの単位と同じ単位を持つ。</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 9人の身長データ入力</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="va">Height_m</span> <span class="op">=</span> [<span class="fl">1.70</span><span class="op">,</span> <span class="fl">1.63</span><span class="op">,</span> <span class="fl">1.53</span><span class="op">,</span> <span class="fl">1.88</span><span class="op">,</span> <span class="fl">1.72</span><span class="op">,</span> <span class="fl">1.77</span><span class="op">,</span> <span class="fl">1.64</span><span class="op">,</span> <span class="fl">1.67</span><span class="op">,</span> <span class="fl">1.59</span>]  </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">% 9人の身長の平均</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="va">mean</span>(<span class="va">Height_m</span>) </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co">% 偏差 Height_d</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="va">Height_d</span> <span class="op">=</span> <span class="va">Height_m</span> <span class="op">-</span> <span class="va">mean</span>(<span class="va">Height_m</span>)  </span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co">% 偏差平方和 Height_SS</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="va">Height_SS</span> <span class="op">=</span> <span class="va">sum</span>(<span class="va">Height_d</span> <span class="op">.^</span><span class="fl">2</span>) </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co">% 標本不偏分散を推定</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="va">vars_dankai</span> <span class="op">=</span> <span class="va">Height_SS</span> <span class="op">/</span>(<span class="fl">9</span><span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="fl">0.0106</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">% データHeight_mから一つの数式で計算</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="va">vars_ikkai</span> <span class="op">=</span> <span class="va">sum</span>((<span class="va">Height_m</span> <span class="op">-</span> <span class="va">mean</span>(<span class="va">Height_m</span>)) <span class="op">.^</span><span class="fl">2</span>)<span class="op">/</span>(<span class="fl">9</span><span class="op">-</span><span class="fl">1</span>)  </span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="fl">0.0106</span></span></code></pre></div>
+<p>通常はvar()関数を用いる。</p>
+<pre><code>%  var()関数を用いて不偏標本分散を計算し、Height_varに代入
+Height_var = var(Height_m)  
+0.0106
+
+% 標本分散の平方根を計算し、Height_sdに代入
+Height_sd = sqrt(Height_var)  
+0.1030</code></pre>
+<h4 id="変動係数">変動係数</h4>
+<p>おなじ9人に由来する体重のデータWeight_kgについて、平均、標本分散、標準偏差を
+計算してみよう。</p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="va">Weight_kg</span> <span class="op">=</span> [<span class="fl">58.4</span><span class="op">,</span> <span class="fl">62.3</span><span class="op">,</span> <span class="fl">51.0</span><span class="op">,</span> <span class="fl">71.0</span><span class="op">,</span> <span class="fl">63.4</span><span class="op">,</span> <span class="fl">65.1</span><span class="op">,</span> <span class="fl">59.3</span><span class="op">,</span> <span class="fl">62.9</span><span class="op">,</span> <span class="fl">59.0</span>] </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">% 平均</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="va">mean</span>(<span class="va">Weight_kg</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fl">61.37778</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co">% 標本分散</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="va">var</span>(<span class="va">Weight_kg</span>)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="fl">30.02944</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co">% 標準偏差</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="va">sqrt</span>(<span class="va">var</span>(<span class="va">Weight_kg</span>))</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="fl">5.479913</span></span></code></pre></div>
+<p>身長の標準偏差は
+0.1030102だが、体重の標準偏差は5.479913であった。体重のほうがよりばらついて
+いるだろうか。データの桁数が大きいほど、標準偏差が大きく見える。</p>
+<p>データ同士の変動を比較したいばあい場合、<strong>変動係数 (coefficient
+of
+variation)</strong>にて比較するのが便利である。変動係数は標準偏差を平均値で割ってもとめる。
+<span class="math display">\[
+CV = s / \bar{a_i}
+\]</span> ただし、<span class="math inline">\(\bar{a_i}\)</span>は<span
+class="math inline">\(a_i\)</span>の平均値である。</p>
+<p>身長の変動係数および体重の変動係数を比較すると</p>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 身長の変動係数</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="va">sqrt</span>(<span class="va">var</span>(<span class="va">Height_m</span>))<span class="op">/</span><span class="va">mean</span>(<span class="va">Height_m</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fl">0.0612751</span> </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co">% 体重の変動係数</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="va">sqrt</span>(<span class="va">var</span>(<span class="va">Weight_kg</span>))<span class="op">/</span><span class="va">mean</span>(<span class="va">Weight_kg</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fl">0.08928171</span></span></code></pre></div>
+<p>このデータでは体重のほうが変動係数は大きい、すなわちばらつきの度合いが大きい。</p>
+<h4 id="標準化">標準化</h4>
+<p>データを平均および標準偏差にて調整する<strong>標準化(standarization)</strong>をおこない、<strong>標準化得点(Zスコア)</strong>を求める。</p>
+<p>あるn個のデータの集合<span class="math inline">\(X=\{X_1, X_2 \cdots
+X_n\}\)</span>が平均<span
+class="math inline">\(\mu\)</span>、標準偏差<span
+class="math inline">\(\sigma\)</span>を持つとき、 <span
+class="math inline">\(i\)</span>番目のデータの標準化スコア<span
+class="math inline">\(Z_i\)</span>は <span class="math display">\[
+        Z_i = \frac{X_i - \mu}{\sigma}
+\]</span> にて求める。得られた集合<span class="math inline">\(Z = \{Z_1,
+Z_2, \cdots Z_n \}\)</span>について、平均<span
+class="math inline">\(\mu_Z\)</span>は0、分散<span
+class="math inline">\(\sigma_{Z}^2\)</span>は1となる <span
+class="math display">\[
+    \mu_Z = 0 \quad \sigma_{Z}^2 = 1、
+\]</span></p>
+<h4 id="練習問題-1">練習問題</h4>
+<p>もっとも平均身長および平均体重より離れているのは何番目のデータか。</p>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 9人の身長データ入力</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="va">Height_m</span> <span class="op">=</span> [<span class="fl">1.70</span><span class="op">,</span> <span class="fl">1.63</span><span class="op">,</span> <span class="fl">1.53</span><span class="op">,</span> <span class="fl">1.88</span><span class="op">,</span> <span class="fl">1.72</span><span class="op">,</span> <span class="fl">1.77</span><span class="op">,</span> <span class="fl">1.64</span><span class="op">,</span> <span class="fl">1.67</span><span class="op">,</span> <span class="fl">1.59</span>]  </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">% 平均値を計算し、Height_meanに代入</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="va">Height_mean</span> <span class="op">=</span> <span class="va">mean</span>(<span class="va">Height_m</span>)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">% 標準偏差を計算し、Height_sdに代入</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="va">Height_sd</span> <span class="op">=</span> <span class="va">sqrt</span>(<span class="va">var</span>(<span class="va">Height_m</span>))</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">% 標準化スコアを計算し、Height_zに代入</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="va">Height_z</span> <span class="op">=</span> (<span class="va">Height_m</span> <span class="op">-</span> <span class="va">Height_mean</span>) <span class="op">/</span> <span class="va">Height_sd</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果の表示</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="va">Height_z</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a> <span class="fl">0.1833690</span> <span class="op">-</span><span class="fl">0.4961750</span> <span class="op">-</span><span class="fl">1.4669522</span>  <span class="fl">1.9307680</span>  <span class="fl">0.3775245</span>  <span class="fl">0.8629131</span> <span class="op">-</span><span class="fl">0.3990973</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a> <span class="op">-</span><span class="fl">0.1078641</span> <span class="op">-</span><span class="fl">0.8844859</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 9人の体重データ入力</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="va">Weight_kg</span> <span class="op">=</span> [<span class="fl">58.4</span><span class="op">,</span> <span class="fl">62.3</span><span class="op">,</span> <span class="fl">51.0</span><span class="op">,</span> <span class="fl">71.0</span><span class="op">,</span> <span class="fl">63.4</span><span class="op">,</span> <span class="fl">65.1</span><span class="op">,</span> <span class="fl">59.3</span><span class="op">,</span> <span class="fl">62.9</span><span class="op">,</span> <span class="fl">59.0</span>] </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">% 平均値を計算し、Weight_meanに代入</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="va">Weight_mean</span> <span class="op">=</span> <span class="va">mean</span>(<span class="va">Weight_kg</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">% 標準偏差を計算し、Weight_sdに代入</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="va">Weight_sd</span> <span class="op">=</span> <span class="va">sqrt</span>(<span class="va">var</span>(<span class="va">Weight_kg</span>))</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">% 標準化スコアを計算し、Weight_zに代入</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="va">Weight_z</span> <span class="op">=</span> (<span class="va">Weight_kg</span> <span class="op">-</span> <span class="va">Weight_mean</span>) <span class="op">/</span> <span class="va">Weight_sd</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果の表示</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="va">Weight_z</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a> [<span class="fl">1</span>] <span class="op">-</span><span class="fl">0.5433988</span>  <span class="fl">0.1682914</span> <span class="op">-</span><span class="fl">1.8937852</span>  <span class="fl">1.7559079</span>  <span class="fl">0.3690245</span>  <span class="fl">0.6792484</span> <span class="op">-</span><span class="fl">0.3791626</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>[<span class="fl">8</span>]  <span class="fl">0.2777822</span> <span class="op">-</span><span class="fl">0.4339080</span></span></code></pre></div>
+<p>以上の結果から、Height_zおよびWeight_zの絶対値が一番大きいのは、4番目のデータである。</p>
+<h3 id="練習問題-2">練習問題</h3>
+<p>matlabの計算に用いたコマンド及び計算結果について示せ。 - setosa
+の花弁長 (Sepal.Length) のヒストグラム作成せよ。 - setosa の花弁長
+(Sepal.Length)の平均、不偏標本分散、変動係数を示せ。 -
+setosa、versicolor, virginica
+の花弁長において、また最大の変動係数を持つ種は何か。</p>
+<h2 id="レポート課題">レポート課題</h2>
+<p>下記の課題をレポート課題として提出する。課題で用いるデータはインターネット上から直接読み込む。</p>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="va">URL</span> <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/qikushu/stat/master/kadai_R.txt&quot;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="va">kadai_data</span> <span class="op">=</span> <span class="va">readtable</span>(<span class="va">URL</span>)</span></code></pre></div>
+<h4 id="第一回の課題">第一回の課題</h4>
+<p>抵抗性イネ品種ADR52と感受性品種台中65の交雑F2集団48個体について、ウンカ類を放飼し5日後
+(five days-after-infestation:
+DAI5)の昆虫の死亡率が記載されている。染色体6に座乗するDNAマーカーS00310,
+P493ATc, RM204にて遺伝子型(1:台中65号ホモ接合型, 3:ヘテロ接合型, 2:
+ADR52ホモ接合型)が判明している。</p>
+<ol type="1">
+<li>F2集団48個体すべての個体についてDAI5の散布図を作成しなさい。</li>
+<li>S00310における数値(1, 2,
+3)をもとに、DAI5のデータを分類し、遺伝子型ごとのDAI5の平均値、不偏分散を求めよ。</li>
+<li>S00310における遺伝子型ごとにDAI5のヒストグラムを作りなさい。</li>
+</ol>
+<p>レポートはワードやエクセルなどで作成し、計算に用いたRプログラムおよび得られた結果を記載すること。得られた図は画面キャプチャーし、パワーポイントに貼り付け、印刷し、はさみとのりで
+台紙に張り付けて、何の図なのか図のタイトルを記載したうえで、あわせて提出すること。
+パソコンが得意な人は、得られたプロット図をR上でPDF形式等で保存し、パワーポイントに張り付け後、図のタイトルを記載し、綺麗に整形後に提出してもよい。</p>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">% テーブル型オブジェクトのkadai_dataのDAI5列の要素数をカウントする</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="va">youso</span> <span class="op">=</span> <span class="va">length</span>(<span class="va">kadai_data</span>.<span class="va">DAI5</span>)<span class="op">;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co">% 要素がすべて1である1(いち)ベクトルをones(1, x)関数にて作成する。</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="va">ichi_vector</span> <span class="op">=</span> <span class="va">ones</span>(<span class="fl">1</span><span class="op">,</span> <span class="va">youso</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="co">% scatter()関数で散布図を作成 (データが重なっている場合は、いくつでーたがあるのかわかりにくい)</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="va">scatter</span>(<span class="va">ichi_vector</span><span class="op">,</span> <span class="va">kadai_data</span>.<span class="va">DAI5</span>)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co">% swarmchart(x, y)関数を用いた場合は、データの重なりをずらして表示する</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="va">swarmchart</span>(<span class="va">ichi_vector</span><span class="op">,</span> <span class="va">kadai_data</span>.<span class="va">DAI5</span>)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="va">xlabel</span>(<span class="ss">&#39;All data of the DAI5&#39;</span>)<span class="op">;</span> <span class="co">% X軸のラベルを設定</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;DAI5&#39;</span>)<span class="op">;</span> <span class="co">% Y軸のラベルを設定</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">&#39;DAI5の全データに関する散布図&#39;</span>)<span class="op">;</span> <span class="co">% グラフのタイトルを設定</span></span></code></pre></div>
+            </div>
+    </div>
+  </div>
+  <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+
+</body>
+</html>
