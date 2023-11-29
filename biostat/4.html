@@ -346,14 +346,11 @@ square)という。全平方和の自由度は、18-1 =
 17である。群間の自由度は、群が3つあるので、3-1=2である。群内の自由度は、18
 - 1 - 2 = 15と計算する。</p>
 <h4 id="平均平方">平均平方</h4>
-<p>平均平方
-(分散)は、各平方和を自由度で割って求める。群間の平均平方は<span
+<p>平均平方は、各平方和を自由度で割って求める。群間の平均平方は<span
 class="math inline">\(1600/2=800\)</span>である。群内の平均平方は<span
 class="math inline">\(1640/15=109.3\)</span>である。</p>
 <h4 id="分散比">分散比</h4>
-<p>群間の平均平方(群間の分散)と群内の平均平方(群内の分散)の比を分散比といい、<span
-class="math inline">\(F\)</span>とあらわす。F=群間の平均平方 /
-群内の平均平方にて求める。よって<span
+<p>F=群間の平均平方 / 群内の平均平方にて求める。よって<span
 class="math inline">\(F=800.2/109.3=7.319\)</span></p>
 <h4 id="f分布表">F分布表</h4>
 <p><span class="math inline">\(F\)</span>値の確率密度分布(<span
@@ -1485,37 +1482,265 @@ C)。これを実際に計算を行った結果を表に示す。統計ソフト
 </tr>
 </tbody>
 </table>
-<p>平方和分解 | Fertilizer | Y | <span
-class="math inline">\(\bar{Y}\)</span> | <span
-class="math inline">\(M\)</span> | |<span
-class="math inline">\(\vec{D}\)</span>| | |<span
-class="math inline">\(\vec{G}\)</span>| | |<span
-class="math inline">\(\vec{E}\)</span>| | |<span
-class="math inline">\(\vec{D}^2\)</span>| | |<span
-class="math inline">\(\vec{G}^2\)</span>| | |<span
-class="math inline">\(\vec{E}^2\)</span>| |
-|————|——-|————|——-|———–|———–|———–|————–|————–|————–| | A | 514.7 | 509.2
-| 518.1 | 5.5 | 8.9 | -3.4 | 30.25 | 79.21 | 11.56 | | A | 509.1 | 509.2
-| 518.1 | -0.1 | 8.9 | -9 | 0.01 | 79.21 | 81 | | A | 512.2 | 509.2 |
-518.1 | 3 | 8.9 | -5.9 | 9 | 79.21 | 34.81 | | A | 532.7 | 509.2 | 518.1
-| 23.5 | 8.9 | 14.6 | 552.25 | 79.21 | 213.16 | | A | 517.7 | 509.2 |
-518.1 | 8.5 | 8.9 | -0.4 | 72.25 | 79.21 | 0.16 | | A | 522.2 | 509.2 |
-518.1 | 13 | 8.9 | 4.1 | 169 | 79.21 | 16.81 | | B | 503.5 | 509.2 |
-513.35| -5.7 | 4.15 | -9.85 | 32.49 | 17.2225 | 97.0225 | | B | 511 |
-509.2 | 513.35| 1.8 | 4.15 | -2.35 | 3.24 | 17.2225 | 5.5225 | | B |
-525.1 | 509.2 | 513.35| 15.9 | 4.15 | 11.75 | 252.81 | 17.2225 |
-138.0625 | | B | 504.9 | 509.2 | 513.35| -4.3 | 4.15 | -8.45 | 18.49 |
-17.2225 | 71.4025 | | B | 524.4 | 509.2 | 513.35| 15.2 | 4.15 | 11.05 |
-231.04 | 17.2225 | 122.1025 | | B | 511.2 | 509.2 | 513.35| 2 | 4.15 |
--2.15 | 4 | 17.2225 | 4.6225 | | C | 489.3 | 509.2 | 496.15| -19.9 |
--13.05 | -6.85 | 396.01 | 170.3025 | 46.9225 | | C | 501 | 509.2 |
-496.15| -8.2 | -13.05 | 4.85 | 67.24 | 170.3025 | 23.5225 | | C | 472.9
-| 509.2 | 496.15| -36.3 | -13.05 | -23.25 | 1317.69 | 170.3025 |
-540.5625 | | C | 501.7 | 509.2 | 496.15| -7.5 | -13.05 | 5.55 | 56.25 |
-170.3025 | 30.8025 | | C | 504 | 509.2 | 496.15| -5.2 | -13.05 | 7.85 |
-27.04 | 170.3025 | 61.6225 | | C | 508 | 509.2 | 496.15| -1.2 | -13.05 |
-11.85 | 1.44 | 170.3025 | 140.4225 | | 合計 | 9165.6| 9165.6 | 9165.6| 0
-| 0 | 0 | 3240.5 | 1600.41 | 1640.09 |</p>
+<p>平方和分解</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fertilizer</th>
+<th>Y</th>
+<th><span class="math inline">\(\bar{Y}\)</span></th>
+<th><span class="math inline">\(M\)</span></th>
+<th>|<span class="math inline">\(\vec{D}\)</span>|</th>
+<th>|<span class="math inline">\(\vec{G}\)</span>|</th>
+<th>|<span class="math inline">\(\vec{E}\)</span>|</th>
+<th>|<span class="math inline">\(\vec{D}^2\)</span>|</th>
+<th>|<span class="math inline">\(\vec{G}^2\)</span>|</th>
+<th>|<span class="math inline">\(\vec{E}^2\)</span>|</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>514.7</td>
+<td>509.2</td>
+<td>518.1</td>
+<td>5.5</td>
+<td>8.9</td>
+<td>-3.4</td>
+<td>30.25</td>
+<td>79.21</td>
+<td>11.56</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>509.1</td>
+<td>509.2</td>
+<td>518.1</td>
+<td>-0.1</td>
+<td>8.9</td>
+<td>-9</td>
+<td>0.01</td>
+<td>79.21</td>
+<td>81</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>512.2</td>
+<td>509.2</td>
+<td>518.1</td>
+<td>3</td>
+<td>8.9</td>
+<td>-5.9</td>
+<td>9</td>
+<td>79.21</td>
+<td>34.81</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>532.7</td>
+<td>509.2</td>
+<td>518.1</td>
+<td>23.5</td>
+<td>8.9</td>
+<td>14.6</td>
+<td>552.25</td>
+<td>79.21</td>
+<td>213.16</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>517.7</td>
+<td>509.2</td>
+<td>518.1</td>
+<td>8.5</td>
+<td>8.9</td>
+<td>-0.4</td>
+<td>72.25</td>
+<td>79.21</td>
+<td>0.16</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>522.2</td>
+<td>509.2</td>
+<td>518.1</td>
+<td>13</td>
+<td>8.9</td>
+<td>4.1</td>
+<td>169</td>
+<td>79.21</td>
+<td>16.81</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>503.5</td>
+<td>509.2</td>
+<td>513.35</td>
+<td>-5.7</td>
+<td>4.15</td>
+<td>-9.85</td>
+<td>32.49</td>
+<td>17.2225</td>
+<td>97.0225</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>511</td>
+<td>509.2</td>
+<td>513.35</td>
+<td>1.8</td>
+<td>4.15</td>
+<td>-2.35</td>
+<td>3.24</td>
+<td>17.2225</td>
+<td>5.5225</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>525.1</td>
+<td>509.2</td>
+<td>513.35</td>
+<td>15.9</td>
+<td>4.15</td>
+<td>11.75</td>
+<td>252.81</td>
+<td>17.2225</td>
+<td>138.0625</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>504.9</td>
+<td>509.2</td>
+<td>513.35</td>
+<td>-4.3</td>
+<td>4.15</td>
+<td>-8.45</td>
+<td>18.49</td>
+<td>17.2225</td>
+<td>71.4025</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>524.4</td>
+<td>509.2</td>
+<td>513.35</td>
+<td>15.2</td>
+<td>4.15</td>
+<td>11.05</td>
+<td>231.04</td>
+<td>17.2225</td>
+<td>122.1025</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>511.2</td>
+<td>509.2</td>
+<td>513.35</td>
+<td>2</td>
+<td>4.15</td>
+<td>-2.15</td>
+<td>4</td>
+<td>17.2225</td>
+<td>4.6225</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>489.3</td>
+<td>509.2</td>
+<td>496.15</td>
+<td>-19.9</td>
+<td>-13.05</td>
+<td>-6.85</td>
+<td>396.01</td>
+<td>170.3025</td>
+<td>46.9225</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>501</td>
+<td>509.2</td>
+<td>496.15</td>
+<td>-8.2</td>
+<td>-13.05</td>
+<td>4.85</td>
+<td>67.24</td>
+<td>170.3025</td>
+<td>23.5225</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>472.9</td>
+<td>509.2</td>
+<td>496.15</td>
+<td>-36.3</td>
+<td>-13.05</td>
+<td>-23.25</td>
+<td>1317.69</td>
+<td>170.3025</td>
+<td>540.5625</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>501.7</td>
+<td>509.2</td>
+<td>496.15</td>
+<td>-7.5</td>
+<td>-13.05</td>
+<td>5.55</td>
+<td>56.25</td>
+<td>170.3025</td>
+<td>30.8025</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>504</td>
+<td>509.2</td>
+<td>496.15</td>
+<td>-5.2</td>
+<td>-13.05</td>
+<td>7.85</td>
+<td>27.04</td>
+<td>170.3025</td>
+<td>61.6225</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>508</td>
+<td>509.2</td>
+<td>496.15</td>
+<td>-1.2</td>
+<td>-13.05</td>
+<td>11.85</td>
+<td>1.44</td>
+<td>170.3025</td>
+<td>140.4225</td>
+</tr>
+<tr class="odd">
+<td>合計</td>
+<td>9165.6</td>
+<td>9165.6</td>
+<td>9165.6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3240.5</td>
+<td>1600.41</td>
+<td>1640.09</td>
+</tr>
+</tbody>
+</table>
 <p><span class="math display">\[
     |\vec{D}|^2 = \vec{D} \cdot \vec{D} = d_1^2 + d_2^2 + \cdots +
 d_{16}^2 \\

@@ -1,0 +1,857 @@
+<!doctype html>
+<html >
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--[if lt IE 9]>
+                <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="template.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/template.css" />
+
+    <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- <script type='text/javascript' src='menu/js/jquery.cookie.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.hoverIntent.minified.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.dcjqaccordion.2.7.min.js'></script> -->
+
+    <!-- <link href="menu/css/skins/blue.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/graphite.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/grey.css" rel="stylesheet" type="text/css" /> -->
+  
+    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+        
+  
+    <!-- <script src="script.js"></script> -->
+  
+    <!-- <script src="jquery.sticky-kit.js "></script> -->
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.cookie.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.dcjqaccordion.2.7.min.js'></script>
+
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/graphite.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/grey.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/ryangrose/easy-pandoc-templates@948e28e5/css/elegant_bootstrap.css" rel="stylesheet" type="text/css" />
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/jquery.sticky-kit.js"></script>
+    <meta name="generator" content="pandoc" />
+  <meta name="author" content="Yoshiyuki Yamagata" />
+  <title>2023生物統計学第5回</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+
+    
+    <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="doc-title">2023生物統計学第5回</span>
+        <ul class="nav pull-right doc-info">
+                    <li><p class="navbar-text">Yoshiyuki
+Yamagata</p></li>
+                              <li><p class="navbar-text">2023年11月13日</p></li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <div class="row">
+            <div class="span12">
+
+      
+      <h1 id="生物統計演習-第5回-多重比較">生物統計演習 第5回
+多重比較</h1>
+<h2 id="多重比較について">多重比較について</h2>
+<p>分散分析により「すべての実験群において平均値の差が等しい」とは言えないことが分かったとしても、実際にどの群間に有意差があるかを知りたくなる。3群以上の比較の場合は
+<strong>検定の繰り返しの問題</strong> が生じ、通常の<span
+class="math inline">\(t\)</span>検定などをそのまま用いることができない(図)。</p>
+<table>
+<thead>
+<tr class="header">
+<th><img src="zn6b5q4x.png" alt="" width="90%"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>検定の繰り返しによる第一種の過誤の増大</strong></td>
+</tr>
+</tbody>
+</table>
+<p>例えば2群の対比較について、帰無仮説<span class="math inline">\(H_0:
+\mu_1=\mu_2\)</span>の検定を有意水準 <span
+class="math inline">\(\alpha=0.05\)</span>で行う場合、<span
+class="math inline">\(H_0:
+\mu_1=\mu_2\)</span>のもと偶然有意となる確率は5%である。これを
+<strong>第一種の過誤(Type I error)</strong> といい、
+<strong>「帰無仮説が正しいが、検定にて棄却される確率」</strong>
+である。偽陽性いう言い方ともいう。3群の場合、<span
+class="math inline">\(H_0: \mu_1=\mu_2\)</span>と<span
+class="math inline">\(H_0: \mu_2=\mu_3\)</span>と<span
+class="math inline">\(H_0:
+\mu_3=\mu_0\)</span>の検定を3回行うことになり、 <span
+class="math inline">\(1-(0.95)^{3}=0.1426\)</span>すなわち、3回の対比較のうち少なくとも一対が有意となる確率、すなわち第一種の過誤は14.26%となる(5%より大きい！)。すなわち、検定の繰り返しにより、第一種の過誤が高まるため、誤った有意差が得られやすく、誤った結論に至りやすい。群数が増加すると事態はより深刻である。多重比較における仮説の集合を
+<strong>族(family)</strong>
+といい、仮説の集合全体で一つの検定とみなす考え方を
+<strong>ファミリーワイズ(family wise)</strong>
+といい、多重検定全体における第一種過誤をFEWR(family-wise error
+rate)という。今回は、第一種の過誤を調整した <strong>多重検定</strong>
+に関する演習を行う。</p>
+<h3 id="多重比較の手法の分類">多重比較の手法の分類</h3>
+<p>多重比較は(1)有意水準を制御する方法と(2)統計量を制御する方法の二種類がある。
+1. 有意水準を制御する方法 - Family Wise Error Rate(FWER)に対する補正
+ボンフェローニ補正など - False Discovery Rate (FDR) 補正
+Holm法、Benjamini &amp; Hochberg (BH)法など 2. 統計量を制御する方法 -
+<strong>対照群との多重比較</strong> Dunnet法 など -
+<strong>すべての対比較</strong> Fisher’s protect LSD
+(四群以上では使用不可)、Duncan法(有意差でやすく、使用不可)、Tukey-Kramer法など</p>
+<p>今回は、統計量を制御する方法について演習を行う。</p>
+<h3 id="対照群との多重比較">対照群との多重比較</h3>
+<p>付表1は、栽培イネ品種日本晴(Nip)に遺伝子<em>X1</em>, <em>X2</em>,
+<em>X3</em>,
+<em>X4</em>を導入した形質転換系統についての到穂日数(Days-to-heading
+(DTH))のデータである。Nipを対照群(C)とし、二つ以上の処理群のデータに関して、対照群と処理群の二群間の平均値の差の検定を行う。</p>
+<h4 id="データの読み込み">データの読み込み</h4>
+<p>matlabは多くのデータからインポートできる。今回はコピーされ、クリップボードに保存されたデータの開き方を学習しよう。</p>
+<p>公式マニュアルではここに書いてある。
+https://jp.mathworks.com/help/matlab/import_export/select-spreadsheet-data-interactively_ja_JP.html</p>
+<h5 id="元データの読み込み">1. 元データの読み込み</h5>
+<p>https://github.com/qikushu/stat
+にwebブラウザでアクセスし、dunnett1.txtを選ぶ。画面右付近にある灰色の四角ボタン「raw」をおして、データを表示させた後、データをコピーする。データはclipboardに保存される。</p>
+<pre><code># dunnett1.txt
+Line    DTH
+C   88.3
+C   89.7
+C   90
+C   86.6
+C   89.3
+Line1   89.1
+Line1   88.2
+Line1   85.3
+略
+Line4   86.8</code></pre>
+<h5 id="matlabでのclipboardからのデータ読み込み">2.
+matlabでのclipboardからのデータ読み込み</h5>
+<ol type="1">
+<li>ワークスペースブラウザーのタイトルバーで下三角形をクリックし、[貼り付け]
+を選択する。</li>
+<li>「区切り文字」は「区切り」、列区切り文字は「タブ」を選ぶ。</li>
+<li>「選択」はデータ範囲は範囲、変数名が入っている行は変数名行を選ぶ。</li>
+<li>出力タイプは「table」型とする、</li>
+<li>良ければ、右端の「選択のインポート」ボタンを押す。</li>
+<li>変数名は太字の箇所を編集してください。今回は<code>d</code>とします</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th><img src="kznagV5juhNm.png" alt="" width="80%"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>クリップボードからのデータインポート</strong></td>
+</tr>
+</tbody>
+</table>
+<p>うまくいかない人は、以下から読み取ってください</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">url</span><span class="op">=</span><span class="st">&quot;https://raw.githubusercontent.com/qikushu/stat/master/dunnett1.txt&quot;</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">d</span> <span class="op">=</span> <span class="va">readtable</span>(<span class="va">url</span>)<span class="op">;</span>  <span class="co">% データ読み込み</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">d</span>.<span class="va">Line</span> <span class="op">=</span> <span class="va">categorical</span>(<span class="va">d</span>.<span class="va">Line</span>)<span class="op">;</span>  <span class="co">% カテゴリカル型に変換</span></span></code></pre></div>
+<h4 id="記述統計">記述統計</h4>
+<p>データを図示し、データを俯瞰(ふかん)しよう。</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 箱ひげ図、箱ひげのみ</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">boxchart</span>(<span class="va">d</span>.<span class="va">Line</span><span class="op">,</span>  <span class="va">d</span>.<span class="va">DTH</span>)<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Days to heading&#39;</span>)<span class="op">;</span> <span class="co">% Y軸のラベルを設定</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">&#39;箱ひげ図&#39;</span>)<span class="op">;</span> <span class="co">% グラフのタイトルを設定</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">% 散布図</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="va">swarmchart</span>(<span class="va">d</span>.<span class="va">Line</span><span class="op">,</span> <span class="va">d</span>.<span class="va">DTH</span><span class="op">,</span> <span class="ss">&#39;SizeData&#39;</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="ss">&#39;MarkerFaceColor&#39;</span><span class="op">,</span> <span class="ss">&#39;blue&#39;</span>)<span class="op">;</span> </span></code></pre></div>
+<p>統計量の計算については以下の方法があります</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">%前回示した方法</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">statByLine</span> <span class="op">=</span> <span class="va">grpstats</span>(<span class="va">d</span><span class="op">,</span> <span class="ss">&#39;Line&#39;</span><span class="op">,</span> {<span class="ss">&#39;mean&#39;</span><span class="op">,</span> <span class="ss">&#39;std&#39;</span><span class="op">,</span> <span class="ss">&#39;length&#39;</span>}<span class="op">,</span> <span class="ss">&#39;DataVars&#39;</span><span class="op">,</span> <span class="ss">&#39;DTH&#39;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">% groupsummary関数を用いる場合</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">% 平均</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="va">means</span> <span class="op">=</span> <span class="va">groupsummary</span>(<span class="va">d</span><span class="op">,</span> <span class="ss">&#39;Line&#39;</span><span class="op">,</span> <span class="ss">&#39;mean&#39;</span><span class="op">,</span> <span class="ss">&#39;DTH&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="va">means</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">% 標準偏差</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="va">stds</span> <span class="op">=</span> <span class="va">groupsummary</span>(<span class="va">d</span><span class="op">,</span> <span class="ss">&#39;Line&#39;</span><span class="op">,</span> <span class="ss">&#39;std&#39;</span><span class="op">,</span> <span class="ss">&#39;DTH&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="va">stds</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">% 覚えられた方を使えばいいと思います</span></span></code></pre></div>
+<h3 id="分散分析">分散分析</h3>
+<p>群間の平均値、すなわち系統の平均値の間に差があるかを分散分析により分析できる。独立変数を<code>Line</code>、従属変数を<code>DTH</code>とし、モデル式
+<code>DTH ~ Line</code>にて分散分析を行ってみよう。</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">% モデル式DTH~Lineにて線形回帰し、anova関数で結果を表示する</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">mdl</span> <span class="op">=</span> <span class="va">fitlm</span>(<span class="va">d</span><span class="op">,</span> <span class="ss">&#39;DTH ~ Line&#39;</span>)<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">anovaResult</span> <span class="op">=</span> <span class="va">anova</span>(<span class="va">mdl</span>)<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="va">anovaResult</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>             <span class="va">SumSq</span>     <span class="va">DF</span>    <span class="va">MeanSq</span>      <span class="va">F</span>         <span class="va">pValue</span>  </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>             ______    __    ______    ______    __________</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">Line</span>     <span class="fl">317.31</span>     <span class="fl">4</span>    <span class="fl">79.326</span>    <span class="fl">20.818</span>    <span class="fl">6.7251e-07</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">Error</span>    <span class="fl">76.208</span>    <span class="fl">20</span>    <span class="fl">3.8104</span>   </span></code></pre></div>
+<h4 id="練習課題1">練習課題1</h4>
+<p>分散分析表の結果を説明してみよう。</p>
+<h4 id="dunnettの多重比較">Dunnettの多重比較</h4>
+<p>分散分析により、群間の平均値はすべて等しいとは言えないことが明らかとなった。次にどの群間において差があるといえるかを詳細に調査していく。<code>glht()</code>関数に、分散分析の結果<code>anovaResult</code>を代入し、Dunnettの多重比較を行う。</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">% ANOVAの実行 anova1(データ, 水準);</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>[<span class="va">p</span><span class="op">,</span> <span class="va">tbl</span><span class="op">,</span> <span class="va">stats</span>] <span class="op">=</span> <span class="va">anova1</span>(<span class="va">d</span>.<span class="va">DTH</span><span class="op">,</span> <span class="va">d</span>.<span class="va">Line</span>)<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">% Dunnettの多重比較</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="va">results</span> <span class="op">=</span> <span class="va">multcompare</span>(<span class="va">stats</span><span class="op">,</span> <span class="ss">&#39;CType&#39;</span><span class="op">,</span> <span class="ss">&#39;dunnett&#39;</span>)<span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果の出力がそっけないので、列名を以下のように加える。</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="va">resultsT</span> <span class="op">=</span> <span class="va">array2table</span>(<span class="va">results</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="va">resultsT</span>.<span class="va">Properties</span>.<span class="va">VariableNames</span> <span class="op">=</span> {<span class="ss">&#39;対照区&#39;</span><span class="op">,</span> <span class="ss">&#39;処理群&#39;</span><span class="op">,</span> <span class="ss">&#39;下側信頼限界&#39;</span><span class="op">,</span> <span class="ss">&#39;上側信頼限界&#39;</span><span class="op">,</span><span class="ss">&#39;平均値の差&#39;</span><span class="op">,</span><span class="ss">&#39;p(two-side)&#39;</span>}<span class="op">;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="va">resultsT</span></span></code></pre></div>
+<pre><code>    対照区    処理群    下側信頼限界    上側信頼限界    平均値の差    p(two-side)
+    _____    _____    __________    __________    _________    ___________
+
+      2        1        -4.113        -0.84         2.433         0.89948 
+      3        1       -11.713        -8.44        -5.167      1.3007e-05 
+      4        1        -1.173          2.1         5.373         0.28997 
+      5        1        -5.073         -1.8         1.473         0.41688 </code></pre>
+<p>対照区(C)と処理群(T)の対比較の結果が各行に示されている。3列目は平均値の95%下側信頼限界、4列目は平均値の95%上側信頼限界、5列目は平均値の差、6列目が両側確率(p)である。<span
+class="math inline">\(p\)</span>の値が5%より小さければ5%水準で有意差あり、1%より小さければ1%水準で有意差ありと判断する。</p>
+<p>平均値の差の検定に置ける帰無仮説(<span
+class="math inline">\(H_0\)</span>)は「T-C=0」である。5列目と6列目の間を95%信頼区間(confidence
+interval;
+CI)といい、この中に0が含まれていれば、有意水準5%で有意と一目でわかる。</p>
+<p>仮説の集合全体で一つの検定とみなす考え方を<strong>ファミリーワイズ(family
+wise)</strong>という。ダネットの多重比較は、一連の繰り返しの検定全体で有意水準を制御するfamily
+wiseな検定であり、検定の繰り返しが考慮された信頼区間であることを示している。</p>
+<h3 id="結果の図示">結果の図示</h3>
+<p>結果は通常、エクセルの棒グラフにて平均値を示し、標準誤差のエラーバーを付して示す。Rでも作画する方法はある。ダネットの多重比較の結果得られた有意水準をアスタリスクにて示すのが一般的である。</p>
+<table>
+<thead>
+<tr class="header">
+<th><img src="mh3gqilv.png" alt="" width="80%"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ダネットの多重比較の結果を反映した結果の図示の一例</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="理論">理論</h3>
+<p>Dunnetの多重比較では、対照区1つと<span
+class="math inline">\(c\)</span>個の比較区があり、<span
+class="math inline">\(i\)</span>番目の比較区には<span
+class="math inline">\(N_i\)</span>個のサンプルがあるとする(図)。</p>
+<table>
+<thead>
+<tr class="header">
+<th><img src="nOu78cLG.png" alt="" width="90%"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Dunnetの多重比較の一例</strong></td>
+</tr>
+</tbody>
+</table>
+<p>二標本<span
+class="math inline">\(t\)</span>検定がベースになっている。<span
+class="math inline">\(t\)</span>検定では帰無仮説<span
+class="math inline">\(H_0: \bar{A}-\bar{B}=0\)</span>において、<span
+class="math inline">\(t\)</span>値の信頼区間は有意水準<span
+class="math inline">\(\alpha=0.05\)</span>における下側限界<span
+class="math inline">\(-t_{\alpha=0.05, df}\)</span>と上側限界<span
+class="math inline">\(t_{\alpha=0.05, df}\)</span>の区間である。 <span
+class="math display">\[
+    -t_{\alpha=0.05, df} &lt; t =  \frac{(\bar{A} - \bar{B}) - (\mu_A -
+\mu_B)}{\sqrt{(1/m+1/n) s_p^2}} &lt; t_{\alpha=0.05, df}
+\]</span> ダネットの多重検定では、 <span class="math display">\[
+    -D_{\alpha=0.05, df, \rho} &lt; \frac{(\bar{A} - \bar{B}) - (\mu_A -
+\mu_B)}{\sqrt{(1/m+1/n) s_c^2}} &lt; D_{\alpha=0.05, df,\rho}
+\]</span> とし、ダネットの<span
+class="math inline">\(D\)</span>分布表を見て求める。二標本<span
+class="math inline">\(t\)</span>検定では<span
+class="math inline">\(s_p^2\)</span>は<span
+class="math inline">\(A\)</span>と<span
+class="math inline">\(B\)</span>の合併分散であったが、ダネットの多重検定では、<span
+class="math inline">\(s_c^2\)</span>は群内平均からの誤差二乗和を誤差の自由度<span
+class="math inline">\(df\)</span>で割って求める。自由度<span
+class="math inline">\(df\)</span>はすべてのサンプル数 - 比較群数 -
+1であり、上記の例ではdf = (5+5+4+6) - 3 - 1 = 16である。 <span
+class="math inline">\(c\)</span>は対照区と比較する比較区の数、<span
+class="math inline">\(X_{i, j}\)</span>は<span
+class="math inline">\(i\)</span>番目の比較区における<span
+class="math inline">\(j\)</span>番目の個体をさす。 <span
+class="math display">\[
+s_c^2 = \frac{ \sum_{i=0}^{c} \sum_{j=1}^{N_i} (X_{i, j} - \bar{X}_{i}
+)^2 }{n}
+\]</span></p>
+<p><span
+class="math inline">\(D\)</span>は自由度と処理区の数、処理区と(処理区+対照区)の比<span
+class="math inline">\(\rho\)</span>(ロー)に基づいて選択する。今回は処理区と対照区の反復数が等しい場合(<span
+class="math inline">\(\rho=0.5\)</span>)、かつ有意水準<span
+class="math inline">\(\alpha=0.05\)</span>の時についてのd表をしめす。</p>
+<p>Dunnetのd表(両側確率、<span class="math inline">\(\alpha=0.05,
+\rho=0.05\)</span>) | df | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 13 | 15
+| 17 | 19 | 21 | |—-|——|——|——|——|——|——|——|——|——|——|——|——|——|——| | 2 |
+5.42 | 6.06 | 6.51 | 6.85 | 7.12 | 7.35 | 7.54 | 7.71 | 7.85 | 8.1 |
+8.31 | 8.49 | 8.64 | 8.77 | | 3 | 3.87 | 4.26 | 4.54 | 4.75 | 4.92 |
+5.06 | 5.18 | 5.28 | 5.37 | 5.53 | 5.66 | 5.77 | 5.87 | 5.95 | | 4 |
+3.31 | 3.62 | 3.83 | 3.99 | 4.13 | 4.23 | 4.33 | 4.41 | 4.48 | 4.6 |
+4.71 | 4.79 | 4.87 | 4.94 | | 5 | 3.03 | 3.29 | 3.48 | 3.62 | 3.73 |
+3.82 | 3.9 | 3.97 | 4.03 | 4.14 | 4.23 | 4.3 | 4.37 | 4.42 | | 6 | 2.86
+| 3.1 | 3.26 | 3.39 | 3.49 | 3.57 | 3.64 | 3.71 | 3.76 | 3.86 | 3.94 |
+4.0 | 4.06 | 4.11 | | 7 | 2.75 | 2.97 | 3.12 | 3.24 | 3.33 | 3.41 | 3.47
+| 3.53 | 3.58 | 3.67 | 3.74 | 3.81 | 3.86 | 3.91 | | 8 | 2.67 | 2.88 |
+3.02 | 3.13 | 3.22 | 3.29 | 3.35 | 3.41 | 3.46 | 3.54 | 3.61 | 3.67 |
+3.72 | 3.76 | | 9 | 2.61 | 2.81 | 2.95 | 3.05 | 3.14 | 3.2 | 3.26 | 3.32
+| 3.36 | 3.44 | 3.51 | 3.56 | 3.61 | 3.65 | | 10 | 2.57 | 2.76 | 2.89 |
+2.99 | 3.07 | 3.14 | 3.19 | 3.24 | 3.29 | 3.36 | 3.43 | 3.48 | 3.53 |
+3.57 | | 12 | 2.5 | 2.68 | 2.81 | 2.9 | 2.98 | 3.04 | 3.09 | 3.14 | 3.18
+| 3.25 | 3.31 | 3.36 | 3.41 | 3.45 | | 16 | 2.42 | 2.59 | 2.71 | 2.8 |
+2.87 | 2.92 | 2.97 | 3.02 | 3.06 | 3.12 | 3.18 | 3.22 | 3.26 | 3.3 | |
+20 | 2.38 | 2.54 | 2.65 | 2.73 | 2.8 | 2.86 | 2.9 | 2.95 | 2.98 | 3.05 |
+3.1 | 3.14 | 3.18 | 3.22 | | 24 | 2.35 | 2.51 | 2.61 | 2.7 | 2.76 | 2.81
+| 2.86 | 2.9 | 2.94 | 3.0 | 3.05 | 3.09 | 3.13 | 3.16 | | 30 | 2.32 |
+2.47 | 2.58 | 2.66 | 2.72 | 2.77 | 2.82 | 2.86 | 2.89 | 2.95 | 3.0 |
+3.04 | 3.08 | 3.11 | | 40 | 2.29 | 2.44 | 2.54 | 2.62 | 2.68 | 2.73 |
+2.77 | 2.81 | 2.85 | 2.9 | 2.95 | 2.99 | 3.02 | 3.05 | | 60 | 2.27 |
+2.41 | 2.51 | 2.58 | 2.64 | 2.69 | 2.73 | 2.77 | 2.8 | 2.86 | 2.9 | 2.94
+| 2.97 | 3.0 | | 120| 2.24 | 2.38 | 2.47 | 2.55 | 2.6 | 2.65 | 2.69 |
+2.73 | 2.76 | 2.81 | 2.86 | 2.89 | 2.93 | 2.95 | | <span
+class="math inline">\(\infty\)</span> | 2.21 | 2.35 | 2.44 | 2.51 | 2.57
+| 2.61 | 2.65 | 2.69 | 2.72 | 2.77 | 2.81 | 2.85 | 2.88 | 2.91 |</p>
+<h2 id="すべての対比較を行う多重比較">すべての対比較を行う多重比較</h2>
+<p>ここでは用いた実験条件や試料などの各群の平均値について
+<strong>総当たりで対比較</strong>
+を行う場合について考える。今回は、Tukey(テューキー)法を用いた多重比較について演習を行う。テューキーの範囲検定、テューキー法、テューキーのHSD
+(honestly significant difference)
+検定などの名称がある。本来のTukey法は各群の反復数(n)が同じである必要があるが、Tukey-Kramer法は各群の反復数が異なっていてもよい。</p>
+<h4 id="例題データの読み込み">例題データの読み込み</h4>
+<p>イネ8品種の到穂日数のデータを付表2に示す。データはhttps://github.com/qikushu/stat
+のTukeyKramer1.txtを用いる。前回と同様の手順を踏んで、データはd2というオブジェクトに保存する。</p>
+<p>ワークスペースの下△をクリックして、貼り付けを選択し、データをクリップボードからインポートする。クリップボードからのコピーができない人はweb上のデータから直接読み込む。</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">url</span><span class="op">=</span><span class="st">&quot;https://raw.githubusercontent.com/qikushu/stat/master/TukeyKramer1.txt&quot;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">d2</span> <span class="op">=</span> <span class="va">readtable</span>(<span class="va">url</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="va">d2</span>.<span class="va">Variety</span> <span class="op">=</span> <span class="va">categorical</span>(<span class="va">d2</span>.<span class="va">Variety</span>)<span class="op">;</span>  <span class="co">% カテゴリカル型に変換</span></span></code></pre></div>
+<p>データが読み込めたら記述統計にて全体を俯瞰(ふかん)する。</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 箱ひげ図、箱ひげのみ</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">boxchart</span>(<span class="va">d2</span>.<span class="va">Variety</span><span class="op">,</span>  <span class="va">d2</span>.<span class="va">DTH</span>)<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Days to heading&#39;</span>)<span class="op">;</span> <span class="co">% Y軸のラベルを設定</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">&#39;箱ひげ図&#39;</span>)<span class="op">;</span> <span class="co">% グラフのタイトルを設定</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">% 散布図</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="va">swarmchart</span>(<span class="va">d2</span>.<span class="va">Variety</span><span class="op">,</span> <span class="va">d2</span>.<span class="va">DTH</span><span class="op">,</span> <span class="ss">&#39;SizeData&#39;</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="ss">&#39;MarkerFaceColor&#39;</span><span class="op">,</span> <span class="ss">&#39;blue&#39;</span>)<span class="op">;</span> </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="va">statByLine</span> <span class="op">=</span> <span class="va">grpstats</span>(<span class="va">d2</span><span class="op">,</span> <span class="ss">&#39;Variety&#39;</span><span class="op">,</span> {<span class="ss">&#39;mean&#39;</span><span class="op">,</span> <span class="ss">&#39;std&#39;</span><span class="op">,</span><span class="ss">&#39;length&#39;</span>}<span class="op">,</span> <span class="ss">&#39;DataVars&#39;</span><span class="op">,</span> <span class="ss">&#39;DTH&#39;</span>)</span></code></pre></div>
+<h4
+id="チューキークラマー法による多重比較">チューキークラマー法による多重比較</h4>
+<p>チューキークラマー法による総あたりの対比較を行う。<code>anova1</code>関数で計算した値を<code>multcompare</code>関数により、チューキークラマー法による多重比較を行う。多重比較においては、FisherのPLSD(Protected
+Least Signicicant Difference)法やDuncan
+の方法が知られる。これらの方法は多重検定におけるFWERを適切に調整していないのでつかうべきではないとされる。</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">% ANOVAの実行 anova1(データ, 水準);</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>[<span class="va">p</span><span class="op">,</span> <span class="va">tbl</span><span class="op">,</span> <span class="va">stats</span>] <span class="op">=</span> <span class="va">anova1</span>(<span class="va">d2</span>.<span class="va">DTH</span><span class="op">,</span> <span class="va">d2</span>.<span class="va">Variety</span>)<span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">% Tukey-kramerの多重比較</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="va">resultsTK</span> <span class="op">=</span> <span class="va">multcompare</span>(<span class="va">stats</span><span class="op">,</span> <span class="ss">&#39;CType&#39;</span><span class="op">,</span> <span class="ss">&#39;hsd&#39;</span>)<span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果の出力がそっけないので、列名を以下のように加える。</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="va">resultsTTK</span> <span class="op">=</span> <span class="va">array2table</span>(<span class="va">resultsTK</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="va">resultsTTK</span>.<span class="va">Properties</span>.<span class="va">VariableNames</span> <span class="op">=</span> {<span class="ss">&#39;対照区&#39;</span><span class="op">,</span> <span class="ss">&#39;処理群&#39;</span><span class="op">,</span> <span class="ss">&#39;下側信頼限界&#39;</span><span class="op">,</span> <span class="ss">&#39;上側信頼限界&#39;</span><span class="op">,</span><span class="ss">&#39;平均値の差&#39;</span><span class="op">,</span><span class="ss">&#39;p(two-side)&#39;</span>}<span class="op">;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="va">resultsTTK</span></span></code></pre></div>
+<p>結果</p>
+<pre><code>resultsTTK =
+
+  28×6 table
+
+    対照区    処理群    下側信頼限界    上側信頼限界    平均値の差    p(two-side)
+    _____    _____    __________    __________    _________    ___________
+
+      1        2        3.7657        6.6667        9.5676     1.6705e-07 
+      1        3        14.932        17.833        20.734     1.4747e-21 
+      1        4        1.7657        4.6667        7.5676     0.00018857 
+      1        5        14.266        17.167        20.068     9.5866e-21 
+      1        6        15.432        18.333        21.234     3.4857e-22 
+      1        7       -2.9009             0        2.9009              1 
+      1        8        26.266        29.167        32.068              0 
+      2        3        8.2657        11.167        14.068     9.4727e-14 
+      2        4       -4.9009            -2       0.90092         0.3712 
+      2        5        7.5991          10.5        13.401     6.6062e-13 
+
+      :        :          :             :             :             :     
+
+      4        5        9.5991          12.5        15.401     2.3184e-15 
+      4        6        10.766        13.667        16.568      1.037e-16 
+      4        7       -7.5676       -4.6667       -1.7657     0.00018857 
+      4        8        21.599          24.5        27.401     1.1296e-31 
+      5        6       -1.7343        1.1667        4.0676        0.89887 
+      5        7       -20.068       -17.167       -14.266     9.5866e-21 
+      5        8        9.0991            12        14.901      9.096e-15 
+      6        7       -21.234       -18.333       -15.432     3.4857e-22 
+      6        8        7.9324        10.833        13.734     2.4817e-13 
+      7        8        26.266        29.167        32.068              0 </code></pre>
+<p>総あたり対比較のため、結果は複雑です。一般的には、有意差のない群には同一のアルファベットを付すことで、相互の有意差を表現します(図)。</p>
+<pre><code>Hans-Peter Piepho (2004) An Algorithm for a Letter-Based Representation of All-Pairwise Comparisons, Journal of Computational and Graphical Statistics, 13:2, 456-466, DOI: 10.1198/1061860043515</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th><img src="xkuarv.png" alt="" width="70%"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>チューキークラマー法による多重比較の結果を反映した結果の図示の一例</strong></td>
+</tr>
+</tbody>
+</table>
+<p>今回はTomosurebaOrange氏による方法にて求めます。まず、
+<strong>隣接行列</strong>
+を作成します。これは有意差があるペアを0、有意差がないペアを1とした行列です。対角成分は自分自身との差なので必ず0となります。対称行列となります。</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Var1</th>
+<th>Var2</th>
+<th>Var3</th>
+<th>Var4</th>
+<th>Var5</th>
+<th>Var6</th>
+<th>Var7</th>
+<th>Var8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Var1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Var2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Var3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Var4</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Var5</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Var6</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Var7</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Var8</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>できたら、これをmatlabの行列にします。</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> [</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">1</span>     <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">1</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">1</span>     <span class="fl">1</span>     <span class="fl">0</span>     <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0</span>     <span class="fl">1</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">1</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">1</span>     <span class="fl">0</span>     <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">1</span>     <span class="fl">0</span>     <span class="fl">1</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">1</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  [<span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>     ]<span class="op">;</span></span></code></pre></div>
+<p>お互いの関係性を図で表現してみましょう。</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">graph</span>(<span class="va">A</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th><img src="0gp4caiy8o.png" alt="" width="70%"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ネットワークグラフ図</strong></td>
+</tr>
+</tbody>
+</table>
+<p>このように点が線でつながれた図をネットワークグラフといいます。隣接行列のうち、1には線が引かれ、0には線が引かれません。グラフ理論は離散数学の一つです。n個の点にすべて辺が存在するものを特に
+<strong>完全グラフ(あるいはクリーク (clique)) </strong> といいます。</p>
+<p>以下はK=1からK=5までの完全グラフを示します。上位のクリークは下位のクリークを含みます。例えば、点A,
+B, C, Dの4点クリークは、3点からなるクリークA-B-C, B-C-D, C-D-A,
+D-A-Bを含みます。また点A, B, Cの3点からなるクリークはA-B, B-C,
+C-Aの2点からなるクリークを含みます。</p>
+<table>
+<thead>
+<tr class="header">
+<th><img src="2ybprcdz6u.png" alt="" width="70%"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>完全グラフの一例</strong></td>
+</tr>
+</tbody>
+</table>
+<p>多重比較における有意差グループのアルファベットをつける問題は、ネットワークグラフにおいてクリークを探索する問題と等しいそうです。</p>
+<p>今回得られたグラフからクリークを見つけましょう。3, 6,
+5はK=3、1と7、2と4はK=2、8はK=1のクリークです。それぞれのクリークにa, b,
+c,
+dを割り当てます。アルファベットを振る順番は、平均値が小さい順、あるいは大きい順につけていくとあとからわかりやすくなります</p>
+<table>
+<thead>
+<tr class="header">
+<th>カテゴリー</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>b</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>c</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>a</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>c</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>a</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>a</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>b</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th><img src="7t35if86rn.png" alt="" width="60%"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>完全グラフの一例</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="練習問題1">練習問題1</h4>
+<p>以下の図を見て、アルファベットを割り当ててみましょう。
+<img src="VZjanAHeP9.png" alt="" width="60%"></p>
+<p>問題1 | カテゴリー | Letter | | —- | —- | | A | | | B | | | C | | | D
+| | | E | |</p>
+<p>問題2 | カテゴリー | Letter | | —- | —- | | A | | | B | | | C | | | D
+| | | E | |</p>
+<p>問題3 | カテゴリー | Letter | | —- | —- | | A | | | B | | | C | | | D
+| | | E | |</p>
+<h3
+id="スチューデント化された範囲分布q-参考">スチューデント化された範囲分布(q)
+(参考)</h3>
+<p><span class="math inline">\(k\)</span>個の群はすべて、平均<span
+class="math inline">\(\mu\)</span>、分散<span
+class="math inline">\(\sigma^2\)</span>の正規分布<span
+class="math inline">\(X \sim N(\mu,
+\sigma^2)\)</span>の母集団に由来すると仮定する。この時、<span
+class="math inline">\(k\)</span>個の平均値<span
+class="math inline">\(\bar{X}_1, \bar{X}_2, \cdots \bar{X}_k\)</span>
+は中心極限定理から<span class="math inline">\(\bar{X} \sim N(\mu,
+\sigma^2/k)\)</span>である。<span
+class="math inline">\(k\)</span>群のすべての対比較において、ファミリーワイズエラー率(FEWR)を有意水準<span
+class="math inline">\(\alpha=0.05\)</span>に制御するためには<span
+class="math inline">\(k\)</span>個の平均値のうち、<span
+class="math inline">\(\bar{X}\)</span>の最大値<span
+class="math inline">\(\bar{X}_{max}\)</span>と最小値<span
+class="math inline">\(\bar{X}_{min}\)</span>の差について確率分布を考え、その差がいくらのときに、有意水準<span
+class="math inline">\(\alpha=0.05\)</span>で有意になるかを考えればよい。この最大値<span
+class="math inline">\(\bar{X}_{max}\)</span>と最小値<span
+class="math inline">\(\bar{X}_{min}\)</span>の差はスチューデント化された範囲分布(q)に従う。</p>
+<p>群のサンプル数をそれぞれ<span
+class="math inline">\(N_{max}\)</span>、<span
+class="math inline">\(N_{min}\)</span>, 誤差分散を<span
+class="math inline">\(s^2_e\)</span>とおいたとき、 <span
+class="math display">\[
+    q = \frac{\bar{X}_{max} - \bar{X}_{min}}{s_e\sqrt{1/N_{max} +
+1/N_{min} } }
+\]</span> をスチューデント化された範囲分布という。ただし、<span
+class="math inline">\(s_e^2\)</span>は群内平均からの誤差二乗和を誤差の自由度<span
+class="math inline">\(n\)</span>で割って求める。 <span
+class="math display">\[
+s_e^2 = \frac{ \sum_{i=1}^{k} \sum_{j=1}^{N_i} (X_{i, j} - \bar{X}_{i}
+)^2 }{n}
+\]</span> <span class="math inline">\(n\)</span>はすべてのサンプル数 -
+群数である。</p>
+<h4 id="注意点">注意点</h4>
+<ul>
+<li>3群以上の分析の場合、分散分析にて要因による群間の違いを説明できることを示したのち、<strong>事後解析(post
+hoc analysis)</strong>
+として、多重比較を行うのが典型的な手法である。</li>
+<li>特定の群間において差があることが理論的に推論できる場合、すなわち検証的試験は、特定の群間に着目して対比較あるいは多重比較を行うことができる。</li>
+<li>分散分析では有意だが、多重比較にて一つも有意差がない場合、あるいは分散分析では有意ではないが、多重比較にて有意差が検出される場合がある。</li>
+</ul>
+<h4 id="練習問題">練習問題</h4>
+<p>Rにて標準で利用できるデータに<code>chickwts</code>がある。新たに孵化したひなを6グループに分類し、各グループに異なる飼料を与えて6週間後の体重(g)のデータである。</p>
+<ol type="1">
+<li>箱ひげ図および散布図にて図示しなさい。</li>
+<li><code>feed</code>のカテゴリー別に平均値と標準偏差、標準誤差を示しなさい。</li>
+<li>多重比較にて総当たりの対比較を行いなさい。平均値の棒グラフを作成し、標準誤差と有意差グループをアルファベットにて記しなさい。</li>
+</ol>
+<p>ただしデータは以下のように読み込みなさい。</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">url</span><span class="op">=</span><span class="st">&quot;https://raw.githubusercontent.com/qikushu/stat/master/chickwts.txt&quot;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="va">d3</span> <span class="op">=</span> <span class="va">readtable</span>(<span class="va">url</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="va">d3</span>.<span class="va">feed</span> <span class="op">=</span> <span class="va">categorical</span>(<span class="va">d3</span>.<span class="va">feed</span>)<span class="op">;</span>  <span class="co">% カテゴリカル型に変換</span></span></code></pre></div>
+<h3 id="練習問題の解答例">練習問題の解答例</h3>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 箱ひげ図、箱ひげのみ</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="va">boxchart</span>(<span class="va">d3</span>.<span class="va">feed</span><span class="op">,</span>  <span class="va">d3</span>.<span class="va">weight</span>)<span class="op">;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">&#39;Weight by feed&#39;</span>)<span class="op">;</span> <span class="co">% Y軸のラベルを設定</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">&#39;箱ひげ図&#39;</span>)<span class="op">;</span> <span class="co">% グラフのタイトルを設定</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">% 散布図</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="va">swarmchart</span>(<span class="va">d3</span>.<span class="va">feed</span><span class="op">,</span> <span class="va">d3</span>.<span class="va">weight</span><span class="op">,</span> <span class="ss">&#39;SizeData&#39;</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="ss">&#39;MarkerFaceColor&#39;</span><span class="op">,</span> <span class="ss">&#39;blue&#39;</span>)<span class="op">;</span> </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="va">statByLine</span> <span class="op">=</span> <span class="va">grpstats</span>(<span class="va">d3</span><span class="op">,</span> <span class="ss">&#39;feed&#39;</span><span class="op">,</span> {<span class="ss">&#39;mean&#39;</span><span class="op">,</span> <span class="ss">&#39;std&#39;</span><span class="op">,</span><span class="ss">&#39;length&#39;</span>}<span class="op">,</span> <span class="ss">&#39;DataVars&#39;</span><span class="op">,</span> <span class="ss">&#39;weight&#39;</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co">% ANOVAの実行 anova1(データ, 水準);</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>[<span class="va">p</span><span class="op">,</span> <span class="va">tbl</span><span class="op">,</span> <span class="va">stats</span>] <span class="op">=</span> <span class="va">anova1</span>(<span class="va">d3</span>.<span class="va">weight</span><span class="op">,</span> <span class="va">d3</span>.<span class="va">feed</span>)<span class="op">;</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="co">% Tukey-kramerの多重比較</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="va">resultsTK</span> <span class="op">=</span> <span class="va">multcompare</span>(<span class="va">stats</span><span class="op">,</span> <span class="ss">&#39;CType&#39;</span><span class="op">,</span> <span class="ss">&#39;hsd&#39;</span>)<span class="op">;</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co">% 結果の出力がそっけないので、列名を以下のように加える。</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="va">resultsTTK</span> <span class="op">=</span> <span class="va">array2table</span>(<span class="va">resultsTK</span>)</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="va">resultsTTK</span>.<span class="va">Properties</span>.<span class="va">VariableNames</span> <span class="op">=</span> {<span class="ss">&#39;対照区&#39;</span><span class="op">,</span> <span class="ss">&#39;処理群&#39;</span><span class="op">,</span> <span class="ss">&#39;下側信頼限界&#39;</span><span class="op">,</span> <span class="ss">&#39;上側信頼限界&#39;</span><span class="op">,</span><span class="ss">&#39;平均値の差&#39;</span><span class="op">,</span><span class="ss">&#39;p(two-side)&#39;</span>}<span class="op">;</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="va">resultsTTK</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="co">% 仮説検定の結果</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="va">h</span> <span class="op">=</span> <span class="va">resultsTTK</span>.(<span class="st">&quot;p(two-side)&quot;</span>) <span class="op">&lt;</span> <span class="fl">0.05</span><span class="op">;</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="co">% 1と0を逆転</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="va">resultsTTK</span>.<span class="va">invh</span> <span class="op">=</span> <span class="op">~</span><span class="va">h</span><span class="op">;</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a><span class="co">% 列数を調べる</span></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="va">numCat</span> <span class="op">=</span> <span class="va">max</span>(<span class="va">table2array</span>(<span class="va">resultsTTK</span>(<span class="op">:,</span><span class="fl">2</span>)))<span class="op">;</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> <span class="va">zeros</span>(<span class="va">numCat</span><span class="op">,</span> <span class="va">numCat</span>)<span class="op">;</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="va">i</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">numCat</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="va">j</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">numCat</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="va">i</span> <span class="op">==</span> <span class="va">j</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>            <span class="va">sig2</span> <span class="op">=</span> <span class="fl">0</span><span class="op">;</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>        <span class="kw">elseif</span> <span class="va">i</span> <span class="op">&lt;</span> <span class="va">j</span></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>            <span class="va">sig</span> <span class="op">=</span> <span class="va">resultsTTK</span>(<span class="va">resultsTTK</span>.(<span class="st">&quot;対照区&quot;</span>) <span class="op">==</span> <span class="va">i</span> <span class="op">&amp;</span> <span class="va">resultsTTK</span>.(<span class="st">&quot;処理群&quot;</span>) <span class="op">==</span> <span class="va">j</span><span class="op">,</span><span class="st">&quot;invh&quot;</span>)<span class="op">;</span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>            <span class="va">sig2</span> <span class="op">=</span> <span class="va">table2array</span>(<span class="va">sig</span>)<span class="op">;</span></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>            <span class="va">sig</span> <span class="op">=</span> <span class="va">resultsTTK</span>(<span class="va">resultsTTK</span>.(<span class="st">&quot;対照区&quot;</span>) <span class="op">==</span> <span class="va">j</span> <span class="op">&amp;</span> <span class="va">resultsTTK</span>.(<span class="st">&quot;処理群&quot;</span>) <span class="op">==</span> <span class="va">i</span><span class="op">,</span><span class="st">&quot;invh&quot;</span>)<span class="op">;</span></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>            <span class="va">sig2</span> <span class="op">=</span> <span class="va">table2array</span>(<span class="va">sig</span>)<span class="op">;</span></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>         <span class="kw">end</span></span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>         <span class="va">A</span>(<span class="va">i</span><span class="op">,</span> <span class="va">j</span>) <span class="op">=</span> <span class="va">sig2</span><span class="op">;</span></span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">graph</span>(<span class="va">A</span>))</span></code></pre></div>
+<p>結果の図示 (エクセルの利用)</p>
+<p><img src="DdoHRmYS.png" alt="" width="60%"></p>
+<p>孵化後6週間後のヒナの体重に対する飼料の効果.
+チューキークラマー法による多重比較を行った。エラーバーは標準誤差を示す。各群の反復数はかっこの中に示す。5%水準において有意差のない群には同一のアルファベットを付す。</p>
+<h2 id="付録">付録</h2>
+<h4 id="練習問題1の答え">練習問題1の答え</h4>
+<p>以下の図を見て、アルファベットを割り当ててみましょう。
+<img src="RJtarXixmv.png" alt="" width="60%"></p>
+<h4 id="自動化スクリプト-確認用">自動化スクリプト (確認用)</h4>
+<p>確認用に用いてください。</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">% 仮説検定の結果</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="va">h</span> <span class="op">=</span> <span class="va">resultsTTK</span>.(<span class="st">&quot;p(two-side)&quot;</span>) <span class="op">&lt;</span> <span class="fl">0.05</span><span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">% 1と0を逆転</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="va">resultsTTK</span>.<span class="va">invh</span> <span class="op">=</span> <span class="op">~</span><span class="va">h</span><span class="op">;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">% 列数を調べる</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="va">numCat</span> <span class="op">=</span> <span class="va">max</span>(<span class="va">table2array</span>(<span class="va">resultsTTK</span>(<span class="op">:,</span><span class="fl">2</span>)))<span class="op">;</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> <span class="va">zeros</span>(<span class="va">numCat</span><span class="op">,</span> <span class="va">numCat</span>)<span class="op">;</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="va">i</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">numCat</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="va">j</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">numCat</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="va">i</span> <span class="op">==</span> <span class="va">j</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>            <span class="va">sig2</span> <span class="op">=</span> <span class="fl">0</span><span class="op">;</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">elseif</span> <span class="va">i</span> <span class="op">&lt;</span> <span class="va">j</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>            <span class="va">sig</span> <span class="op">=</span> <span class="va">resultsTTK</span>(<span class="va">resultsTTK</span>.(<span class="st">&quot;対照区&quot;</span>) <span class="op">==</span> <span class="va">i</span> <span class="op">&amp;</span> <span class="va">resultsTTK</span>.(<span class="st">&quot;処理群&quot;</span>) <span class="op">==</span> <span class="va">j</span><span class="op">,</span><span class="st">&quot;invh&quot;</span>)<span class="op">;</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>            <span class="va">sig2</span> <span class="op">=</span> <span class="va">table2array</span>(<span class="va">sig</span>)<span class="op">;</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>            <span class="va">sig</span> <span class="op">=</span> <span class="va">resultsTTK</span>(<span class="va">resultsTTK</span>.(<span class="st">&quot;対照区&quot;</span>) <span class="op">==</span> <span class="va">j</span> <span class="op">&amp;</span> <span class="va">resultsTTK</span>.(<span class="st">&quot;処理群&quot;</span>) <span class="op">==</span> <span class="va">i</span><span class="op">,</span><span class="st">&quot;invh&quot;</span>)<span class="op">;</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>            <span class="va">sig2</span> <span class="op">=</span> <span class="va">table2array</span>(<span class="va">sig</span>)<span class="op">;</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>         <span class="kw">end</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>         <span class="va">A</span>(<span class="va">i</span><span class="op">,</span> <span class="va">j</span>) <span class="op">=</span> <span class="va">sig2</span><span class="op">;</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="co">% グラフ描画</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">graph</span>(<span class="va">A</span>))</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="co">% maxClique問題を解く</span></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a><span class="co">% https://jp.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/30413/versions/3/download/zip からダウンロードしてインストールする。</span></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a><span class="va">B</span><span class="op">=</span> <span class="va">maximalCliques</span>(<span class="va">A</span>)</span></code></pre></div>
+            </div>
+    </div>
+  </div>
+  <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+
+</body>
+</html>
