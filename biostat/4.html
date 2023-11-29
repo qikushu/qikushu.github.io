@@ -154,12 +154,108 @@ https://www.jstage.jst.go.jp/article/kagakutoseibutsu/51/7/51_483/_pdf<br />
 <h3 id="一元配置分散分析">一元配置分散分析</h3>
 <p>三種類の有機肥料を三種類の区画に投入し、イネの収量を調査した(表<span
 class="math inline">\(\ref{tb:uxcmdl}\)</span>)。肥料および栽培区画は収量に影響を与えているといえるか。5%水準で検定せよ。</p>
-<p><strong>表. 収量試験</strong> | 肥料(Fertilizer) | 区画(Area) | 収量
-(kg/ha) | | ————— | ——— | ———— | | A | D | 514.7 | | A | D | 509.1 | | A
-| E | 512.2 | | A | E | 532.7 | | A | F | 517.7 | | A | F | 522.2 | | B
-| D | 503.5 | | B | D | 511.0 | | B | E | 525.1 | | B | E | 504.9 | | B
-| F | 524.4 | | B | F | 511.2 | | C | D | 489.3 | | C | D | 501.0 | | C
-| E | 472.9 | | C | E | 501.7 | | C | F | 504.0 | | C | F | 508.0 |</p>
+<p><strong>表. 収量試験</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>肥料(Fertilizer)</th>
+<th>区画(Area)</th>
+<th>収量 (kg/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>D</td>
+<td>514.7</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>D</td>
+<td>509.1</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>E</td>
+<td>512.2</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>E</td>
+<td>532.7</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>F</td>
+<td>517.7</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>F</td>
+<td>522.2</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>D</td>
+<td>503.5</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>D</td>
+<td>511.0</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>E</td>
+<td>525.1</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>E</td>
+<td>504.9</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>F</td>
+<td>524.4</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>F</td>
+<td>511.2</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>D</td>
+<td>489.3</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>D</td>
+<td>501.0</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>E</td>
+<td>472.9</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>E</td>
+<td>501.7</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>F</td>
+<td>504.0</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>F</td>
+<td>508.0</td>
+</tr>
+</tbody>
+</table>
 <p>MATLABでグラフを作成しながら順に説明しよう。まずデータを入力する。手入力は時間がかかるので本演習では以下のコマンドを実行する。</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">% データ読み込み</span></span>
@@ -203,11 +299,45 @@ squareで<strong>平均平方</strong>、F <strong><span
 class="math inline">\(F\)</span>値</strong>、pValueで<span
 class="math inline">\(p\)</span>値のことである。Error
 <strong>残差</strong>で、今回は群内誤差を指す。Rの出力結果を下記の表に写し取り、分散分析表を完成させよう。</p>
-<p>分散分析表 | 因子 | 平方和 | 自由度 | 平均平方 | <span
-class="math inline">\(F\)</span>値 | <span
-class="math inline">\(p\)</span>値 | | ——— | —— | —— | ——– | —– | —– | |
-群間(肥料) | | | | | | | 群内 | | | | - | - | | 全体 | | | - | - | -
-|</p>
+<p>分散分析表</p>
+<table>
+<thead>
+<tr class="header">
+<th>因子</th>
+<th>平方和</th>
+<th>自由度</th>
+<th>平均平方</th>
+<th><span class="math inline">\(F\)</span>値</th>
+<th><span class="math inline">\(p\)</span>値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>群間(肥料)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>群内</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>全体</td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 <h4 id="分散分析表の作成と検定">分散分析表の作成と検定</h4>
 <p>分散分析では(1)群内および群間の平方和より分散を計算し、(2)分散比(<span
 class="math inline">\(F\)</span>値)について(3)確率計算を行い、(4)有意性を判定する。</p>
@@ -280,20 +410,235 @@ class="math inline">\(p&gt;0.05\)</span>なので、有意ではない、すな�
 <p>表は、2014-2016年(<code>Y2014</code>, <code>Y2015</code>,
 <code>Y2016</code>)の三か年(<code>Year</code>)において、水稲三品種(<code>Variety</code>)を東南アジアのモンスーン季(雨季,
 <code>MS</code>)と乾季(<code>DS</code>)の作季(<code>Season</code>)にて育成し、穂到日数(<code>HD</code>)を計測したものである。品種、作季が到穂日数に関連があるか調査しなさい。</p>
-<p>例題 二元配置分散分析 | HD | Variety | Season | Year | | — | ——- | ——
-| —— | | 115 | M | DS | Y2014 | | 118 | M | DS | Y2014 | | 117 | M | DS
-| Y2014 | | 117 | S | DS | Y2014 | | 116 | S | DS | Y2014 | | 116 | S |
-DS | Y2014 | | 124 | Y | DS | Y2014 | | 125 | Y | DS | Y2014 | | 122 | Y
-| DS | Y2014 | | 113 | M | DS | Y2015 | | 115 | M | DS | Y2015 | | 112 |
-M | DS | Y2015 | | 117 | S | DS | Y2015 | | 116 | S | DS | Y2015 | | 117
-| S | DS | Y2015 | | 115 | Y | DS | Y2015 | | 117 | Y | DS | Y2015 | |
-114 | Y | DS | Y2015 | | 95 | M | MS | Y2015 | | 96 | M | MS | Y2015 | |
-94 | M | MS | Y2015 | | 98 | S | MS | Y2015 | | 97 | S | MS | Y2015 | |
-98 | S | MS | Y2015 | | 110 | Y | MS | Y2015 | | 108 | Y | MS | Y2015 |
-| 108 | Y | MS | Y2015 | | 93 | M | MS | Y2016 | | 93 | M | MS | Y2016 |
-| 95 | M | MS | Y2016 | | 91 | S | MS | Y2016 | | 93 | S | MS | Y2016 |
-| 93 | S | MS | Y2016 | | 105 | Y | MS | Y2016 | | 107 | Y | MS | Y2016
-| | 107 | Y | MS | Y2016 |</p>
+<p>例題 二元配置分散分析</p>
+<table>
+<thead>
+<tr class="header">
+<th>HD</th>
+<th>Variety</th>
+<th>Season</th>
+<th>Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>115</td>
+<td>M</td>
+<td>DS</td>
+<td>Y2014</td>
+</tr>
+<tr class="even">
+<td>118</td>
+<td>M</td>
+<td>DS</td>
+<td>Y2014</td>
+</tr>
+<tr class="odd">
+<td>117</td>
+<td>M</td>
+<td>DS</td>
+<td>Y2014</td>
+</tr>
+<tr class="even">
+<td>117</td>
+<td>S</td>
+<td>DS</td>
+<td>Y2014</td>
+</tr>
+<tr class="odd">
+<td>116</td>
+<td>S</td>
+<td>DS</td>
+<td>Y2014</td>
+</tr>
+<tr class="even">
+<td>116</td>
+<td>S</td>
+<td>DS</td>
+<td>Y2014</td>
+</tr>
+<tr class="odd">
+<td>124</td>
+<td>Y</td>
+<td>DS</td>
+<td>Y2014</td>
+</tr>
+<tr class="even">
+<td>125</td>
+<td>Y</td>
+<td>DS</td>
+<td>Y2014</td>
+</tr>
+<tr class="odd">
+<td>122</td>
+<td>Y</td>
+<td>DS</td>
+<td>Y2014</td>
+</tr>
+<tr class="even">
+<td>113</td>
+<td>M</td>
+<td>DS</td>
+<td>Y2015</td>
+</tr>
+<tr class="odd">
+<td>115</td>
+<td>M</td>
+<td>DS</td>
+<td>Y2015</td>
+</tr>
+<tr class="even">
+<td>112</td>
+<td>M</td>
+<td>DS</td>
+<td>Y2015</td>
+</tr>
+<tr class="odd">
+<td>117</td>
+<td>S</td>
+<td>DS</td>
+<td>Y2015</td>
+</tr>
+<tr class="even">
+<td>116</td>
+<td>S</td>
+<td>DS</td>
+<td>Y2015</td>
+</tr>
+<tr class="odd">
+<td>117</td>
+<td>S</td>
+<td>DS</td>
+<td>Y2015</td>
+</tr>
+<tr class="even">
+<td>115</td>
+<td>Y</td>
+<td>DS</td>
+<td>Y2015</td>
+</tr>
+<tr class="odd">
+<td>117</td>
+<td>Y</td>
+<td>DS</td>
+<td>Y2015</td>
+</tr>
+<tr class="even">
+<td>114</td>
+<td>Y</td>
+<td>DS</td>
+<td>Y2015</td>
+</tr>
+<tr class="odd">
+<td>95</td>
+<td>M</td>
+<td>MS</td>
+<td>Y2015</td>
+</tr>
+<tr class="even">
+<td>96</td>
+<td>M</td>
+<td>MS</td>
+<td>Y2015</td>
+</tr>
+<tr class="odd">
+<td>94</td>
+<td>M</td>
+<td>MS</td>
+<td>Y2015</td>
+</tr>
+<tr class="even">
+<td>98</td>
+<td>S</td>
+<td>MS</td>
+<td>Y2015</td>
+</tr>
+<tr class="odd">
+<td>97</td>
+<td>S</td>
+<td>MS</td>
+<td>Y2015</td>
+</tr>
+<tr class="even">
+<td>98</td>
+<td>S</td>
+<td>MS</td>
+<td>Y2015</td>
+</tr>
+<tr class="odd">
+<td>110</td>
+<td>Y</td>
+<td>MS</td>
+<td>Y2015</td>
+</tr>
+<tr class="even">
+<td>108</td>
+<td>Y</td>
+<td>MS</td>
+<td>Y2015</td>
+</tr>
+<tr class="odd">
+<td>108</td>
+<td>Y</td>
+<td>MS</td>
+<td>Y2015</td>
+</tr>
+<tr class="even">
+<td>93</td>
+<td>M</td>
+<td>MS</td>
+<td>Y2016</td>
+</tr>
+<tr class="odd">
+<td>93</td>
+<td>M</td>
+<td>MS</td>
+<td>Y2016</td>
+</tr>
+<tr class="even">
+<td>95</td>
+<td>M</td>
+<td>MS</td>
+<td>Y2016</td>
+</tr>
+<tr class="odd">
+<td>91</td>
+<td>S</td>
+<td>MS</td>
+<td>Y2016</td>
+</tr>
+<tr class="even">
+<td>93</td>
+<td>S</td>
+<td>MS</td>
+<td>Y2016</td>
+</tr>
+<tr class="odd">
+<td>93</td>
+<td>S</td>
+<td>MS</td>
+<td>Y2016</td>
+</tr>
+<tr class="even">
+<td>105</td>
+<td>Y</td>
+<td>MS</td>
+<td>Y2016</td>
+</tr>
+<tr class="odd">
+<td>107</td>
+<td>Y</td>
+<td>MS</td>
+<td>Y2016</td>
+</tr>
+<tr class="even">
+<td>107</td>
+<td>Y</td>
+<td>MS</td>
+<td>Y2016</td>
+</tr>
+</tbody>
+</table>
 <h4 id="解答例">解答例</h4>
 <p>到穂日数(<code>HD</code>)を応答変数として、品種(<code>Variety</code>)を要因とする一元配置分散分析、および作季(<code>Season</code>)を説明変数とする一元配置分散分析を行う。まず記述統計を行い、それぞれの要因の水準別に散布図や平均、分散を算出する。</p>
 <div class="sourceCode" id="cb6"><pre
@@ -350,9 +695,45 @@ class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb7-1"><a hr
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>               <span class="va">SumSq</span>     <span class="va">DF</span>    <span class="va">MeanSq</span>      <span class="va">F</span>        <span class="va">pValue</span> </span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">Variety</span>    <span class="fl">557.06</span>     <span class="fl">2</span>    <span class="fl">278.53</span>    <span class="fl">2.7786</span>    <span class="fl">0.076689</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">Error</span>      <span class="fl">3307.9</span>    <span class="fl">33</span>    <span class="fl">100.24</span>                      </span></code></pre></div>
-<p>分散分析表 | 因子 | 平方和 | 自由度 | 平均平方 | F値 | p値 |
-|—————-|——–|——–|———-|—–|—–| | 群間(Fertilizer) | | | | | | | 群内 | | |
-| - | - | | 全体 | | | - | - | - |</p>
+<p>分散分析表</p>
+<table>
+<thead>
+<tr class="header">
+<th>因子</th>
+<th>平方和</th>
+<th>自由度</th>
+<th>平均平方</th>
+<th>F値</th>
+<th>p値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>群間(Fertilizer)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>群内</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>全体</td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 <p>となった。分散分析における帰無仮説(<span
 class="math inline">\(H_0\)</span>)は「要因間に目的変数に違いはない」である。一元配置分散分析にて到穂日数と品種の関連を調査したところ、5%水準にて帰無仮説は棄却されなかった。よって品種間に到穂日数に違いがあるとは言えず、到穂日数と品種の関連はない。</p>
 <p>モデル式を<code>HD ~ Season</code>とする 一元配置分散分析を行う。</p>
@@ -364,9 +745,45 @@ class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb8-1"><a hr
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>              <span class="va">SumSq</span>     <span class="va">DF</span>    <span class="va">MeanSq</span>      <span class="va">F</span>         <span class="va">pValue</span>  </span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">Season</span>      <span class="fl">2934</span>     <span class="fl">1</span>      <span class="fl">2934</span>    <span class="fl">107.16</span>    <span class="fl">4.7787e-12</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">Error</span>     <span class="fl">930.94</span>    <span class="fl">34</span>    <span class="fl">27.381</span>                               </span></code></pre></div>
-<p>分散分析表 | 因子 | 平方和 | 自由度 | 平均平方 | F値 | p値 |
-|————|———–|——–|———-|—–|—–| | 群間(Season)| | | | | | | 群内 | | | | - |
-- | | 全体 | | | - | - | - |</p>
+<p>分散分析表</p>
+<table>
+<thead>
+<tr class="header">
+<th>因子</th>
+<th>平方和</th>
+<th>自由度</th>
+<th>平均平方</th>
+<th>F値</th>
+<th>p値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>群間(Season)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>群内</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>全体</td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 <p>一元配置分散分析にて到穂日数と作季の関連を調査した。帰無仮説(<span
 class="math inline">\(H_0\)</span>)は「作季間おいて到穂日数の違いはない」である。分散分析の結果、<span
 class="math inline">\(p\)</span>値は<span class="math inline">\(4.779
@@ -474,10 +891,61 @@ class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb10-1"><a h
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a># このような書き方もある</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="va">mdl</span> <span class="op">=</span> <span class="va">fitlm</span>(<span class="va">d1</span><span class="op">,</span> <span class="ss">&#39;HD ~ Season * Variety&#39;</span>)<span class="op">;</span>  </span></code></pre></div>
-<p>分散分析表 | 因子 | 平方和 | 自由度 | 平均平方 | F値 | p値 |
-|————————-|——–|——–|———-|—-|—-| | 群間(Season) | | | | | | |
-群間(Variety) | | | | | | | 相互作用(Season:Variety)| | | | | | | 群内 |
-| | | - | - | | 全体 | | | - | - | - |</p>
+<p>分散分析表</p>
+<table>
+<thead>
+<tr class="header">
+<th>因子</th>
+<th>平方和</th>
+<th>自由度</th>
+<th>平均平方</th>
+<th>F値</th>
+<th>p値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>群間(Season)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>群間(Variety)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>相互作用(Season:Variety)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>群内</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>全体</td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 <p>前節と同様、主効果の<code>Season</code>と<code>Variety</code>は有意となり、到穂日数に関連していることが示唆された。<code>Season:Variety</code>が相互作用に相当する成分であり、<code>Season:Variety</code>の相互作用に関する平方和、平均平方、<span
 class="math inline">\(F\)</span>値が計算され、<span
 class="math inline">\(F\)</span>値に基づく<span
@@ -504,20 +972,202 @@ class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb11-1"><a h
 x
 施肥量(<code>fert</code>)の相互作用を考慮した場合、これらは一穂籾数(<code>gn</code>)に影響を与えるといえるか、二元配置分散分析(相互作用あり)を用い、5%水準にて検定せよ。</li>
 </ol>
-<p>分散分析表 | 因子 | 平方和 | 自由度 | 平均平方 | F値 | p値 |
-|————|——–|——–|———-|—–|—–| | 群間(fert) | | | | | | | 群内 | | | | - | -
-| | 全体 | | | - | - | - |</p>
-<p>分散分析表 | 因子 | 平方和 | 自由度 | 平均平方 | F値 | p値 |
-|————|——–|——–|———-|—–|—–| | 群間(dens) | | | | | | | 群内 | | | | - | -
-| | 全体 | | | - | - | - |</p>
-<p>分散分析表 | 因子 | 平方和 | 自由度 | 平均平方 | F値 | p値 |
-|————-|——–|——–|———-|—–|—–| | 群間(fert) | | | | | | | 群間(dens) | | | |
-| | | 群間(block) | | | | | | | 群内 | | | | - | - | | 全体 | | | - | -
-| - |</p>
-<p>分散分析表 | 因子 | 平方和 | 自由度 | 平均平方 | F値 | p値 |
-|———————|——–|——–|———-|—–|—–| | 群間(fert) | | | | | | | 群間(dens) | | |
-| | | | 群間(block) | | | | | | | 相互作用(fert:dens) | | | | | | | 群内
-| | | | - | - | | 全体 | | | - | - | - |</p>
+<p>分散分析表1</p>
+<table>
+<thead>
+<tr class="header">
+<th>因子</th>
+<th>平方和</th>
+<th>自由度</th>
+<th>平均平方</th>
+<th>F値</th>
+<th>p値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>群間(fert)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>群内</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>全体</td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>分散分析表2</p>
+<table>
+<thead>
+<tr class="header">
+<th>因子</th>
+<th>平方和</th>
+<th>自由度</th>
+<th>平均平方</th>
+<th>F値</th>
+<th>p値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>群間(dens)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>群内</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>全体</td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>分散分析表3</p>
+<table>
+<thead>
+<tr class="header">
+<th>因子</th>
+<th>平方和</th>
+<th>自由度</th>
+<th>平均平方</th>
+<th>F値</th>
+<th>p値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>群間(fert)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>群間(dens)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>群間(block)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>群内</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>全体</td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>分散分析表4</p>
+<table>
+<thead>
+<tr class="header">
+<th>因子</th>
+<th>平方和</th>
+<th>自由度</th>
+<th>平均平方</th>
+<th>F値</th>
+<th>p値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>群間(fert)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>群間(dens)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>群間(block)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>相互作用(fert:dens)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>群内</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>全体</td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 <h3 id="補足資料-平方和分解">補足資料 (平方和分解)</h3>
 <h4 id="偏差の分解">偏差の分解</h4>
 <p>例えば、18個の測定値<span class="math inline">\(y_1, y_2,\cdots, y_i,
