@@ -956,16 +956,16 @@ class="math inline">\(p\)</span>値が算出される。</p>
 <p>データを以下のURLからダウンロードする</p>
 <div class="sourceCode" id="cb11"><pre
 class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">myURL</span> <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/qikushu/stat/master/yieldtrial2ABC.txt&quot;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">d3</span> <span class="op">=</span> <span class="va">read</span>.<span class="va">table</span>(<span class="va">myURL</span><span class="op">,</span> <span class="va">head</span><span class="op">=</span><span class="va">T</span>)</span></code></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">d3</span> <span class="op">=</span> <span class="va">readtable</span>(<span class="va">myUR</span>)</span></code></pre></div>
 <p>圃場試験実習において、施肥量(<code>fert</code>)と栽植密度(<code>dens</code>)が水稲収量にもたらす影響を調べられた。圃場を大きく二つのブロックに分割し、各ブロックに12のプロットを設定して行われた。収量(<code>gy</code>)とは、単位面積(m2)あたりの玄米の収穫量(g)のことであるが、収量構成要素は、収量に影響を与える形質で収量を分解したもので、例えば、「単位面積当たりの穂数(<code>pn</code>)」、「一穂籾数(<code>gn</code>)」、「登熟歩合(<code>pr</code>)」、「玄米千粒重(<code>gw</code>)」と分解できる。
 収量はこれらの構成要素の積で表現される。下記の質問に答えよ。</p>
 <ol type="1">
 <li>施肥量(<code>fert</code>)は収量(<code>gy</code>)に影響を与えるといえるか、一元配置分散分析にて5%水準にて検定せよ。分散分析表を作成するとともに、検定の手続きに従って検定の結果と結論を正しく論述すること。(以下おなじ)</li>
 <li>栽植密度(<code>dens</code>)は玄米千粒重(<code>gw</code>)に影響を与えるといえるか、一元配置分散分析にて5%水準にて検定せよ。</li>
-<li>栽植密度(<code>dens</code>)、施肥量(<code>fert</code>)、ブロック(<code>block</code>)を主効果として、収量(<code>gy</code>)に影響を与えるといえるか。二元配置分散分析にて5%水準にて検定せよ。ただし、相互作用は考慮しない。</li>
+<li>栽植密度(<code>dens</code>)、施肥量(<code>fert</code>)、ブロック(<code>block</code>)を主効果として、収量(<code>gy</code>)に影響を与えるといえるか。三元配置分散分析にて5%水準にて検定せよ。ただし、相互作用は考慮しない。</li>
 <li>栽植密度(<code>dens</code>)、施肥量(<code>fert</code>)、ブロック(<code>block</code>)を主効果、栽植密度(<code>dens</code>)
 x
-施肥量(<code>fert</code>)の相互作用を考慮した場合、これらは一穂籾数(<code>gn</code>)に影響を与えるといえるか、二元配置分散分析(相互作用あり)を用い、5%水準にて検定せよ。</li>
+施肥量(<code>fert</code>)の相互作用を考慮した場合、これらは一穂籾数(<code>gn</code>)に影響を与えるといえるか、三元配置分散分析(相互作用あり)を用い、5%水準にて検定せよ。</li>
 </ol>
 <p>分散分析表1</p>
 <table>
