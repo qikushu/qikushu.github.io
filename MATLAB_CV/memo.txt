@@ -1,0 +1,8 @@
+# ubuntu 学校のwindowsで作成する
+cd bio2
+# 以下を実行
+
+~/pandoc-3.1.9/bin/pandoc imageAnalysis1.md -o imageAnalysis1.html --mathjax -s  --template=elegant_bootstrap_menu.html --filter ./encode_images.py
+
+
+#できたファイルをブラウザで開いて、画像付きで保存するのが良い
