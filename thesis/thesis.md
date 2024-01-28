@@ -127,9 +127,18 @@ Microsoft Wordの場合は、「デザイン」-> 「フォント」-> 「フォ
 
 + DNAマーカーはイタリックでかきましょう。プライマーの配列は表にまとめ、PCR反応の箇所で引用しましょう
 
-+ Qマーカーは元のRMマーカー名も併記しましょう。文献を引用しましょう。
++ Qマーカーは元のRMマーカー名も併記しましょう。文献を引用しましょう。どれがどれに対応するか、確認しましょう。
+```
+Panaud, O., X. Chen, S. R. McCouch (1996) Development of microsatellite markers and characterization of simple sequence length polymorphism (SSLP) in rice (Oryza sativa L.). Mol. Gen. Genet. 252: 597–607.
+Chen, X., S. Temnykh, Y. Xu, Y. Cho, S. R. McCouch (1997) Development of a microsatellite framework map providing genome-wide coverage in rice (Oryza sativa L.). Theor. Appl. Genet. 95: 553–567.
+Temnykh, S., W. Park., N. Ayres, S. Cartinhour, N. Hauck, L. Lipovich, Y. Cho, T. Ishii, S. R. McCouch (2000) Mapping and genome organization of microsatellite sequences in rice (Oryza sativa L.). Theor. Appl. Genet. 100: 697–712.
+McCouch, S. R., L. Teytelman, Y. Xu, K. Lobos, K. Clare, M. Walton, B. Fu, R. Maghirang, Z. Li, Y. Xing, Q. Zhang, I. Kono, M. Yano, R. Fjellstrom, g. DeClerck, D. Schneider, S. Cartinhour, D. Ware, L. Stein (2002) Development and mapping of 2240 new SSR markers for rice (Oryza sativa L.). DNA Res. 9: 1
+```
 
-
++ 最尤法は以下の文献を引用しましょう。
+```
+Allard, R. W. (1956) Formulas and tables to facilitate the calculation of recombination values in heredity. Hilgardia 24(10):235-278. DOI:10.3733/hilg.v24n10p235. 
+```
 
 #### Manufacturer
 試薬や機器メーカーについて、初出においては、Manufacturer, Countryを記述する。アメリカの場合はstateも記載する。二回目以降はメーカー名だけでよい。
@@ -194,14 +203,29 @@ MSP明朝など日本語フォントでは全角になり正しく表示され�
 図表を引用しながら過去形で説明する。図表は本文を説明するための補助資料だから、図表を張り付けただけではだめで、図表のデータを説明するように、本文を書くことが大事である。
 
 ### 図表について
+
 #### 図
-(Fig. 1)(Fig. 2)(Figs. 1-2)のように記載する。(Figure xx)とはしない。一つの図に複数のパネルが含まれる場合はA, B, Cのように、大文字のアルファベットとする。(Fig. 1A, Fig. 1B)のような形とする。本文にて初出直後のページに挿入し、順に番号を付ける。
++ (Fig. 1)(Fig. 2)(Figs. 1-2)のように記載する。(Figure xx)とはしない。
++ 文末に図を引用する際は、句読点の位置に気を付ける
 
-自分でデータをとった図表に限定する。他人の学位論文の図表を引用するのは盗作である。どうしても必要ならば、Supplemental figureとして(Fig. S1)などのようにして引用する。
+```
+# 間違った書き方
+本研究ではSSRマーカーを解析に用いた. (表1)
 
+# 正しい書き方
+本研究ではSSRマーカーを解析に用いた(表1).
+
+句読点が打たれた箇所で、文章は切れる。
+表1は解析プライマーの情報を補足する表だから、
+句読点の前に打つ！
+
+```
++ 一つの図に複数のパネルが含まれる場合はA, B, Cのように、大文字のアルファベットとする。(Fig. 1A, Fig. 1B)のような形とする。本文にて初出直後のページに挿入し、順に番号を付ける。
++ 自分でデータをとった図表に限定する。他人の学位論文の図表を引用するのは盗作である。どうしても必要ならば、Supplemental figureとして(Fig. S1)などのようにして引用する。
++ 図のタイトルは図の下部につけ、すべて太字とする。図の脚注(Figure legendという)はパネルのアルファベットのみを太字とする。
 ![図の説明](QEfD3ibATHqr.png)
 
-図のタイトルは図の下部につけ、すべて太字とする。図の脚注(Figure legendという)はパネルのアルファベットのみを太字とする。
+
 
 #### 表
 (Table 1)(Table 2)(Tables 1-2)のように記載する。英文の場合は、表頭の先頭は必ず大文字から始める。そのほかは小文字である。縦線は入れない。
