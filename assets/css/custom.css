@@ -1,0 +1,74 @@
+/* ==============================================
+   Plant Breeding Lab — Custom Styles
+   ============================================== */
+
+/* Google Fonts: Noto Sans JP + Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+/* Typography */
+:root {
+  --font-family-sans: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-feature-settings: "palt" 1;  /* Proportional alternates for Japanese */
+}
+
+/* Japanese text optimization */
+:lang(ja) {
+  line-height: 1.8;
+  word-break: break-all;
+}
+
+:lang(en) {
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-sans);
+  font-weight: 700;
+}
+
+/* Language toggle styling */
+.language-toggle {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* Hero section */
+.hero-section {
+  background: linear-gradient(135deg, #0a1628 0%, #1a237e 100%);
+}
+
+/* Publication list */
+.pub-list-item {
+  border-left: 3px solid #5c6bc0;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Member cards */
+.member-card {
+  transition: transform 0.2s ease;
+}
+.member-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Code blocks */
+pre code {
+  font-size: 0.875rem;
+}
+
+/* Dark mode adjustments */
+.dark {
+  --tw-bg-opacity: 1;
+}
+
+.dark .navbar {
+  background-color: rgba(13, 27, 62, 0.95);
+  backdrop-filter: blur(10px);
+}

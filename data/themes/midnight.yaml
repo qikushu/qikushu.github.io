@@ -1,0 +1,27 @@
+# Midnight Blue Theme — Plant Breeding Lab
+# Inspired by: genomic precision, advanced technology, trustworthiness
+
+# Primary palette
+primary: "#1a237e"        # Deep indigo (primary accent)
+menu_primary: "#0d1b3e"   # Dark navy (header/navigation)
+home_section_odd: "#0a1628"  # Near-black navy (odd sections)
+home_section_even: "#0f2035" # Slightly lighter navy (even sections)
+
+font: minimal
+font_size: L
+
+# Light mode overrides (hybrid mode)
+light:
+  primary: "#1a237e"
+  background: "#f8f9fc"
+  home_section_odd: "#ffffff"
+  home_section_even: "#f0f4f8"
+
+# Dark mode (default)
+dark:
+  primary: "#5c6bc0"       # Lighter indigo for dark backgrounds
+  background: "#0a1628"    # Deep midnight blue
+  home_section_odd: "#0a1628"
+  home_section_even: "#0f2035"
+  link: "#7986cb"          # Soft indigo links
+  link_hover: "#9fa8da"    # Lighter on hover
