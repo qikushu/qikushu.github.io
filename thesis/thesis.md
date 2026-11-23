@@ -274,6 +274,15 @@ General introductionには一般的背景から問題点、全体における目
 
 実験計画を立てる場合は節を設置して整理するが、学位論文執筆のときには節構造は取り払い、学術論文のように構成する
 
+#### 著者の所属
+
+| 日本語 | 日本語の略 | 英訳 | 英語の略 |
+|---|---|---|---|
+| 九州大学農学部(学部生) | 九州大・農 | School of Agriculture, Kyushu University | Sch. Agr., Kyushu Univ. |
+| 九州大学大学院生物資源環境科学府(大学院生) | 九州大・院・生資環 | Graduate School of Bioresource and Bioenvironmental Sciences, Kyushu University | Grad. Sch. Bioresour. Bioenviron. Sci., Kyushu Univ. |
+| 九州大学大学院農学研究院(教員) | 九州大・院・農 | Faculty of Agriculture, Kyushu University | Fac. Agr., Kyushu Univ. |
+
+
 
 
 ### テンプレートファイル
